@@ -1,15 +1,26 @@
+from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
+from django.views import generic
 from posts.models import Post
 
 
-def index(request):
-    last_10 = Post.objects.order_by('-pub_date')[:10]
-    context = {'last_posts': last_10}
-    return render(request, 'posts/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'posts/index.html'
+    context_object_name = 'last_posts'
 
-def detail(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'posts/detail.html', {'post': post})
+    def get_queryset(self):
+        objects = Post.objects
+        if self.request.user.is_superuser:
+            return objects.order_by('-pub_date')[:10]
+        return objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:10]
 
-# Create your views here.
+
+class DetailView(generic.DetailView):
+    model = Post
+    template_name = 'posts/detail.html'
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Post.objects.all()
+        return Post.objects.filter(pub_date__lte=timezone.now())

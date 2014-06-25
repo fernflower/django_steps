@@ -3,6 +3,6 @@ from posts import views
 
 
 urlpatterns = patterns('',
-                       url(r'^$', views.index, name='index'),
+                       url(r'^$', views.IndexView.as_view(), name='index'),
                        # /posts/1
-                       url(r'^(?P<post_id>\d+)/$', views.detail, name='detail'))
+                       url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'))
