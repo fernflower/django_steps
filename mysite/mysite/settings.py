@@ -37,7 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap',
-    'posts'
+    'django_summernote',
+    #'social.apps.django_app.default',
+    'posts',
 )
 
 MIDDLEWARE_CLASSES = (

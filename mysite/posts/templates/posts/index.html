@@ -4,7 +4,8 @@
   {% if last_posts %}
     <ul>
     {% for post in last_posts %}
-    <li><a href="{% url 'posts:detail' post.id %}">{{ post.text }}</a></li>
+    <li><a href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
+    <p>{{ post.text|safe }}</p></li>
     {% endfor %}
     </ul>
   {% else %}
