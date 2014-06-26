@@ -1,13 +1,12 @@
-{% extends 'posts/base.html' %}
+{% extends 'posts/blog_base.html' %}
 
 {% block content %}
   {% if last_posts %}
-    <ul>
     {% for post in last_posts %}
-    <li><a href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
-    <p>{{ post.text|safe }}</p></li>
+    <a class="blog-post-title" href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
+    <p class="blog-post-meta">{{ post.pub_date }}</p>
+    <p>{{ post.text|safe }}</p>
     {% endfor %}
-    </ul>
   {% else %}
     <p>No posts are available</p>
   {% endif %}

@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap',
     'django_summernote',
-    #'social.apps.django_app.default',
     'posts',
 )
 
@@ -55,6 +54,7 @@ ROOT_URLCONF = 'mysite.urls'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+VK_API_ID = 4431663
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

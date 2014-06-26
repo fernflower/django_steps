@@ -1,4 +1,5 @@
 from django.utils import timezone
+from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.views import generic
@@ -19,6 +20,11 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Post
     template_name = 'posts/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        context['vk_api_id'] = settings.VK_API_ID
+        return context
 
     def get_queryset(self):
         if self.request.user.is_superuser:
