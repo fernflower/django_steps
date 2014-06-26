@@ -50,6 +50,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ROOT_URLCONF = 'mysite.urls'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
@@ -85,4 +87,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATIC_FILES_DIR = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = ('/home/ina/projects/mysite/common_static/',)
