@@ -1,0 +1,4 @@
+Django==1.6.5
+distribute==0.6.34
+django-summernote==0.5.12
+django-bootstrap-static==3.1.1

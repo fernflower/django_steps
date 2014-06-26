@@ -1,0 +1,4 @@
+# in order to enable VK comments on developer's server you need to start server at 127.0.0.1:80. The best way I found (to avoid starting server as root) - start server at port 8080 and redirect traffic to port 80 by adding entries to iptables.
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-port 8080
