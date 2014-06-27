@@ -1,0 +1,44 @@
+{% extends 'posts/blog_base.html' %}
+{% block content %}
+<form class="form-horizontal" method="post">
+    {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend>Write something nice</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="id_name">Your name</label>  
+  <div class="col-md-4">
+      <input name="name" placeholder="placeholder" class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="id_email">Your email</label>  
+  <div class="col-md-4">
+      <input name="email" placeholder="placeholder" class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">Text Area</label>
+  <div class="col-md-4">                     
+      <textarea class="form-control" id="textarea" name="message"></textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="id_button_send"></label>
+  <div class="col-md-4">
+    <button id="id_button_send" name="id_button_send" class="btn btn-primary">Send</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+{% endblock %}

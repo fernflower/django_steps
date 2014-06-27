@@ -1,5 +1,3 @@
 Django==1.6.5
-django-contact-form==1.0
-distribute==0.6.34
 django-summernote==0.5.12
 django-bootstrap-static==3.1.1

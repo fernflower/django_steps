@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'bootstrap',
     'django_summernote',
     'about',
+    'contacts',
     'posts',
 )
 
