@@ -3,4 +3,4 @@ from about import views
 
 
 urlpatterns = patterns('',
-                       url(r'^$', views.ContactFormView.as_view(), name='contact_form'))
+                       url(r'^$', views.AboutView.as_view(), name='index'))
