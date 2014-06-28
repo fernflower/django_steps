@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from contacts.secret_settings import MY_EMAIL_HOST_USER, MY_EMAIL_HOST_PASSWORD, \
+    MY_EMAIL_RECIPIENT_LIST
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -52,10 +54,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-EMAIL_HOST = ''
-EMAIL_PORT = ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = MY_EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = MY_EMAIL_HOST_PASSWORD
+EMAIL_RECIPIENT_LIST = MY_EMAIL_RECIPIENT_LIST
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

@@ -4,7 +4,8 @@ from django.db import models
 class Message(models.Model):
     sender_name = models.CharField(max_length=100)
     sender_email = models.CharField(max_length=100)
-    message = models.TextField()
+    phone = models.CharField(max_length=14)
+    message = models.TextField(max_length=2000)
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
