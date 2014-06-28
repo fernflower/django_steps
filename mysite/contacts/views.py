@@ -24,12 +24,11 @@ def process_message(request):
                       format(msg.sender_name, msg.phone),
                       message=msg.message, from_email=msg.sender_email,
                       recipient_list=settings.EMAIL_RECIPIENT_LIST)
-            return HttpResponseRedirect(reverse('contacts:send'))
+            return HttpResponseRedirect(reverse('contacts:message_sent'))
     else:
         form = ContactForm()
     return render(request, 'contacts/form.html', {'form': form})
 
 
-def send_message(request):
-    # TODO
-    return HttpResponseRedirect(reverse('posts:index'))
+def message_sent(request):
+    return render(request, 'contacts/sent.html')
