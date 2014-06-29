@@ -9,12 +9,14 @@ from posts.models import Post
 class IndexView(generic.ListView):
     template_name = 'posts/index.html'
     context_object_name = 'last_posts'
+    paginate_by = 5
 
     def get_queryset(self):
         objects = Post.objects
         if self.request.user.is_superuser:
-            return objects.order_by('-pub_date')[:10]
-        return objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:10]
+            return objects.order_by('-pub_date')
+        return objects.filter(pub_date__lte=timezone.now()).\
+            order_by('-pub_date')
 
 
 class DetailView(generic.DetailView):
