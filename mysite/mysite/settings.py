@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap',
     'django_summernote',
+    'captcha',
     'about',
     'contacts',
     'posts',
