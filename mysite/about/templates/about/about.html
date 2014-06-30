@@ -1,4 +1,7 @@
 {% extends 'posts/blog_base.html' %}
 {% block content %}
-<p>Here will be some data with pics</p>
+  <p>Here will be some data with pics</p>
+{% endblock %}
+{% block nav-about %}
+  <a class="blog-nav-item active" href="{% url 'about:index' %}">About Us</a>
 {% endblock %}

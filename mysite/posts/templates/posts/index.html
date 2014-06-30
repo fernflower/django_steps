@@ -27,3 +27,7 @@
   </ul>
 {% endif %}
 {% endblock %}
+
+{% block nav-home %}
+<a class="blog-nav-item active" href="{% url 'posts:index' %}">Home</a>
+{% endblock %}

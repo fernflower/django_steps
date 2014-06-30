@@ -24,9 +24,9 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="{% url 'posts:index' %}">Home</a>
-          <a class="blog-nav-item" href="{% url 'about:index' %}">About Us</a>
-          <a class="blog-nav-item" href="/contacts">Contact Us</a>
+         {% block nav-home %}<a class="blog-nav-item" href="{% url 'posts:index' %}">Home</a>{% endblock %}
+         {% block nav-about %}<a class="blog-nav-item" href="{% url 'about:index' %}">About Us</a>{% endblock %}
+         {% block nav-contacts %}<a class="blog-nav-item" href="{% url 'contacts:show_form' %}">Contact Us</a>{% endblock %}
         </nav>
       </div>
     </div>
@@ -96,5 +96,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}contacts.js"></script>
   </body>
 </html>
