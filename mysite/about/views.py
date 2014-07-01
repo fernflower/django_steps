@@ -6,3 +6,5 @@ from about.models import Member
 
 class AboutView(generic.ListView):
     template_name = "about/about.html"
+    model = Member
+    context_object_name = 'members'

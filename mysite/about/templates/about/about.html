@@ -1,6 +1,9 @@
 {% extends 'posts/blog_base.html' %}
 {% block content %}
-  <p>Here will be some data with pics</p>
+  {% for member in members %}
+    {{ member.name }}
+    <div>{{ member.info|safe }}</div>
+  {% endfor %}
 {% endblock %}
 {% block nav-about %}
   <a class="blog-nav-item active" href="{% url 'about:index' %}">About Us</a>

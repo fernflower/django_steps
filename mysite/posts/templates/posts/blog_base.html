@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load icons %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,8 +35,8 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        <h1 class="blog-title">Kreda</h1>
+        <p class="lead blog-description">Яркий и необычный инструментальный коллектив 4-х лучших друзей.</p>
       </div>
 
       <div class="row">
@@ -53,36 +54,16 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>Kreda</h4>
-            <p> Яркий и необычный, инструментальный коллектив 4-х лучших друзей.
-                В репертуаре самая разная музыка - от французского шансона до джазовых и эстрадных произведений, песен.
-                Особый колорит ансамблю придает необычное сочетание музыкальных инструментов - дуэт аккордеона и скрипки
-                поддерживает контрабас и кахон (перкуссионый инструмент из Испании).
-            </p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-              <li><a href="#">March 2013</a></li>
-              <li><a href="#">February 2013</a></li>
-            </ol>
+            <h4>Контакты</h4>
+            <p>{% icon 'telephone' %} 8 916 919 77 21, Максим</p>
+            <p>{% icon 'email' %} kreda2014@mail.ru</p>
+            <p>{% icon 'pencil' %} <a href="{% url 'contacts:show_form' %}">Отправить сообщение</a></p>
+            <p><a href="http://vk.com/kreda"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img></a> vk.com/kreda</p>
           </div>
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
-
     </div><!-- /.container -->
-
     <div class="blog-footer">
       <p>Blog template built for <a href="http://vk.com/kreda">Kreda</a> by <a href="https://github.com/fernflower">@fernflower</a>.</p>
       <p>

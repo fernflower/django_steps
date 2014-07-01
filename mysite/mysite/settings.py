@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'bootstrap',
     'django_summernote',
     'captcha',
+    'icons_famfamfam',
     'about',
     'contacts',
     'posts',
