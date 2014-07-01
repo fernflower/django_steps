@@ -99,4 +99,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ('/home/ina/projects/mysite/common_static/',)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
