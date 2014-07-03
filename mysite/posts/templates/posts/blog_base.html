@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'blog.css' %}" rel="stylesheet">
+    <link href="{% static 'carousel.css' %}" rel="stylesheet">
 
   </head>
 
@@ -33,11 +34,12 @@
     </div>
 
     <div class="container">
-
+    {% block header %}
       <div class="blog-header">
         <h1 class="blog-title">Kreda</h1>
         <p class="lead blog-description">Яркий и необычный инструментальный коллектив 4-х лучших друзей.</p>
       </div>
+    {% endblock %}
 
       <div class="row">
 
@@ -52,6 +54,7 @@
 
         </div><!-- /.blog-main -->
 
+        {% block contacts %}
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>Контакты</h4>
@@ -61,6 +64,7 @@
             <p><a href="http://vk.com/kreda"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img></a> vk.com/kreda</p>
           </div>
         </div><!-- /.blog-sidebar -->
+        {% endblock %}
 
       </div><!-- /.row -->
     </div><!-- /.container -->

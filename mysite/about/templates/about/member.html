@@ -1,0 +1,5 @@
+{% extends 'about/about_base.html' %}
+{% block content %}
+<h1>{{ member.name }}</h1>
+<p>{{ member.info|safe}}</p>
+{% endblock %}

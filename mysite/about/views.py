@@ -8,3 +8,12 @@ class AboutView(generic.ListView):
     template_name = "about/about.html"
     model = Member
     context_object_name = 'members'
+
+
+class GroupDataView(generic.TemplateView):
+    template_name = "about/about_base.html"
+
+
+class DetailMember(generic.DetailView):
+    template_name = "about/member.html"
+    model = Member
