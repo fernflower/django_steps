@@ -15,14 +15,14 @@ def process_message(request):
             msg = Message()
             msg.sender_name = form.cleaned_data.get('name')
             msg.sender_email = form.cleaned_data.get('email')
-            msg.message = form.cleaned_data.get('message')
+            msg.text = form.cleaned_data.get('text')
             msg.phone = form.cleaned_data.get('phone')
             msg.pub_date = timezone.now()
             msg.save()
             # send message via email
             send_mail(subject="A message from {} ({})".\
                       format(msg.sender_name, msg.phone),
-                      message=msg.message, from_email=msg.sender_email,
+                      message=msg.text, from_email=msg.sender_email,
                       recipient_list=settings.EMAIL_RECIPIENT_LIST)
             return HttpResponseRedirect(reverse('contacts:message_sent'))
     else:

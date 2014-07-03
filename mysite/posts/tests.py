@@ -7,7 +7,6 @@ from posts.models import Post
 
 
 class PostMethodTests(TestCase):
-
     def test_recently_published(self):
         future_post = Post(pub_date=timezone.now() + datetime.timedelta(days=30))
         self.assertFalse(future_post.is_published_recently())
@@ -22,7 +21,6 @@ def create_post(text, days):
                                pub_date=timezone.now() + datetime.timedelta(days=days))
 
 class PostViewTests(TestCase):
-
     def setUp(self):
         self.admin_user = User.objects.create_superuser('admin', 'admin@test.ru',
                                                         'password')
