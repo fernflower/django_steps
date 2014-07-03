@@ -4,7 +4,7 @@ from about.models import Member
 
 
 class MemberAdmin(SummernoteModelAdmin):
-    fieldsets = [ ('Personal info', {'fields': ['name', 'birthday']}),
+    fieldsets = [ ('Personal info', {'fields': ['name', 'birthday', 'alias']}),
                   ('None', {'fields': ['info']}), ]
 
 admin.site.register(Member, MemberAdmin)
