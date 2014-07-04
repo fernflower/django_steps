@@ -5,7 +5,9 @@ sudo iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-p
 
 # in order to set up email notifications (gmail) on message post you need to create file contacts/secret_settings.py and setup Gmail's login\password and send mail list. Something like the following:
 #
-MY_EMAIL_HOST_USER = "my_login"
-MY_EMAIL_HOST_PASSWORD = "my_pass"
-MY_EMAIL_RECIPIENT_LIST = ("notify_me1@site.com", "notify_me2@site.com", )
+# MY_EMAIL_HOST_USER = "my_login"
+# MY_EMAIL_HOST_PASSWORD = "my_pass"
+# MY_EMAIL_RECIPIENT_LIST = ("notify_me1@site.com", "notify_me2@site.com", )
 # all other settings (smtp port, smtp server etc are in mysite/settings.py as usual; those were moved out and .gitignored for obvious security reasons)
+#
+# had some problems with pyquery install via pip, solved by installing distribute (to replace setuputils as have python3 here) and installing lxml like via apt-get 'apt-get install libxml2-dev libxslt1-dev'.
