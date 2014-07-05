@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from contacts.secret_settings import MY_EMAIL_HOST_USER, MY_EMAIL_HOST_PASSWORD, \
-    MY_EMAIL_RECIPIENT_LIST
+    MY_EMAIL_RECIPIENT_LIST, MY_DB_NAME, MY_DB_USER, MY_DB_PASSWORD
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -76,8 +76,12 @@ VK_API_ID = 4431663
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': MY_DB_NAME,
+        'USER': MY_DB_USER,
+        'PASSWORD': MY_DB_PASSWORD,
+        'HOST': '',
+        'PORT': '',
     }
 }
 
