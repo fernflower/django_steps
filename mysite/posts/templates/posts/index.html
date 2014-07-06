@@ -5,7 +5,7 @@
     {% for post in last_posts %}
     <a class="blog-post-title" href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
     <p class="blog-post-meta">{{ post.pub_date }}</p>
-    <p>{{ post.text|safe }}</p>
+    <p>{{ post.text|safe|truncatewords_html:30 }}</p>
     {% endfor %}
   {% else %}
     <p>No posts are available</p>
