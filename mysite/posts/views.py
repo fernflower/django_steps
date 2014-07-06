@@ -1,7 +1,5 @@
 from django.utils import timezone
 from django.conf import settings
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
 from django.views import generic
 from posts.models import Post
 

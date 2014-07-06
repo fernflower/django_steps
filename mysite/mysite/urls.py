@@ -5,13 +5,13 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^about/', include('about.urls', namespace="about")),
-    url(r'^contacts/', include('contacts.urls', namespace="contacts")),
-    url(r'^posts/', include('posts.urls', namespace="posts")),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^captcha/', include('captcha.urls')),
-    url(r'^summernote/', include('django_summernote.urls')),
-)
+                       # Examples:
+                       # url(r'^$', 'mysite.views.home', name='home'),
+                       # url(r'^blog/', include('blog.urls')),
+                       url(r'^about/', include('about.urls', namespace="about")),
+                       url(r'^contacts/', include('contacts.urls', namespace="contacts")),
+                       url(r'^posts/', include('posts.urls', namespace="posts")),
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^captcha/', include('captcha.urls')),
+                       url(r'^summernote/', include('django_summernote.urls')),
+                       )
