@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from contacts.secret_settings import MY_EMAIL_HOST_USER, MY_EMAIL_HOST_PASSWORD, \
-    MY_EMAIL_RECIPIENT_LIST, MY_DB_NAME, MY_DB_USER, MY_DB_PASSWORD
+    MY_EMAIL_RECIPIENT_LIST, MY_DB_NAME, MY_DB_USER, MY_DB_PASSWORD, MY_VK_API_ID, MY_SECRET_KEY, MY_ALLOWED_HOSTS
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -19,14 +19,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6tmj5&woi=m3*^g4pvht3eag-t^v2kc-las^qo!-rbe3ko((00'
+SECRET_KEY = MY_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = MY_ALLOWED_HOSTS
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/posts/media/'
@@ -72,7 +72,7 @@ ROOT_URLCONF = 'mysite.urls'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-VK_API_ID = 4431663
+VK_API_ID = MY_VK_API_ID
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -106,5 +106,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )

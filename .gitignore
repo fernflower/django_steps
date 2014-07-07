@@ -2,3 +2,4 @@
 *.sqlite3
 src/mysite/posts/__pycache__/*
 django
+mysite/static
