@@ -4,32 +4,30 @@
     <div class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-md-4">
           <a href="{% url 'about:member' 'drums'%}"><img class="img-circle" src="{{STATIC_URL}}drums.jpg" alt="Алексей Бударин" style="width: 140px; height: 140px;"></a>
           <h2>Алексей</h2>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <div class="col-md-4">
           <a href="{% url 'about:member' 'kreda' %}"><img class="img-circle" src="{{STATIC_URL}}kreda.jpg" alt="Kreda" style="width: 140px; height: 140px;"></a>
           <h2>Группа Kreda</h2>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <div class="col-md-4">
           <a href="{% url 'about:member' 'violin' %}"><img class="img-circle active" src="{{STATIC_URL}}violin.jpg" alt="Катажына Флерчак" style="width: 140px; height: 140px;"></a>
           <h2>Катажына</h2>
         </div><!-- /.col-lg-4 -->
       </div>
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-md-6">
           <a href="{% url 'about:member' 'bass' %}"><img class="img-circle" src="{{STATIC_URL}}double_bass.jpg" alt="Максим Макагонов" style="width: 140px; height: 140px;"></a>
           <h2>Максим</h2>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" style="width: 140px; height: 140px;"></a>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <div class="col-md-6">
           <a href="{% url 'about:member' 'accordion' %}"><img class="img-circle" src="{{STATIC_URL}}accordion.jpg" alt="Александра Коновалова" style="width: 140px; height: 140px;"></a>
           <h2>Александра</h2>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
+    </div> <!-- marketing -->
 {% endblock %}
 {% block contacts %}
 {% endblock %}
