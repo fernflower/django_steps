@@ -15,7 +15,7 @@ class AboutView(generic.ListView):
 
 class GroupDataView(RedirectView):
     def get_redirect_url(self):
-        return reverse_lazy('about:member', kwargs={'pk': 5},
+        return reverse_lazy('about:member', kwargs={'pk': 'kreda'},
                              current_app='about')
 
 
