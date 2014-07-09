@@ -10,8 +10,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from contacts.secret_settings import MY_EMAIL_HOST_USER, MY_EMAIL_HOST_PASSWORD, \
-    MY_EMAIL_RECIPIENT_LIST, MY_DB_NAME, MY_DB_USER, MY_DB_PASSWORD, MY_VK_API_ID, MY_SECRET_KEY, MY_ALLOWED_HOSTS
+from contacts.secret_settings import * # NOQA
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -22,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = MY_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = MY_DEBUG
 
 TEMPLATE_DEBUG = True
 
