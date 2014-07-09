@@ -2,9 +2,20 @@ from django.utils import timezone
 from django.conf import settings
 from django.views import generic
 from posts.models import Post
+from contacts.models import ContactInfo
 
 
-class IndexView(generic.ListView):
+# all parameters to be passed to base template are aggregated in this mixin
+class GeneralContextMixin(generic.base.ContextMixin):
+    def get_context_data(self, **kwargs):
+        context = super(GeneralContextMixin, self).get_context_data(**kwargs)
+        context['contacts_main'] = ContactInfo.objects.filter(type='main').first()
+        context['contacts_friends'] = ContactInfo.objects.filter(type='friends')
+        context['vk_api_id'] = settings.VK_API_ID
+        return context
+
+
+class IndexView(generic.ListView, GeneralContextMixin):
     template_name = 'posts/index.html'
     context_object_name = 'last_posts'
     paginate_by = 5
@@ -13,20 +24,15 @@ class IndexView(generic.ListView):
         objects = Post.objects
         if self.request.user.is_superuser:
             return objects.order_by('-pub_date')
-        return objects.filter(pub_date__lte=timezone.now()).\
+        return objects.filter(pub_date__lte=timezone.localtime(timezone.now())).\
             order_by('-pub_date')
 
 
-class DetailView(generic.DetailView):
+class DetailView(generic.DetailView, GeneralContextMixin):
     model = Post
     template_name = 'posts/detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
-        context['vk_api_id'] = settings.VK_API_ID
-        return context
 
     def get_queryset(self):
         if self.request.user.is_superuser:
             return Post.objects.all()
-        return Post.objects.filter(pub_date__lte=timezone.now())
+        return Post.objects.filter(pub_date__lte=timezone.localtime(timezone.now()))

@@ -1,0 +1,21 @@
+{% load staticfiles %}
+{% load icons %}
+<div class="col-sm-3 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>Контакты</h4>
+        <p>{% icon 'telephone' %} {{ contacts_main.phone }}</p>
+        <p>{% icon 'email' %} {{ contacts_main.email }} </p>
+        <p>{% icon 'pencil' %} <a href="{% url 'contacts:show_form' %}">Отправить сообщение</a></p>
+        <p><a href="{{ contacts_main.website }}"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img></a> {{contacts_main.website}}</p>
+    </div>
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>Наши друзья</h4>
+        {% for friend in contacts_friends %}
+        <p>{% icon 'emoticon_happy' %}{% if friend.website %}<a href="{{ friend.website }}">{{friend.name}}</a></p>
+            {% else %}{{ friend.name }}</p>
+                {% if friend.phone %} <p>{% icon 'telephone' %} {{ friend.phone }}</p> {% endif %}
+                {% if friend.email %} <p>{% icon 'email' %} {{ friend.email }} </p> {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div><!-- /.blog-sidebar -->

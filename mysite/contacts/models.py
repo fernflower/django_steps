@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Message(models.Model):
@@ -12,3 +13,22 @@ class Message(models.Model):
         return "Name:{subject}\nEmail:{sender}\n{msg}".\
             format(subject=self.sender_name, sender=self.sender_email,
                    msg=self.text)
+
+
+class ContactInfo(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    phone = models.CharField(max_length=100, blank=True, null=True)
+    website = models.CharField(max_length=100, blank=True, null=True)
+    type = models.CharField(max_length=100, choices=zip(settings.CONTACT_TYPES,
+                                                        settings.CONTACT_TYPES))
+
+    def __str__(self):
+        return "Name:{}\nEmail:{}\nPhone:{}\nWebsite:{}\n".format(
+            self.name, self.email, self.phone, self.website)
+
+    def save(self, *args, **kwargs):
+        if self.website:
+            # remove http:\\ if any
+            self.website = self.website.lstrip('http://')
+        super(ContactInfo, self).save(*args, **kwargs)

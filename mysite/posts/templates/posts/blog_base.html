@@ -55,15 +55,7 @@
         </div><!-- /.blog-main -->
 
         {% block contacts %}
-        <div class="col-sm-3 col-sm-offset-0 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>Контакты</h4>
-            <p>{% icon 'telephone' %} 8 916 919 77 21, Максим</p>
-            <p>{% icon 'email' %} kreda2014@mail.ru</p>
-            <p>{% icon 'pencil' %} <a href="{% url 'contacts:show_form' %}">Отправить сообщение</a></p>
-            <p><a href="http://vk.com/kreda"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img></a> vk.com/kreda</p>
-          </div>
-        </div><!-- /.blog-sidebar -->
+        {% include "contacts/contact_info.html" %}
         {% endblock %}
 
       </div><!-- /.row -->
