@@ -18,3 +18,4 @@ MY_VK_API_ID = 0
 MY_DEBUG = False
 # app sepecific settings section
 MEMBER_ALIASES = []
+CONTACT_TYPES = []
