@@ -9,7 +9,7 @@
         <p><a href="{{ contacts_main.website }}"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img></a>  {{contacts_main.website}}</p>
     </div>
     <div class="sidebar-module sidebar-module-inset">
-        <h4>Наши друзья</h4>
+        {% if contacts_friends %}<h4>Наши друзья</h4>{% endif %}
         {% for friend in contacts_friends %}
         <p>{% icon 'emoticon_happy' styles='padding-right:5px' %}{% if friend.website %}<a href="{{ friend.website }}"> {{friend.name}}</a></p>
             {% else %}{{ friend.name }}</p>

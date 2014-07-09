@@ -26,9 +26,3 @@ class ContactInfo(models.Model):
     def __str__(self):
         return "Name:{}\nEmail:{}\nPhone:{}\nWebsite:{}\n".format(
             self.name, self.email, self.phone, self.website)
-
-    def save(self, *args, **kwargs):
-        if self.website:
-            # remove http:\\ if any
-            self.website = self.website.lstrip('http://')
-        super(ContactInfo, self).save(*args, **kwargs)
