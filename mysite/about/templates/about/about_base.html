@@ -1,38 +1,85 @@
-{% extends 'posts/blog_base.html' %}
 {% load staticfiles %}
-{% block header %}
-    <div class="container marketing">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-md-4">
-          <a href="{% url 'about:member' 'drums'%}"><img class="img-circle" src="{{STATIC_URL}}drums.jpg" alt="Алексей Бударин" style="width: 140px; height: 140px;"></a>
-          <h2>Алексей</h2>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-md-4">
-          <a href="{% url 'about:member' 'kreda' %}"><img class="img-circle" src="{{STATIC_URL}}kreda.jpg" alt="Kreda" style="width: 140px; height: 140px;"></a>
-          <h2>Группа Kreda</h2>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-md-4">
-          <a href="{% url 'about:member' 'violin' %}"><img class="img-circle active" src="{{STATIC_URL}}violin.jpg" alt="Катажына Фльорчак" style="width: 140px; height: 140px;"></a>
-          <h2>Катажына</h2>
-        </div><!-- /.col-lg-4 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog.css' %}" rel="stylesheet">
+    <link href="{% static 'carousel.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+         {% block nav-home %}<a class="blog-nav-item" href="{% url 'posts:index' %}">Home</a>{% endblock %}
+         {% block nav-about %}<a class="blog-nav-item" href="{% url 'about:index' %}">About Us</a>{% endblock %}
+         {% block nav-contacts %}<a class="blog-nav-item" href="{% url 'contacts:show_form' %}">Contact Us</a>{% endblock %}
+        </nav>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <a href="{% url 'about:member' 'bass' %}"><img class="img-circle" src="{{STATIC_URL}}double_bass.jpg" alt="Максим Макагонов" style="width: 140px; height: 140px;"></a>
-          <h2>Максим</h2>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-md-6">
-          <a href="{% url 'about:member' 'accordion' %}"><img class="img-circle" src="{{STATIC_URL}}accordion.jpg" alt="Александра Коновалова" style="width: 140px; height: 140px;"></a>
-          <h2>Александра</h2>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+    </div>
+
+    <div class="container marketing">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'about:member' 'drums'%}"><img class="img-circle" src="{{STATIC_URL}}drums.jpg" alt="Алексей Бударин" style="width: 140px; height: 140px;"></a>
+                <h2>Алексей</h2>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-md-4">
+                <a href="{% url 'about:member' 'kreda' %}"><img class="img-circle" src="{{STATIC_URL}}kreda.jpg" alt="Kreda" style="width: 140px; height: 140px;"></a>
+                <h2>Группа Kreda</h2>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-md-4">
+                <a href="{% url 'about:member' 'violin' %}"><img class="img-circle active" src="{{STATIC_URL}}violin.jpg" alt="Катажына Фльорчак" style="width: 140px; height: 140px;"></a>
+                <h2>Катажына</h2>
+            </div><!-- /.col-lg-4 -->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{% url 'about:member' 'bass' %}"><img class="img-circle" src="{{STATIC_URL}}double_bass.jpg" alt="Максим Макагонов" style="width: 140px; height: 140px;"></a>
+                <h2>Максим</h2>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-md-6">
+                <a href="{% url 'about:member' 'accordion' %}"><img class="img-circle" src="{{STATIC_URL}}accordion.jpg" alt="Александра Коновалова" style="width: 140px; height: 140px;"></a>
+                <h2>Александра</h2>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
     </div> <!-- marketing -->
-{% endblock %}
-{% block contacts %}
-{% endblock %}
-{% block content-wrapper %}
-  <div class="col-sm-12 blog-main">
-{% endblock %}
-{% block content %}
-{% endblock %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 blog-main">
+                <div class="blog-post">
+                    {% block member_info %}No member info yet{% endblock %}
+                </div><!-- /.blog-post -->
+            </div><!-- /.blog-main -->
+        </div>
+    </div><!-- /.container -->
+
+    <div class="blog-footer">
+        <p>Blog template built for <a href="http://vk.com/kreda">Kreda</a> by <a href="https://github.com/fernflower">@fernflower</a>.</p>
+        <p>
+        <a href="#">Back to top</a>
+        </p>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}contacts.js"></script>
+  </body>
+</html>
