@@ -3,3 +3,4 @@
 src/mysite/posts/__pycache__/*
 django
 mysite/static
+.ropeproject
