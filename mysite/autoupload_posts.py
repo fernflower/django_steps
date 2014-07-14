@@ -6,7 +6,7 @@ from django.core.files import File
 from django.conf import settings
 from posts.models import Post
 
-IMG_HTML = "<img class='img-responsive' src={}/>"
+IMG_HTML = "<img class='img-responsive' src={}/><br/>"
 TEXT_HTML = "<p>{}</p>"
 
 
@@ -32,7 +32,7 @@ def main():
         # now add TZ info. We save everything in UTC so TZ=utc
         pubdate = timezone.make_aware(pubdate, timezone.utc)
         title = "auto uploaded post {}".format(post_id)
-        for pic in pics:
+        for pic in pics[0:2]:
             # upload attachments
             attachment = Attachment(name=pic,
                                     file=File(open(_get_path(pic), 'rb')))
