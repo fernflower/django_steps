@@ -1,5 +1,10 @@
 import sys
 import os
+
+# a nasty hack to set up correct settings module
+old_django_settings = os.environ.get("DJANGO_SETTINGS_MODULE", None)
+os.environ["DJANGO_SETTINGS_MODULE"] = "mysite.settings"
+
 from django.utils import timezone
 from django_summernote.models import Attachment
 from django.core.files import File
@@ -46,3 +51,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # restore settings
+    if old_django_settings:
+        os.environ["DJANGO_SETTINGS_MODULE"] = old_django_settings
