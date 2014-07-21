@@ -29,11 +29,13 @@ class CurrentHtmlNode(template.Node):
             if tag.tag == 'img':
                 img_count += 1
             if img_count > 2:
+                # TODO perhaps not the most easy way to remove tag
                 tag.clear()
+                tag.drop_tag()
                 # add '...' to show that more data is hidden under cut
                 if first_clear:
                     first_clear = False
-                    pq.append("<a href='{}'>(Больше фотографий)</a>".format(
+                    pq.append("<a href='{}'>(Узнать больше)</a>".format(
                         reverse('posts:detail', kwargs={'pk': post_id})))
         return pq.html()
 

@@ -37,12 +37,16 @@ def main():
         # now add TZ info. We save everything in UTC so TZ=utc
         pubdate = timezone.make_aware(pubdate, timezone.utc)
         title = "auto uploaded post {}".format(post_id)
+        add_br = False
         for pic in pics:
+            add_br = not(pic not in [pics[0], pics[-1]]) or True
             # upload attachments
             attachment = Attachment(name=pic,
                                     file=File(open(_get_path(pic), 'rb')))
             attachment.save()
             # insert pics in text
+            if add_br:
+                text += "<br/>"
             text += IMG_HTML.format(os.path.join(settings.MEDIA_URL,
                                                  attachment.file.name))
         post = Post(title=title, text=text, pub_date=pubdate)
