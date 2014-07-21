@@ -11,7 +11,7 @@ from django.core.files import File
 from django.conf import settings
 from posts.models import Post
 
-IMG_HTML = "<img class='img-responsive' src={}/>"
+IMG_HTML = "<img class='img-responsive' src='{}' />"
 TEXT_HTML = "<p>{}</p>"
 
 
