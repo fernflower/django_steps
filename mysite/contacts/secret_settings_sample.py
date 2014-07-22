@@ -16,6 +16,7 @@ MY_DB_PASSWORD = ""
 MY_ALLOWED_HOSTS = []
 MY_VK_API_ID = 0
 MY_DEBUG = False
+MY_RAVEN_CONFIG = None
 # app sepecific settings section
 MEMBER_ALIASES = []
 CONTACT_TYPES = []

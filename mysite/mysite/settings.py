@@ -126,4 +126,4 @@ RAVEN_CONFIG = MY_RAVEN_CONFIG
 
 if RAVEN_CONFIG:
     INSTALLED_APPS = INSTALLED_APPS + \
-        ('raven.contrib.django.raven_compat'),
+        ('raven.contrib.django.raven_compat',)

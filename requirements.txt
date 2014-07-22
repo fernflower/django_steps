@@ -5,4 +5,4 @@ django-simple-captcha==0.4.2
 django-icons-famfamfam==0.2-1
 pyquery==1.2.8
 psycopg2==2.5.3
-raven
+raven==5.0.0
