@@ -25,6 +25,7 @@ class CurrentHtmlNode(template.Node):
         pq = PyQuery(rendered_html)
         img_count = 0
         first_clear = True
+        pq = PyQuery(pq.html())
         for tag in pq.children():
             if tag.tag == 'img':
                 img_count += 1
@@ -37,7 +38,7 @@ class CurrentHtmlNode(template.Node):
                     first_clear = False
                     pq.append("<a href='{}'>(Узнать больше)</a>".format(
                         reverse('posts:detail', kwargs={'pk': post_id})))
-        return pq.html()
+        return pq.outer_html()
 
 
 register = template.Library()
