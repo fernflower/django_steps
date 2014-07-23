@@ -13,9 +13,9 @@ class DeleteAllAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(SummernoteModelAdmin, DeleteAllAdmin):
-    fieldsets = [(None, {'fields': ['title', 'text']}),
+    fieldsets = [(None, {'fields': ['title', 'is_favourite', 'text']}),
                  ('Date information', {'fields': ['pub_date']}), ]
-    list_display = ['title', 'pub_date']
+    list_display = ['title', 'is_favourite', 'pub_date']
 
 
 class MyAttachmentAdmin(AttachmentAdmin, DeleteAllAdmin):

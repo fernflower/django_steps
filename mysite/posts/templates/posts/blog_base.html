@@ -28,6 +28,7 @@
         <nav class="blog-nav">
          {% block nav-home %}<a class="blog-nav-item" href="{% url 'posts:index' %}">Home</a>{% endblock %}
          {% block nav-about %}<a class="blog-nav-item" href="{% url 'about:index' %}">About Us</a>{% endblock %}
+         {% block nav-favourites %}<a class="blog-nav-item" href="{% url 'posts:favourites' %}">Favourites</a>{% endblock %}
          {% block nav-contacts %}<a class="blog-nav-item" href="{% url 'contacts:show_form' %}">Contact Us</a>{% endblock %}
         </nav>
       </div>

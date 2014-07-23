@@ -36,3 +36,14 @@ class DetailView(generic.DetailView, GeneralContextMixin):
         if self.request.user.is_superuser:
             return Post.objects.all()
         return Post.objects.filter(pub_date__lte=timezone.localtime(timezone.now()))
+
+
+class FavouritePostsView(IndexView):
+    model = Post
+    template_name = 'posts/favourites.html'
+
+    def get_queryset(self):
+        all_favourites = Post.objects.filter(is_favourite=True)
+        if self.request.user.is_superuser:
+            return all_favourites
+        return all_favourites.filter(pub_date__lte=timezone.localtime(timezone.now()))
