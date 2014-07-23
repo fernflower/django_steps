@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Blog Template</title>
+    <title>Kreda</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,10 +26,10 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-         {% block nav-home %}<a class="blog-nav-item" href="{% url 'posts:index' %}">Home</a>{% endblock %}
-         {% block nav-about %}<a class="blog-nav-item" href="{% url 'about:index' %}">About Us</a>{% endblock %}
-         {% block nav-favourites %}<a class="blog-nav-item" href="{% url 'posts:favourites' %}">Favourites</a>{% endblock %}
-         {% block nav-contacts %}<a class="blog-nav-item" href="{% url 'contacts:show_form' %}">Contact Us</a>{% endblock %}
+         <a class="blog-nav-item {% block nav-home %}{% endblock %}" href="{% url 'posts:index' %}">Новости</a>
+         <a class="blog-nav-item {% block nav-about %}{% endblock %}" href="{% url 'about:index' %}">О нас</a>
+         <a class="blog-nav-item {% block nav-favourites %}{% endblock %}" href="{% url 'posts:favourites' %}">Избранное</a>
+         <a class="blog-nav-item {% block nav-contacts %}{% endblock %}" href="{% url 'contacts:show_form' %}">Обратная связь</a>
         </nav>
       </div>
     </div>

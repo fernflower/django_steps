@@ -1,9 +1,5 @@
 {% extends 'posts/index.html' %}
 
-{% block nav-favourites %}
-<a class="blog-nav-item active" href="{% url 'posts:favourites' %}">Favourites</a>
-{% endblock %}
+{% block nav-favourites %}active{% endblock %}
 
-{% block nav-home %}
-<a class="blog-nav-item" href="{% url 'posts:index' %}">Home</a>
-{% endblock %}
+{% block nav-home %}{% endblock %}
