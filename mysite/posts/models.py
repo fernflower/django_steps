@@ -1,4 +1,5 @@
 import datetime
+from pyquery import PyQuery
 from django.db import models
 from django.utils import timezone
 
@@ -21,3 +22,11 @@ class Post(models.Model):
     def is_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
+
+    # all stuff with html convertions is done here
+    @property
+    def processed_text(self):
+        pq = PyQuery(self.text)
+        if pq('iframe'):
+            pq = pq('iframe').wrapAll("<div class='responsive-video'>")
+        return pq.outer_html()

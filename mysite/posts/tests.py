@@ -1,4 +1,5 @@
 import datetime
+from pyquery import PyQuery
 from django.utils import timezone
 from django.test import TestCase
 from django.core.urlresolvers import reverse
@@ -14,6 +15,12 @@ class PostMethodTests(TestCase):
         self.assertFalse(old_post.is_published_recently())
         recent_post = Post(pub_date=timezone.now() - datetime.timedelta(hours=1))
         self.assertTrue(recent_post.is_published_recently())
+
+    def test_preprocess(self):
+        post_text = '<iframe src="//www.youtube.com/embed/mY5jXUW3tkk" frameborder="0" height="360" width="640"></iframe>'
+        post = Post(text=post_text)
+        pq = PyQuery(post.processed_text)
+        self.assertEquals(len(pq('.responsive-video')), 1)
 
 
 def create_post(text, days):
