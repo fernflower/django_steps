@@ -9,5 +9,14 @@ sudo iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-p
 # MY_EMAIL_HOST_PASSWORD = "my_pass"
 # MY_EMAIL_RECIPIENT_LIST = ("notify_me1@site.com", "notify_me2@site.com", )
 # all other settings (smtp port, smtp server etc are in mysite/settings.py as usual; those were moved out and .gitignored for obvious security reasons)
-#
+# Full list of custom secret settings you can see in contacts/secret_settings.sample
+
+Troubleshooting
+LXML
 # had some problems with pyquery install via pip, solved by installing distribute (to replace setuputils as have python3 here) and installing lxml like via apt-get 'apt-get install libxml2-dev libxslt1-dev'.
+
+DJANGO_SIMPLE_CAPTCHA
+
+If captcha is not shown, and GET on /captcha/captcha_id gives code 500 and "The _imagingft C module is not installed" error,
+install libfreetype6-dev
+'apt-get install libfreetype6-dev'
