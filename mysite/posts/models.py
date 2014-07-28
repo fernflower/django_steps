@@ -28,5 +28,7 @@ class Post(models.Model):
     def processed_text(self):
         pq = PyQuery(self.text)
         if pq('iframe'):
-            pq = pq('iframe').wrapAll("<div class='responsive-video'>")
+            pq('iframe').wrap("<div class='responsive-video'>")
+        if pq('img'):
+            pq('img').addClass('img-responsive')
         return pq.outer_html()

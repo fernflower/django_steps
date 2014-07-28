@@ -2,7 +2,7 @@
 {% block content %}
   <h2 class="blog-post-title">{{ post.title }}</h2>
   <p class="blog-post-meta">{{ post.pub_date }}</p>
-  <p> {{ post.text|safe }} </p>
+  <p> {{ post.processed_text|safe }} </p>
 <!-- Put this script tag to the <head> of your page -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
 

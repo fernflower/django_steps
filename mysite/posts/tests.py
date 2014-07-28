@@ -17,10 +17,19 @@ class PostMethodTests(TestCase):
         self.assertTrue(recent_post.is_published_recently())
 
     def test_preprocess(self):
-        post_text = '<iframe src="//www.youtube.com/embed/mY5jXUW3tkk" frameborder="0" height="360" width="640"></iframe>'
+        post_text = """<p><iframe src='//www.youtube.com/embed/mY5jXUW3tkk' frameborder="0" height="360" width="640">
+                       </iframe></p> Some text goes here and must be shown
+                       <iframe src='/data/video1'/>"""
         post = Post(text=post_text)
         pq = PyQuery(post.processed_text)
-        self.assertEquals(len(pq('.responsive-video')), 1)
+        self.assertTrue("Some text goes here" in post.processed_text)
+        self.assertEquals(len(pq('.responsive-video')), 2)
+        post_img_text = """<img src='/data/image1.png'></img> Image text
+                           <img src='/data/image2.png'></img>"""
+        post_img = Post(text=post_img_text)
+        pq = PyQuery(post_img.processed_text)
+        self.assertTrue("Image text" in post_img.processed_text)
+        self.assertEquals(len(pq('.img-responsive')), 2)
 
 
 def create_post(text, days):
