@@ -1,5 +1,6 @@
 from pyquery import PyQuery
 from django import template
+from django.conf import settings
 from django.core.urlresolvers import reverse
 
 
@@ -23,16 +24,19 @@ class CurrentHtmlNode(template.Node):
         post_id = template.Template(self.post_id).render(context)
         rendered_html = t.render(context)
         pq = PyQuery(rendered_html)
-        img_count = 0
+        img_video_count = 0
+        text_chars_count = 0
         first_clear = True
         pq = PyQuery(pq.html())
         for tag in pq.children():
-            if tag.tag == 'img':
-                img_count += 1
-            if img_count > 2:
-                # TODO perhaps not the most easy way to remove tag
-                tag.clear()
-                tag.drop_tag()
+            text_chars_count += len(tag.text) if tag.text else 0
+            if tag.tag == 'img' or tag.tag == 'div' and \
+                    tag.get('class') == 'responsive-video':
+                img_video_count += 1
+            if img_video_count > settings.IMG_VIDEO_COUNT or \
+                    text_chars_count > settings.TEXT_CHARS_COUNT:
+                parent = tag.getparent()
+                parent.remove(tag)
                 # add '...' to show that more data is hidden under cut
                 if first_clear:
                     first_clear = False
