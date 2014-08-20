@@ -9,7 +9,8 @@ from contacts.models import ContactInfo
 class GeneralContextMixin(generic.base.ContextMixin):
     def get_context_data(self, **kwargs):
         context = super(GeneralContextMixin, self).get_context_data(**kwargs)
-        context['contacts_main'] = ContactInfo.objects.filter(type='main').first()
+        context['contacts_main'] = ContactInfo.objects.filter(type='main').\
+            first()
         context['contacts_friends'] = ContactInfo.objects.filter(type='friends')
         context['vk_api_id'] = settings.VK_API_ID
         return context
@@ -35,7 +36,8 @@ class DetailView(generic.DetailView, GeneralContextMixin):
     def get_queryset(self):
         if self.request.user.is_superuser:
             return Post.objects.all()
-        return Post.objects.filter(pub_date__lte=timezone.localtime(timezone.now()))
+        return Post.objects.filter(pub_date__lte=timezone.localtime(
+            timezone.now()))
 
 
 class FavouritePostsView(IndexView):
@@ -46,4 +48,5 @@ class FavouritePostsView(IndexView):
         all_favourites = Post.objects.filter(is_favourite=True)
         if self.request.user.is_superuser:
             return all_favourites
-        return all_favourites.filter(pub_date__lte=timezone.localtime(timezone.now()))
+        return all_favourites.filter(pub_date__lte=timezone.localtime(
+            timezone.now())).order_by('-pub_date')
