@@ -1,10 +1,11 @@
 {% load staticfiles %}
+{% load contacts_tags %}
 {% load icons %}
 <div class="col-sm-3 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
         <h4>Контакты</h4>
         <p>{% icon 'telephone' styles='padding-right:5px' %} {{ contacts_main.phone }}</p>
-        <p>{% icon 'email' styles='padding-right:5px' %} {{ contacts_main.email }}</p>
+        <p>{% icon 'email' styles='padding-right:5px' %} {% substitute_at {{contacts_main.email}} %}</p>
         <p>{% icon 'pencil' styles='padding-right:5px' %} <a href="{% url 'contacts:show_form' %}"> Отправить сообщение</a></p>
         <p><a href="{{ contacts_main.website }}"><img src="{{STATIC_URL}}vk1.png" width=20 height=20></img>{{contacts_main.website}}</a></p>
     </div>
@@ -14,7 +15,7 @@
         <p>{% icon 'emoticon_happy' styles='padding-right:5px' %}{% if friend.website %}<a href="{{ friend.website }}"> {{friend.name}}</a></p>
             {% else %}{{ friend.name }}</p>
                 {% if friend.phone %} <p>{% icon 'telephone' styles='padding-right:5px' %} {{ friend.phone }}</p> {% endif %}
-                {% if friend.email %} <p>{% icon 'email' styles='padding-right:5px' %} {{ friend.email }} </p> {% endif %}
+                {% if friend.email %} <p>{% icon 'email' styles='padding-right:5px' %} {% substitute_at {{friend.email}} %} </p> {% endif %}
             {% endif %}
         {% endfor %}
     </div>
