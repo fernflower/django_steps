@@ -1,0 +1,7 @@
+User-agent: Yandex
+Allow: /
+Sitemap: http://kreda.today/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Sitemap: http://kreda.today/sitemap.xml
