@@ -1,7 +1,4 @@
-User-agent: Yandex
-Allow: /
-Sitemap: http://kreda.today/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
+User-agent: *
+Disallow: /admin/
+Crawl-delay: 2
 Sitemap: http://kreda.today/sitemap.xml
