@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render
 from django.views import generic
-from django.views.generic.edit import FormView
 from django.utils import timezone
 from django.core.mail import send_mail
 from posts.views import GeneralContextMixin
@@ -9,7 +8,7 @@ from contacts.forms import ContactForm
 from contacts.models import Message, ContactInfo
 
 
-class ContactUsView(FormView, GeneralContextMixin):
+class ContactUsView(generic.edit.FormView, GeneralContextMixin):
     template_name = "contacts/form.html"
     success_url = "/contacts/sent/"
     form_class = ContactForm
@@ -30,8 +29,8 @@ class ContactUsView(FormView, GeneralContextMixin):
             return super(ContactUsView, self).form_valid(form)
 
 
-def message_sent(request):
-    return render(request, 'contacts/sent.html')
+class MessageSentView(generic.TemplateView, GeneralContextMixin):
+    template_name="contacts/sent.html"
 
 
 class ContactInfoView(generic.ListView):
