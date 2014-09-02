@@ -12,7 +12,7 @@
     <div class="sidebar-module sidebar-module-inset">
         {% if contacts_friends %}<h4>Наши друзья</h4>{% endif %}
         {% for friend in contacts_friends %}
-        <p>{% icon 'emoticon_happy' styles='padding-right:5px' %}{% if friend.website %}<a href="{{ friend.website }}"> {{friend.name}}</a></p>
+        <p>{% icon 'music' styles='padding-right:5px' %}{% if friend.website %}<a href="{{ friend.website }}"> {{friend.name}}</a></p>
             {% else %}{{ friend.name }}</p>
                 {% if friend.phone %} <p>{% icon 'telephone' styles='padding-right:5px' %} {{ friend.phone }}</p> {% endif %}
                 {% if friend.email %} <p>{% icon 'email' styles='padding-right:5px' %} {% substitute_at {{friend.email}} %} </p> {% endif %}
