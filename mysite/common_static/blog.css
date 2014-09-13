@@ -153,6 +153,7 @@ h6, .h6 {
 a {
     color: #996100;
 }
+
 a:hover {
     color: #996100;
 }
@@ -195,4 +196,18 @@ a:hover {
 .btn-primary:hover {
     background-color: #383329;
     border-color: #5E4D31;
+}
+
+.navbar-default {
+    background-color: #A08040;
+    border-color: #A08040;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #C9BABA;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
 }
