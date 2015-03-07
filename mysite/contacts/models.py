@@ -26,3 +26,8 @@ class ContactInfo(models.Model):
     def __str__(self):
         return "Name:{}\nEmail:{}\nPhone:{}\nWebsite:{}\n".format(
             self.name, self.email, self.phone, self.website)
+
+    @property
+    def phones(self):
+        # split phone data by '|' separator
+        return self.phone.split('|')
