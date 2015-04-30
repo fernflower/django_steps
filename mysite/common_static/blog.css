@@ -151,11 +151,11 @@ h6, .h6 {
 }
 
 a {
-    color: #996100;
+    color: #6E3100;
 }
 
 a:hover {
-    color: #996100;
+    color: #6E3100;
 }
 
 
@@ -190,7 +190,7 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #72572C;
+    background-color: #6E3100;
     border-color: #5E4D31;
 }
 .btn-primary:hover {
