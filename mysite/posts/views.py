@@ -25,8 +25,9 @@ class IndexView(generic.ListView, GeneralContextMixin):
         objects = Post.objects
         if self.request.user.is_superuser:
             return objects.order_by('-pub_date')
-        return objects.filter(pub_date__lte=timezone.localtime(timezone.now())).\
-            order_by('-pub_date')
+        return (objects
+                .filter(pub_date__lte=timezone.localtime(timezone.now()))
+                .filter(is_visible=True).order_by('-pub_date'))
 
 
 class DetailView(generic.DetailView, GeneralContextMixin):
@@ -36,8 +37,9 @@ class DetailView(generic.DetailView, GeneralContextMixin):
     def get_queryset(self):
         if self.request.user.is_superuser:
             return Post.objects.all()
-        return Post.objects.filter(pub_date__lte=timezone.localtime(
-            timezone.now()))
+        return (Post.objects
+                .filter(pub_date__lte=timezone.localtime(timezone.now()))
+                .filter(is_visible=True))
 
 
 class FavouritePostsView(IndexView):
@@ -48,5 +50,7 @@ class FavouritePostsView(IndexView):
         all_favourites = Post.objects.filter(is_favourite=True)
         if self.request.user.is_superuser:
             return all_favourites.order_by('-pub_date')
-        return all_favourites.filter(pub_date__lte=timezone.localtime(
-            timezone.now())).order_by('-pub_date')
+        return (all_favourites
+                .filter(pub_date__lte=timezone.localtime(timezone.now()))
+                .filter(is_visible=True)
+                .order_by('-pub_date'))

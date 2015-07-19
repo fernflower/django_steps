@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django_summernote',
     'captcha',
     'icons_famfamfam',
+    'south',
     'about',
     'contacts',
     'posts',
@@ -64,10 +65,7 @@ MIDDLEWARE_CLASSES = (
 LOGGING = {
     'version': 1,
     'handlers': {
-        'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
-        },
+        'console': {'level': 'DEBUG', 'class': 'logging.StreamHandler'},
     }
 }
 
@@ -132,3 +130,8 @@ if RAVEN_CONFIG:
 # img-video and text cut settings
 IMG_VIDEO_COUNT = 2
 TEXT_CHARS_COUNT = 1000
+
+# temp directory to store scraped posts
+VK_SCRAPE_DIR = '/tmp/scraped_posts'
+# path to vk scrape script
+VK_SCRAPER = 'get_data.py'

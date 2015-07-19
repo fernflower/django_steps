@@ -6,3 +6,4 @@ django-icons-famfamfam==0.2-1
 pyquery==1.2.8
 psycopg2==2.5.3
 raven==5.0.0
+South==1.0.2

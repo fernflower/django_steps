@@ -1,0 +1,1 @@
+/home/ina/projects/vk-scraper/get_data.py

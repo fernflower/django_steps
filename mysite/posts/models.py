@@ -8,8 +8,9 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField(max_length=400)
     pub_date = models.DateTimeField('date published', blank=True, null=True)
-    is_favourite = models.BooleanField(default=False,
-                                       verbose_name="Show on favourite posts page?")
+    is_favourite = models.BooleanField(
+        default=False, verbose_name="Show on favourite posts page?")
+    is_visible = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title if self.title != '' else self.text[:50]
