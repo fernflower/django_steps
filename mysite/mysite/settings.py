@@ -133,5 +133,3 @@ TEXT_CHARS_COUNT = 1000
 
 # temp directory to store scraped posts
 VK_SCRAPE_DIR = '/tmp/scraped_posts'
-# path to vk scrape script
-VK_SCRAPER = 'get_data.py'

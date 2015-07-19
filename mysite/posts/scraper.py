@@ -7,22 +7,25 @@ import django.http as http
 from django.utils import timezone
 
 from django_summernote.models import Attachment
+from scraper import scraper
 from posts.models import Post
+
+SCRAPER = scraper.VkScraper()
 
 
 def scrape_vk(request):
     if not request.user.is_superuser:
         return http.HttpResponseForbidden(
             "Only superuser can start the scraper")
-    count = request.GET.get('count', '5')
-    offset = request.GET.get('offset', '0')
+    count = int(request.GET.get('count', 5))
+    offset = int(request.GET.get('offset', 0))
     upload_dir = settings.VK_SCRAPE_DIR
 
     html = "<html><body>%(msg)s</body></html>"
 
     try:
-        subprocess.check_call(['python', settings.VK_SCRAPER, count,
-                               '--offset', offset, '--upload-dir', upload_dir])
+        SCRAPER.scrape_wall(count=count, upload_dir=upload_dir, offset=offset,
+                            save=True)
         _load_scraped(upload_dir)
     except subprocess.CalledProcessError as e:
         return http.HttpResponse(html % {"msg": e.message})
