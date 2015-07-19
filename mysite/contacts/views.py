@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.shortcuts import render
 from django.views import generic
 from django.utils import timezone
 from django.core.mail import send_mail
@@ -30,7 +29,7 @@ class ContactUsView(generic.edit.FormView, GeneralContextMixin):
 
 
 class MessageSentView(generic.TemplateView, GeneralContextMixin):
-    template_name="contacts/sent.html"
+    template_name = "contacts/sent.html"
 
 
 class ContactInfoView(generic.ListView):
@@ -39,6 +38,7 @@ class ContactInfoView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ContactInfoView, self).get_context_data(**kwargs)
-        context['contacts_main'] = ContactInfo.objects.filter(type='main').first()
+        context['contacts_main'] = ContactInfo.objects.filter(
+            type='main').first()
         context['contacts_friends'] = ContactInfo.objects.filter(type='friends')
         return context

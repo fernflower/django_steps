@@ -4,6 +4,7 @@ import subprocess
 from django.conf import settings
 from django.core.files import File
 import django.http as http
+from django.shortcuts import render_to_response
 from django.utils import timezone
 
 from django_summernote.models import Attachment
@@ -11,6 +12,13 @@ from scraper import scraper
 from posts.models import Post
 
 SCRAPER = scraper.VkScraper()
+
+
+def scraper_home(request):
+    if not request.user.is_superuser:
+        return http.HttpResponseForbidden(
+            "Only superuser can start the scraper")
+    return render_to_response('posts/scraper.html')
 
 
 def scrape_vk(request):
