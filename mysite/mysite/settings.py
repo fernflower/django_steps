@@ -35,7 +35,11 @@ MEDIA_URL = '/posts/media/'
 
 # Application definition
 
+
 INSTALLED_APPS = (
+    # FIXME some day a bootstrapped admin should appear, but currently it is
+    # breaking VK Scraper link and wysiwyg post edition facilities
+    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,7 +64,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    'posts/templates'
+    'posts/templates',
 )
 
 MIDDLEWARE_CLASSES = (
