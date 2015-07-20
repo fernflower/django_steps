@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 import subprocess
 
@@ -5,6 +7,7 @@ from django.conf import settings
 from django.core.files import File
 import django.http as http
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.utils import timezone
 
 from django_summernote.models import Attachment
@@ -34,12 +37,12 @@ def scrape_vk(request):
     try:
         SCRAPER.scrape_wall(count=count, upload_dir=upload_dir, offset=offset,
                             save=True)
-        _load_scraped(upload_dir)
+        posts = _load_scraped(upload_dir)
+        return render_to_response('posts/show_scraped.html',
+                                  {'posts': posts},
+                                  context_instance=RequestContext(request))
     except subprocess.CalledProcessError as e:
-        return http.HttpResponse(html % {"msg": e.message})
-
-    ok_message = "Done! %s posts uploaded." % count
-    return http.HttpResponse(html % {"msg": ok_message})
+        return http.HttpResponseBadRequest(html % {"msg": e.message})
 
 
 def _load_scraped(data_dir):
@@ -54,6 +57,7 @@ def _load_scraped(data_dir):
     def _get_path(filename=''):
         return os.path.join(data_dir, post_dir_name, filename)
 
+    saved = []
     for post_dir_name in os.listdir(data_dir):
         # post dir name has format postid_pubdate
         text = ""
@@ -65,7 +69,7 @@ def _load_scraped(data_dir):
         pubdate = timezone.datetime.utcfromtimestamp(seconds)
         # now add TZ info. We save everything in UTC so TZ=utc
         pubdate = timezone.make_aware(pubdate, timezone.utc)
-        title = "auto uploaded post {}".format(post_id)
+        title = u"Новость № %s" % post_id
         add_br = False
         for pic in pics:
             add_br = not(pic not in [pics[0], pics[-1]]) or True
@@ -81,7 +85,9 @@ def _load_scraped(data_dir):
         # scraped posts not visible by default
         post = Post(title=title, text=text, pub_date=pubdate, is_visible=False)
         post.save()
+        saved.append(post)
         # remove source data from data_dir
         for f in ['text'] + pics:
             os.remove(_get_path(f))
         os.rmdir(_get_path())
+    return sorted(saved, key=lambda p: p.pub_date, reverse=True)
