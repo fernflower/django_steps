@@ -1,6 +1,5 @@
 $(function() {
     $('.captcha-refresh').click(function(){
-        console.log('123');
         var $form = $('form');
         var url = '/captcha/refresh';
         $.getJSON(url, {}, function(json) {

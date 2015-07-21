@@ -4,12 +4,16 @@
 {% load icons %}
 
 {% block data %}
+    <div class="row">
+       <button id="delete-selected" class="btn btn-primary"
+           onclick="delete_selected_scraped()">Удалить</button>
+    </div>
     {% for post in posts %}
         <div class="row">
+            <div class="hidden-id" style="display: none">{{post.id}}</div>
             <a class="blog-post-title" href="{% url 'admin:posts_post_change' post.id %}"
                 target="_blank">{{ post.title }}</a>
-            <a href="{% url 'admin:posts_post_delete' post.id %}"
-                target="_blank">{% icon 'cross' %}</a>
+            <a class="delete-post-icon" href="#void">{% icon 'cross' %}</a>
             <p class="blog-post-meta">{{ post.pub_date }}</p>
             <p>{% cut_images {{post.processed_text}} {{post.id}} %}</p>
         </div>

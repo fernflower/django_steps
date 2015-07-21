@@ -1,8 +1,18 @@
+import django.http
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 from django.views import generic
 from posts.models import Post
 from contacts.models import ContactInfo
+
+
+def delete_multiple(request):
+    ids = request.POST.getlist('ids[]')
+    for post_id in ids:
+        post = get_object_or_404(Post, pk=post_id).delete()
+    return django.http.HttpResponseRedirect(reverse('admin:index'))
 
 
 # all parameters to be passed to base template are aggregated in this mixin
