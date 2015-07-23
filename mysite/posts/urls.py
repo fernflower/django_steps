@@ -8,7 +8,7 @@ urlpatterns = patterns(
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^favourites/$', views.FavouritePostsView.as_view(),
         name='favourites'),
-    # attachments /posts/attachment/1
+    url(r'^(?P<pk>\d+)/update', views.update, name='update'),
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),

@@ -26,15 +26,22 @@ $(function() {
     });
 });
 
-function get_selected_scraped() {
-    var post_ids = $(".post-to-delete").find('.hidden-id').map(function() {
-        return $(this).text();
-    }).get();
-    return post_ids;
-}
+$(function() {
+    $('.visible-post-icon').click(function(){
+        $(this).parent().find('.invisible-post-icon').css('display', 'inline');
+        $(this).css('display', 'none');
+        return false;
+    });
+    $('.invisible-post-icon').click(function(){
+        $(this).parent().find('.visible-post-icon').css('display', 'inline');
+        $(this).css('display', 'none');
+        return false;
+    });
+});
 
-function delete_selected_scraped() {
-    var post_ids = $(".post-to-delete").find('.hidden-id').map(function() {
+function save_changes_scraped() {
+    // collect post ids to delete
+    var post_ids = $(".post-to-delete:visible").find('.hidden-id').map(function() {
         return $(this).text();
     }).get();
 
@@ -49,7 +56,26 @@ function delete_selected_scraped() {
         data: {'ids': post_ids},
         headers: {'X-CSRFToken': getCookie('csrftoken')},
         success: function(result) {
+            // hide already deleted posts
             $(".post-to-delete").css("display", "none");
         }
     });
+    // change visibility of a post according to visible flag
+    // posts are invisible by default, so collect all visible posts
+    visible_posts = $('.row').not('.post-to-delete').find('.visible-post-icon:visible')
+        .siblings('.hidden-id').map(function() {
+        return $(this).text();
+    }).get();
+    for (i = 0; i < visible_posts.length; i++) {
+        var update_url = "/posts/" + visible_posts[i] + "/update";
+        $.ajax({
+            url: update_url,
+            type: 'post',
+            data: {'is_visible': true},
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(result) {
+                return false;
+            }
+        });
+    }
 }

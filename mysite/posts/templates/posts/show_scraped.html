@@ -5,14 +5,21 @@
 
 {% block data %}
     <div class="row">
-       <button id="delete-selected" class="btn btn-primary"
-           onclick="delete_selected_scraped()">Удалить</button>
+       <div class="col-sm-6">
+       <button id="apply-changes" class="btn btn-primary"
+           onclick="save_changes_scraped()">Сохранить изменения</button>
+       </div>
+       <div class="col-sm-6">
+        <a href="{% url 'posts:index' %}?as_user=True" target="_blank">Предпросмотр</a>
+       </div>
     </div>
     {% for post in posts %}
         <div class="row">
             <div class="hidden-id" style="display: none">{{post.id}}</div>
             <a class="blog-post-title" href="{% url 'admin:posts_post_change' post.id %}"
                 target="_blank">{{ post.title }}</a>
+            <a class="visible-post-icon" href="#void">{% icon 'flag_green' %}</a>
+            <a class="invisible-post-icon" style="display:none" href="#void">{% icon 'flag_red' %}</a>
             <a class="delete-post-icon" href="#void">{% icon 'cross' %}</a>
             <p class="blog-post-meta">{{ post.pub_date }}</p>
             <p>{% cut_images {{post.processed_text}} {{post.id}} %}</p>
