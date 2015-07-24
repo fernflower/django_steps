@@ -18,8 +18,7 @@
             <div class="hidden-id" style="display: none">{{post.id}}</div>
             <a class="blog-post-title" href="{% url 'admin:posts_post_change' post.id %}"
                 target="_blank">{{ post.title }}</a>
-            <a class="visible-post-icon" href="#void">{% icon 'flag_green' %}</a>
-            <a class="invisible-post-icon" style="display:none" href="#void">{% icon 'flag_red' %}</a>
+            <a class="post-visibility" href="#void">{% icon 'eye' %}</a>
             <a class="delete-post-icon" href="#void">{% icon 'cross' %}</a>
             <p class="blog-post-meta">{{ post.pub_date }}</p>
             <p>{% cut_images {{post.processed_text}} {{post.id}} %}</p>

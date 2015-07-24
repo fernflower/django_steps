@@ -4,10 +4,12 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from posts import utils
 from posts.models import Post
 from contacts.models import ContactInfo
 
 
+@utils.check_auth
 def delete_multiple(request):
     ids = request.POST.getlist('ids[]')
     for post_id in ids:
@@ -16,6 +18,7 @@ def delete_multiple(request):
     return django.http.HttpResponseRedirect(reverse('admin:index'))
 
 
+@utils.check_auth
 def update(request, pk):
     def _get_bool(param):
         mapping = {'true': True, 'false': False}

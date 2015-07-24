@@ -13,21 +13,18 @@ from django.utils import timezone
 from django_summernote.models import Attachment
 from scraper import scraper
 from posts.models import Post
+from posts import utils
 
 SCRAPER = scraper.VkScraper()
 
 
+@utils.check_sadmin
 def scraper_home(request):
-    if not request.user.is_superuser:
-        return http.HttpResponseForbidden(
-            "Only superuser can start the scraper")
     return render_to_response('posts/scraper.html')
 
 
+@utils.check_sadmin
 def scrape_vk(request):
-    if not request.user.is_superuser:
-        return http.HttpResponseForbidden(
-            "Only superuser can start the scraper")
     count = int(request.GET.get('count', 5))
     offset = int(request.GET.get('offset', 0))
     upload_dir = settings.VK_SCRAPE_DIR

@@ -27,16 +27,10 @@ $(function() {
 });
 
 $(function() {
-    $('.visible-post-icon').click(function(){
-        $(this).parent().find('.invisible-post-icon').css('display', 'inline');
-        $(this).css('display', 'none');
-        return false;
+    $('.post-visibility').click(function(){
+        $(this).toggleClass('invisible-post-icon');
     });
-    $('.invisible-post-icon').click(function(){
-        $(this).parent().find('.visible-post-icon').css('display', 'inline');
-        $(this).css('display', 'none');
-        return false;
-    });
+    return false;
 });
 
 function save_changes_scraped() {
@@ -62,16 +56,22 @@ function save_changes_scraped() {
     });
     // change visibility of a post according to visible flag
     // posts are invisible by default, so collect all visible posts
-    visible_posts = $('.row').not('.post-to-delete').find('.visible-post-icon:visible')
-        .siblings('.hidden-id').map(function() {
+    var visible_posts = $('.row').not('.post-to-delete').find('.post-visibility')
+        .not('.invisible-post-icon').siblings('.hidden-id').map(function() {
+        return $(this).text();
+    }).get(); 
+    var all_posts = $('.row').not('.post-to-delete').find('.hidden-id').map(function() {
         return $(this).text();
     }).get();
-    for (i = 0; i < visible_posts.length; i++) {
-        var update_url = "/posts/" + visible_posts[i] + "/update";
+
+    for (i = 0; i < all_posts.length; i++) {
+        var post_id = all_posts[i];
+        var update_url = "/posts/" + post_id + "/update";
+        var is_visible = visible_posts.indexOf(post_id) > -1;
         $.ajax({
             url: update_url,
             type: 'post',
-            data: {'is_visible': true},
+            data: {'is_visible': is_visible},
             headers: {'X-CSRFToken': getCookie('csrftoken')},
             success: function(result) {
                 return false;
