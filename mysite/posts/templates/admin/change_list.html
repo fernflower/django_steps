@@ -1,0 +1,12 @@
+{% extends "admin:admin/change_list.html" %}
+{% load icons %}
+
+{% block object-tools %}
+    {{block.super}}
+    <div>
+        <h2>Danger zone!</h2>
+        <a href="{% url 'posts:delete_all' %}">
+            <p>{% icon 'cross' %} Delete all posts</p>
+        </a>
+    </div>
+{% endblock %}

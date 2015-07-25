@@ -18,6 +18,12 @@ def delete_multiple(request):
     return django.http.HttpResponseRedirect(reverse('admin:index'))
 
 
+@utils.check_sadmin
+def destroy(request):
+    Post.objects.all().delete()
+    return django.http.HttpResponseRedirect(reverse('admin:index'))
+
+
 @utils.check_auth
 def update(request, pk):
     def _get_bool(param):

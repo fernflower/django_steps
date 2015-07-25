@@ -12,4 +12,5 @@ urlpatterns = patterns(
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
+    url(r'^delete/all', views.destroy, name='delete_all'),
     url(r'^delete', views.delete_multiple, name='delete_multiple'))
