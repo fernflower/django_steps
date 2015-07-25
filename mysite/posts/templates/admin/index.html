@@ -1,0 +1,13 @@
+{% extends "admin:admin/index.html" %}
+
+{% block sidebar %}
+    {{block.super}}
+    <div>
+        <h1>Extra links</h1>
+        <a href="{% url 'scraper_home' %}">
+            <p>
+            <img src="{{STATIC_URL}}vk1.png" width=20 height=20>VK Scraper</img>
+            </p>
+        </a>
+    </div>
+{% endblock %}

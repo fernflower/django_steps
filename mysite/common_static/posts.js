@@ -1,3 +1,11 @@
+function has_changes() {
+    $('#apply-changes').prop('disabled', false);
+}
+
+function no_changes() {
+    $('#apply-changes').prop('disabled', true);
+}
+
 //a func to retrieve csrf token
 function getCookie(name) {
     var cookieValue = null;
@@ -16,6 +24,7 @@ function getCookie(name) {
 
 $(function() {
     $('.delete-post-icon').click(function(){
+        has_changes();
         if ($(this).parent().hasClass('post-to-delete')) {
             $(this).parent().removeClass('post-to-delete');
         }
@@ -28,6 +37,7 @@ $(function() {
 
 $(function() {
     $('.post-visibility').click(function(){
+        has_changes();
         $(this).toggleClass('invisible-post-icon');
     });
     return false;
@@ -78,4 +88,5 @@ function save_changes_scraped() {
             }
         });
     }
+    no_changes();
 }
