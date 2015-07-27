@@ -79,8 +79,9 @@ def _load_scraped(data_dir):
                 text += "<br/>"
             text += img_html.format(os.path.join(settings.MEDIA_URL,
                                                  attachment.file.name))
-        # scraped posts are visible by default
-        post = Post(title=title, text=text, pub_date=pubdate, is_visible=True)
+        # scraped posts are invisible by default. Will be made visible after
+        # changes are applied
+        post = Post(title=title, text=text, pub_date=pubdate, is_visible=False)
         post.save()
         saved.append(post)
         # remove source data from data_dir

@@ -10,7 +10,8 @@
            onclick="save_changes_scraped()">Сохранить изменения</button>
        </div>
        <div class="col-sm-6">
-        <a href="{% url 'posts:index' %}?as_user=True" target="_blank">Предпросмотр</a>
+        <button id="preview-changes" class="btn btn-primary"
+            onclick="preview_changes()">Предпросмотр</button>
        </div>
     </div>
     {% for post in posts %}

@@ -1,9 +1,12 @@
 import django.http
-from django.utils import timezone
+
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response
+from django.template import RequestContext
+from django.utils import simplejson, timezone
 from django.views import generic
+
 from posts import utils
 from posts.models import Post
 from contacts.models import ContactInfo
@@ -26,19 +29,27 @@ def destroy(request):
 
 @utils.check_auth
 def update(request, pk):
-    def _get_bool(param):
-        mapping = {'true': True, 'false': False}
-        return mapping.get(request.POST.get(param))
-
+    data = request.body.decode('utf-8')
+    json_data = simplejson.loads(data)
+    is_visible = json_data.get('is_visible')
+    is_favourite = json_data.get('is_favourite')
     post = get_object_or_404(Post, pk=pk)
-    is_visible = _get_bool('is_visible')
-    is_favourite = _get_bool('is_favourite')
     if is_visible is not None:
         post.is_visible = is_visible
     if is_favourite is not None:
         post.is_favourite = is_favourite
     post.save()
     return django.http.HttpResponse()
+
+
+@utils.check_auth
+def preview(request):
+    data = request.body.decode('utf-8')
+    json_data = simplejson.loads(data)
+    posts = [get_object_or_404(Post, pk=post_id)
+             for post_id in json_data["visible"]]
+    return render_to_response('posts/index.html', {"last_posts": posts},
+                              context_instance=RequestContext(request))
 
 
 # all parameters to be passed to base template are aggregated in this mixin
@@ -60,7 +71,7 @@ class IndexView(generic.ListView, GeneralContextMixin):
     def get_queryset(self):
         objects = Post.objects
         as_user = self.request.GET.get('as_user', False)
-        if self.request.user.is_superuser and not as_user:
+        if self.request.user.is_staff and not as_user:
             return objects.order_by('-pub_date')
         return (objects
                 .filter(pub_date__lte=timezone.localtime(timezone.now()))

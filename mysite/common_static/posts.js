@@ -1,3 +1,6 @@
+// FIXME preview should be opened in a single window that is refreshed
+var previewWindow = null;
+
 function has_changes() {
     $('#apply-changes').prop('disabled', false);
 }
@@ -51,6 +54,28 @@ $(function() {
     return false;
 });
 
+function preview_changes() {
+    // collect visible posts' ids
+    var visible_posts = $('.row').not('.post-to-delete').find('.post-visibility')
+        .not('.invisible-post-icon').siblings('.hidden-id').map(function() {
+        return $(this).text();
+    }).get();
+    var data = JSON.stringify({'visible': visible_posts});
+    var preview_url = '/posts/preview';
+    $.ajax({
+        url: preview_url,
+        type: 'post',
+        data: data,
+        headers: {'X-CSRFToken': getCookie('csrftoken'),
+                  'Content-Type': 'application/json;charset=utf-8'},
+        success: function(result) {
+            previewWindow = window.open("", '_blank');
+            previewWindow.document.write(result);
+        }
+    });
+    return false;
+}
+
 function save_changes_scraped() {
     // collect post ids to delete
     var post_ids = $(".post-to-delete:visible").find('.hidden-id').map(function() {
@@ -92,12 +117,14 @@ function save_changes_scraped() {
         var update_url = "/posts/" + post_id + "/update";
         var is_visible = visible_posts.indexOf(post_id) > -1;
         var is_favourite = favourites.indexOf(post_id) > -1;
+        var data = JSON.stringify({'is_visible': is_visible,
+                                   'is_favourite': is_favourite});
         $.ajax({
             url: update_url,
             type: 'post',
-            data: {'is_visible': is_visible,
-                   'is_favourite': is_favourite},
-            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            data: data,
+            headers: {'X-CSRFToken': getCookie('csrftoken'),
+                      'Content-Type': 'application/json;charset=utf-8'},
             success: function(result) {
                 return false;
             }
