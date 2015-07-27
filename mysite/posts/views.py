@@ -2,6 +2,7 @@ import django.http
 
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.contrib.admin import actions, site
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
 from django.utils import simplejson, timezone
@@ -23,7 +24,18 @@ def delete_multiple(request):
 
 @utils.check_sadmin
 def destroy(request):
-    Post.objects.all().delete()
+    if request.GET.get('no_confirm'):
+        Post.objects.all().delete()
+    else:
+        # FIXME not an optimal way to delete one-by-one, but helps to ease the
+        # pain and reuse existing admin method
+        # FIXME an easier way to get modeladmin?
+        modeladmin = site._registry[Post]
+        all_posts = Post.objects.all()
+        response = actions.delete_selected(modeladmin, request, all_posts)
+        if response:
+            # show confirmation
+            return response
     return django.http.HttpResponseRedirect(reverse('admin:index'))
 
 
