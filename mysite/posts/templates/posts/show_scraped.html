@@ -19,6 +19,7 @@
             <a class="blog-post-title" href="{% url 'admin:posts_post_change' post.id %}"
                 target="_blank">{{ post.title }}</a>
             <a class="post-visibility" href="#void">{% icon 'eye' %}</a>
+            <a class="post-favourites not-favourite-post" href="#void">{% icon 'star' %}</a>
             <a class="delete-post-icon" href="#void">{% icon 'cross' %}</a>
             <p class="blog-post-meta">{{ post.pub_date }}</p>
             <p>{% cut_images {{post.processed_text}} {{post.id}} %}</p>

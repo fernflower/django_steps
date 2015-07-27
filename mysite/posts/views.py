@@ -32,8 +32,11 @@ def update(request, pk):
 
     post = get_object_or_404(Post, pk=pk)
     is_visible = _get_bool('is_visible')
+    is_favourite = _get_bool('is_favourite')
     if is_visible is not None:
         post.is_visible = is_visible
+    if is_favourite is not None:
+        post.is_favourite = is_favourite
     post.save()
     return django.http.HttpResponse()
 

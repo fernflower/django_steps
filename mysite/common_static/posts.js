@@ -43,6 +43,14 @@ $(function() {
     return false;
 });
 
+$(function() {
+    $('.post-favourites').click(function(){
+        has_changes();
+        $(this).toggleClass('not-favourite-post');
+    });
+    return false;
+});
+
 function save_changes_scraped() {
     // collect post ids to delete
     var post_ids = $(".post-to-delete:visible").find('.hidden-id').map(function() {
@@ -64,12 +72,17 @@ function save_changes_scraped() {
             $(".post-to-delete").css("display", "none");
         }
     });
-    // change visibility of a post according to visible flag
-    // posts are invisible by default, so collect all visible posts
+    // collect visible posts' ids
     var visible_posts = $('.row').not('.post-to-delete').find('.post-visibility')
         .not('.invisible-post-icon').siblings('.hidden-id').map(function() {
         return $(this).text();
-    }).get(); 
+    }).get();
+    // collect favourite posts' ids
+    var favourites = $('.row').not('.post-to-delete').find('.post-favourites')
+        .not('.not-favourite-post').siblings('.hidden-id').map(function() {
+        return $(this).text();
+    }).get();
+    // collect all posts' ids to work with
     var all_posts = $('.row').not('.post-to-delete').find('.hidden-id').map(function() {
         return $(this).text();
     }).get();
@@ -78,10 +91,12 @@ function save_changes_scraped() {
         var post_id = all_posts[i];
         var update_url = "/posts/" + post_id + "/update";
         var is_visible = visible_posts.indexOf(post_id) > -1;
+        var is_favourite = favourites.indexOf(post_id) > -1;
         $.ajax({
             url: update_url,
             type: 'post',
-            data: {'is_visible': is_visible},
+            data: {'is_visible': is_visible,
+                   'is_favourite': is_favourite},
             headers: {'X-CSRFToken': getCookie('csrftoken')},
             success: function(result) {
                 return false;
