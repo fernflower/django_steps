@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'captcha',
     'icons_famfamfam',
     'south',
+    'admin_reorder',
     'about',
     'contacts',
     'posts',
@@ -74,6 +75,17 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
+)
+
+ADMIN_REORDER = (
+    # Rename app
+    {'app': 'auth', 'label': 'Site Authorization'},
+    # Keep original label and models
+    'posts',
+    'contacts',
+    'about',
+    {'app': 'django_summernote', 'label': 'Post Attachments (system)'}
 )
 
 LOGGING = {

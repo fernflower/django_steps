@@ -9,3 +9,4 @@ raven==5.0.0
 South==1.0.2
 git+https://github.com/fernflower/vk-scraper@master
 django-apptemplates
+django-modeladmin-reorder
