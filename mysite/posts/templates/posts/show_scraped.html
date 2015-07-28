@@ -6,12 +6,12 @@
 {% block data %}
     <div class="row">
        <div class="col-sm-6">
-       <button id="apply-changes" class="btn btn-primary" disabled
+       <button id="apply-changes" class="btn btn-primary"
            onclick="save_changes_scraped()">Сохранить изменения</button>
        </div>
        <div class="col-sm-6">
-        <button id="preview-changes" class="btn btn-primary"
-            onclick="preview_changes()">Предпросмотр</button>
+        <a href="#void" onClick="$(function(){wind = window.open('', '_blank');
+            wind.opener.focus(); preview_changes(wind);});">Предпросмотр</a>
        </div>
     </div>
     {% for post in posts %}

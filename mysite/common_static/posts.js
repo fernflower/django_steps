@@ -69,8 +69,7 @@ function preview_changes() {
         headers: {'X-CSRFToken': getCookie('csrftoken'),
                   'Content-Type': 'application/json;charset=utf-8'},
         success: function(result) {
-            previewWindow = window.open("", '_blank');
-            previewWindow.document.write(result);
+                wind.document.write(result);
         }
     });
     return false;
