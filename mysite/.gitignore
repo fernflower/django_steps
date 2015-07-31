@@ -1,3 +1,4 @@
-contacts/secret_settings.py
+mysite/secret_settings.py
 .ropeproject
+*.log
 django-summernote/
