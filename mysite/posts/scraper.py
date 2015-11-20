@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
 import os
+import requests
 import subprocess
 
 from django.conf import settings
@@ -27,14 +27,12 @@ def scraper_home(request):
 def scrape_vk(request):
     count = int(request.GET.get('count', 5))
     offset = int(request.GET.get('offset', 0))
-    upload_dir = settings.VK_SCRAPE_DIR
 
     html = "<html><body>%(msg)s</body></html>"
 
     try:
-        SCRAPER.scrape_wall(count=count, upload_dir=upload_dir, offset=offset,
-                            save=True)
-        posts = _load_scraped(upload_dir)
+        scraped = SCRAPER.scrape_wall(count=count, offset=offset)
+        posts = _load_scraped(scraped)
         return render_to_response('posts/show_scraped.html',
                                   {'posts': posts},
                                   context_instance=RequestContext(request))
@@ -42,50 +40,43 @@ def scrape_vk(request):
         return http.HttpResponseBadRequest(html % {"msg": e.message})
 
 
-def _load_scraped(data_dir):
-    """Load scraped data from data_dir as Posts.
+def _load_scraped(posts):
+    """Load scraped scraper.Post as models.Post.
+
+    Data_dir param shows where to search for attachments.
 
     Posts are saved with is_visible=False and won't be visible to non-admins.
     After post has been saved into db data is removed from data_dir.
     """
-    img_html = "<img src='{}' />"
-    text_html = "<p>{}</p>"
-
-    def _get_path(filename=''):
-        return os.path.join(data_dir, post_dir_name, filename)
+    img_html = "<img src='%s' />"
+    text_html = "<p>%s</p>"
 
     saved = []
-    for post_dir_name in os.listdir(data_dir):
+    for post in posts:
         # post dir name has format postid_pubdate
-        text = ""
-
-        pics = [f for f in os.listdir(_get_path()) if f != 'text']
-        with open(_get_path('text')) as post_text:
-            text = text_html.format(post_text.read())
-        [post_id, seconds] = map(lambda x: int(x), post_dir_name.split('_'))
-        pubdate = timezone.datetime.utcfromtimestamp(seconds)
-        # now add TZ info. We save everything in UTC so TZ=utc
-        pubdate = timezone.make_aware(pubdate, timezone.utc)
-        title = u"Новость № %s" % post_id
-        add_br = False
-        for pic in pics:
-            add_br = not(pic not in [pics[0], pics[-1]]) or True
+        pubdate = timezone.make_aware(
+            timezone.datetime.utcfromtimestamp(post.date), timezone.utc)
+        title = u"Новость № %s" % post.id
+        text = text_html % post.text
+        for i, pic in enumerate(post.pics):
+            add_br = False if i < 2 else True
             # upload attachments
-            attachment = Attachment(name=pic,
-                                    file=File(open(_get_path(pic), 'rb')))
-            attachment.save()
+            temp = 'tempfile.jpg'
+            pic_data = requests.get(pic['url']).content
+            with open(temp, 'wb') as f:
+                f.write(pic_data)
+            with open(temp, 'rb') as f:
+                attachment = Attachment(name=pic['name'], file=File(f))
+                attachment.save()
+            os.remove(temp)
             # insert pics in text
             if add_br:
                 text += "<br/>"
-            text += img_html.format(os.path.join(settings.MEDIA_URL,
-                                                 attachment.file.name))
+            text += img_html % (os.path.join(settings.MEDIA_URL,
+                                             attachment.file.name))
         # scraped posts are invisible by default. Will be made visible after
         # changes are applied
         post = Post(title=title, text=text, pub_date=pubdate, is_visible=False)
         post.save()
         saved.append(post)
-        # remove source data from data_dir
-        for f in ['text'] + pics:
-            os.remove(_get_path(f))
-        os.rmdir(_get_path())
     return sorted(saved, key=lambda p: p.pub_date, reverse=True)

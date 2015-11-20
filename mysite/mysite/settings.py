@@ -156,6 +156,3 @@ if RAVEN_CONFIG:
 # img-video and text cut settings
 IMG_VIDEO_COUNT = 2
 TEXT_CHARS_COUNT = 1000
-
-# temp directory to store scraped posts
-VK_SCRAPE_DIR = '/tmp/scraped_posts'

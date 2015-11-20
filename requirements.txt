@@ -11,3 +11,4 @@ git+https://github.com/fernflower/vk-scraper@master
 django-apptemplates
 django-modeladmin-reorder
 uwsgi
+requests
