@@ -1,7 +1,6 @@
 Django==1.6.5
 -e git://github.com/fernflower/django-summernote.git@9da9a71b566f94f1799fed07038f342745105633#egg=django-summernote
 django-bootstrap-static==3.1.1
-django-simple-captcha==0.4.2
 django-icons-famfamfam==0.2-1
 pyquery==1.2.8
 psycopg2==2.5.3

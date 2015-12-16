@@ -1,8 +1,0 @@
-{% extends 'posts/blog_base.html' %}
-{% block content %}
-  {% for member in members %}
-    {{ member.name }}
-    <div>{{ member.info|safe }}</div>
-  {% endfor %}
-{% endblock %}
-{% block nav-about %}active{% endblock %}

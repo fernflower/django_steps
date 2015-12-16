@@ -49,12 +49,9 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'bootstrap',
     'django_summernote',
-    'captcha',
     'icons_famfamfam',
     'south',
     'admin_reorder',
-    'about',
-    'contacts',
     'posts',
 )
 
@@ -83,8 +80,6 @@ ADMIN_REORDER = (
     {'app': 'auth', 'label': 'Site Authorization'},
     # Keep original label and models
     'posts',
-    'contacts',
-    'about',
     {'app': 'django_summernote', 'label': 'Post Attachments (system)'}
 )
 
@@ -107,8 +102,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 ROOT_URLCONF = 'mysite.urls'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
-VK_API_ID = MY_VK_API_ID
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

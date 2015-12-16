@@ -1,7 +1,6 @@
 import django.http
 
 from django.core.urlresolvers import reverse
-from django.conf import settings
 from django.contrib.admin import actions, site
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
@@ -10,7 +9,6 @@ from django.views import generic
 
 from posts import utils
 from posts.models import Post
-from contacts.models import ContactInfo
 
 
 @utils.check_auth
@@ -64,18 +62,7 @@ def preview(request):
                               context_instance=RequestContext(request))
 
 
-# all parameters to be passed to base template are aggregated in this mixin
-class GeneralContextMixin(generic.base.ContextMixin):
-    def get_context_data(self, **kwargs):
-        context = super(GeneralContextMixin, self).get_context_data(**kwargs)
-        context['contacts_main'] = ContactInfo.objects.filter(type='main').\
-            first()
-        context['contacts_friends'] = ContactInfo.objects.filter(type='friends')
-        context['vk_api_id'] = settings.VK_API_ID
-        return context
-
-
-class IndexView(generic.ListView, GeneralContextMixin):
+class IndexView(generic.ListView):
     template_name = 'posts/index.html'
     context_object_name = 'last_posts'
     paginate_by = 5
@@ -90,7 +77,7 @@ class IndexView(generic.ListView, GeneralContextMixin):
                 .filter(is_visible=True).order_by('-pub_date'))
 
 
-class DetailView(generic.DetailView, GeneralContextMixin):
+class DetailView(generic.DetailView):
     model = Post
     template_name = 'posts/detail.html'
 
