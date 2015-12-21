@@ -48,10 +48,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'bootstrap',
-    'django_summernote',
     'icons_famfamfam',
     'south',
     'admin_reorder',
+    'django_markdown',
     'posts',
 )
 
@@ -80,7 +80,6 @@ ADMIN_REORDER = (
     {'app': 'auth', 'label': 'Site Authorization'},
     # Keep original label and models
     'posts',
-    {'app': 'django_summernote', 'label': 'Post Attachments (system)'}
 )
 
 LOGGING = {
@@ -148,4 +147,5 @@ if RAVEN_CONFIG:
 
 # img-video and text cut settings
 IMG_VIDEO_COUNT = 2
-TEXT_CHARS_COUNT = 1000
+TEXT_CHARS_COUNT = 50
+HTML_CUT_TEXT = u"(Читать дальше ...)"

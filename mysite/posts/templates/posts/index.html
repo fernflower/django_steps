@@ -4,9 +4,9 @@
 {% block content %}
   {% if last_posts %}
     {% for post in last_posts %}
-    <a class="blog-post-title" href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
-    <p class="blog-post-meta">{{ post.pub_date }}</p>
-    <p>{% cut_images {{post.processed_text}} {{post.id}} %}</p>
+      <a class="blog-post-title" href="{% url 'posts:detail' post.id %}">{{ post.title }}</a>
+      <p class="blog-post-meta">{{ post.pub_date }}</p>
+      <p>{% cut_html {{post.processed_text}} {{post.id}} %}</p>
     {% endfor %}
   {% else %}
     <p>No posts are available</p>
