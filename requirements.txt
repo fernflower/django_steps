@@ -11,3 +11,4 @@ django-apptemplates
 django-modeladmin-reorder
 uwsgi
 requests
+django-markdown

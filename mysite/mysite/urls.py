@@ -10,6 +10,6 @@ urlpatterns = patterns(
     '',
     url(r'^posts/', include('posts.urls', namespace="posts")),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^summernote/', include('django_summernote.urls')),
+    url('^markdown/', include( 'django_markdown.urls')),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
      {'sitemaps': sitemaps}),)

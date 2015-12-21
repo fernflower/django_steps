@@ -3,10 +3,13 @@ from pyquery import PyQuery
 from django.db import models
 from django.utils import timezone
 
+import django_markdown
+import markdown
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    text = models.TextField(max_length=400)
+    text = django_markdown.models.MarkdownField()
     pub_date = models.DateTimeField('date published', blank=True, null=True)
     is_favourite = models.BooleanField(
         default=False, verbose_name="Show on favourite posts page?")
@@ -27,7 +30,8 @@ class Post(models.Model):
     # all stuff with html convertions is done here
     @property
     def processed_text(self):
-        pq = PyQuery(self.text)
+        markdowned = markdown.markdown(self.text)
+        pq = PyQuery(markdowned)
         if pq('iframe'):
             pq('iframe').wrap("<div class='responsive-video'>")
         if pq('img'):
