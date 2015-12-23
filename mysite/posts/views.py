@@ -37,6 +37,11 @@ def destroy(request):
     return django.http.HttpResponseRedirect(reverse('admin:index'))
 
 
+def about_author(request):
+    return render_to_response(
+        'posts/about_clean.html', context_instance=RequestContext(request))
+
+
 @utils.check_auth
 def update(request, pk):
     data = request.body.decode('utf-8')
@@ -58,12 +63,12 @@ def preview(request):
     json_data = simplejson.loads(data)
     posts = [get_object_or_404(Post, pk=post_id)
              for post_id in json_data["visible"]]
-    return render_to_response('posts/index.html', {"last_posts": posts},
+    return render_to_response('posts/index_clean.html', {"last_posts": posts},
                               context_instance=RequestContext(request))
 
 
 class IndexView(generic.ListView):
-    template_name = 'posts/index.html'
+    template_name = 'posts/index_clean.html'
     context_object_name = 'last_posts'
     paginate_by = 5
 
@@ -79,7 +84,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Post
-    template_name = 'posts/detail.html'
+    template_name = 'posts/detail_clean.html'
 
     def get_queryset(self):
         if self.request.user.is_superuser:
@@ -87,17 +92,3 @@ class DetailView(generic.DetailView):
         return (Post.objects
                 .filter(pub_date__lte=timezone.localtime(timezone.now()))
                 .filter(is_visible=True))
-
-
-class FavouritePostsView(IndexView):
-    model = Post
-    template_name = 'posts/favourites.html'
-
-    def get_queryset(self):
-        all_favourites = Post.objects.filter(is_favourite=True)
-        if self.request.user.is_superuser:
-            return all_favourites.order_by('-pub_date')
-        return (all_favourites
-                .filter(pub_date__lte=timezone.localtime(timezone.now()))
-                .filter(is_visible=True)
-                .order_by('-pub_date'))

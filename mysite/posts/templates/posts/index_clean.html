@@ -1,0 +1,35 @@
+{% extends 'posts/base_clean.html' %}
+{% load posts_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% for post in last_posts %}
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+                <a href="{% url 'posts:detail' post.id %}">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                </a>
+                <p class="post-meta">Posted on {{ post.pub_date }}</p>
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block pager %}
+{% if is_paginated %}
+  <ul class="pager">
+   {% if page_obj.has_previous %}
+   <li><a href="?page={{ page_obj.previous_page_number }}">Page {{ page_obj.previous_page_number }}</a></li>
+   {% endif %}
+   {% if page_obj.has_next %}
+   <li><a href="?page={{ page_obj.next_page_number }}">Page {{ page_obj.next_page_number }}</a></li>
+   {% endif %}
+  </ul>
+{% endif %}
+{% endblock %}
+
+{% block nav-home %}active{% endblock %}
