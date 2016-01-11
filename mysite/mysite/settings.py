@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for mysite project.
 
@@ -47,7 +48,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'bootstrap',
     'icons_famfamfam',
     'south',
     'admin_reorder',
