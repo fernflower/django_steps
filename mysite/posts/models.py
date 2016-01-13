@@ -1,7 +1,9 @@
 import datetime
-from pyquery import PyQuery
+
+from adminfiles import utils
 from django.db import models
 from django.utils import timezone
+from pyquery import PyQuery
 
 import django_markdown
 import markdown
@@ -30,7 +32,7 @@ class Post(models.Model):
     # all stuff with html convertions is done here
     @property
     def processed_text(self):
-        markdowned = markdown.markdown(self.text)
+        markdowned = markdown.markdown(utils.render_uploads(self.text))
         pq = PyQuery(markdowned)
         if pq('iframe'):
             pq('iframe').wrap("<div class='responsive-video'>")

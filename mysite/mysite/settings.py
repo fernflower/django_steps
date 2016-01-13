@@ -52,6 +52,8 @@ INSTALLED_APPS = (
     'south',
     'admin_reorder',
     'django_markdown',
+    'adminfiles',
+    'sorl.thumbnail',
     'posts',
 )
 
@@ -149,3 +151,6 @@ if RAVEN_CONFIG:
 IMG_VIDEO_COUNT = 2
 TEXT_CHARS_COUNT = 50
 HTML_CUT_TEXT = u"(Читать дальше ...)"
+
+# django-markdown
+MARKDOWN_PREVIEW_TEMPLATE = "posts/preview.html"

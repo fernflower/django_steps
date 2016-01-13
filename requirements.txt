@@ -9,3 +9,6 @@ django-modeladmin-reorder
 uwsgi
 requests
 django-markdown
+django-adminfiles
+sorl-thumbnail
+pillow

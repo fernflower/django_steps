@@ -1,3 +1,4 @@
+from adminfiles.admin import FilePickerAdmin
 from django.contrib import admin
 from django_markdown.admin import MarkdownModelAdmin
 
@@ -14,10 +15,11 @@ class ComplexDeleteAdmin(admin.ModelAdmin):
     remove_all_items.short_description = "Delete all items"
 
 
-class PostAdmin(MarkdownModelAdmin):
+class PostAdmin(MarkdownModelAdmin, FilePickerAdmin):
     fieldsets = [(None, {'fields': ['title',  'is_visible', 'text']}),
                  ('Date information', {'fields': ['pub_date']}), ]
     list_display = ['title', 'is_visible', 'pub_date']
+    adminfiles_fields = ('text', )
 
 
-admin.site.register(Post, MarkdownModelAdmin)
+admin.site.register(Post, PostAdmin)
