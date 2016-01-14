@@ -5,7 +5,7 @@ from django.db import models
 from django.utils import timezone
 from pyquery import PyQuery
 
-import django_markdown
+import django_markdown.models
 import markdown
 
 
