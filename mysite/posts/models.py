@@ -15,7 +15,8 @@ add_introspection_rules([], ["^django_markdown\.models\.MarkdownField"])
 class Post(models.Model):
     title = models.CharField(max_length=100)
     text = django_markdown.models.MarkdownField()
-    summary = django_markdown.models.MarkdownField(default='')
+    summary = django_markdown.models.MarkdownField(default='', blank=True,
+                                                   null=True)
     pub_date = models.DateTimeField('date published', blank=True, null=True)
     is_favourite = models.BooleanField(
         default=False, verbose_name="Show on favourite posts page?")
