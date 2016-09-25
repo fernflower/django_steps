@@ -16,9 +16,9 @@ class ComplexDeleteAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(MarkdownModelAdmin, FilePickerAdmin):
-    fieldsets = [(None, {'fields': ['title',  'is_visible', 'text']}),
+    fieldsets = [(None, {'fields': ['title', 'summary', 'is_visible', 'text']}),
                  ('Date information', {'fields': ['pub_date']}), ]
-    list_display = ['title', 'is_visible', 'pub_date']
+    list_display = ['title', 'summary', 'is_visible', 'pub_date']
     adminfiles_fields = ('text', )
 
 

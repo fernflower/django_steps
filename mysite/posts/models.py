@@ -8,17 +8,22 @@ from pyquery import PyQuery
 import django_markdown.models
 import markdown
 
+from south.modelsinspector import add_introspection_rules
+add_introspection_rules([], ["^django_markdown\.models\.MarkdownField"])
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     text = django_markdown.models.MarkdownField()
+    summary = django_markdown.models.MarkdownField(default='')
     pub_date = models.DateTimeField('date published', blank=True, null=True)
     is_favourite = models.BooleanField(
         default=False, verbose_name="Show on favourite posts page?")
     is_visible = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.title if self.title != '' else self.text[:50]
+    def __unicode__(self):
+        unic_title = self.title if self.title != '' else self.text[:50]
+        return unicode(unic_title)
 
     def save(self, *args, **kwargs):
         if not self.pub_date:
