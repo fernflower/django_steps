@@ -1,0 +1,26 @@
+# mysite_uwsgi.ini file
+[uwsgi]
+
+# Django-related settings
+# the base directory (full path)
+chdir           = /django_steps/mysite
+# the virtualenv (full path)
+home            = /venv
+# Django's wsgi file
+module          = mysite.wsgi:application
+pythonpath      = /venv/bin/python2.7
+
+# process-related settings
+# master
+master          = true
+# maximum number of worker processes
+processes       = 5
+# the socket (use the full path to be safe
+socket          = /django_steps/mysite/mysite.sock
+# ... with appropriate permissions - may be needed
+chmod-socket    = 666
+# clear environment on exit
+vacuum          = true
+
+env = DJANGO_SETTINGS_MODULE=mysite.settings
+logto = /var/log/uwsgi/django_steps.log
