@@ -5,3 +5,4 @@ django
 mysite/static
 .ropeproject
 .venv
+secret_vars.yml

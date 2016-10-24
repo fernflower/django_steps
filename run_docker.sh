@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # TODO XXX rewrite this with ansible docker one day
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-SECRET_VARS_FILE="$DIR/secret_vars.yml"
+SECRET_VARS_FILE="secret_vars.yml"
 IMAGE=app
 
 # build $IMAGE container
