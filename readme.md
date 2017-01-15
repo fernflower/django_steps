@@ -10,7 +10,20 @@ cp secret_vars_sample.yml secret_vars.yml
 ```
 
 ### Running install script
-Docker installation (assumes that you have docker and postgresql on host machine):
+Docker installation
+The application is served by 3 containers: django/nginx, postgres and data.
+
+Launch data container:
+```
+bash run_docker_data.sh
+```
+
+Launch postgres container:
+```
+bash run_docker_postgresql.sh
+```
+
+Launch django/nginx container:
 ```
 bash run_docker.sh
 ```
@@ -20,4 +33,5 @@ bash run_docker.sh
 
 ## TODO list
 - [] utilize ansible docker for docker installation
-- [] postgresql in a docker container or configured by ansible on host
+- [x] postgresql in a docker container or configured by ansible on host
+- [] make deployment kubernetes-friendly
