@@ -18,7 +18,6 @@ RUN apt-get update && \
 
 RUN pip install j2cli
 COPY . /django_steps
-#RUN git clone -b blog "https://github.com/fernflower/django_steps.git" /django_steps
 
 COPY docker_templates /templates
 COPY entrypoint.sh /

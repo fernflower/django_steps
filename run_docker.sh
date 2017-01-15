@@ -2,7 +2,9 @@
 
 # TODO XXX rewrite this with ansible docker one day
 SECRET_VARS_FILE="secret_vars.yml"
-IMAGE=app
+DATA_CONTAINER=data-cont
+IMAGE=blog
+NAME=blog
 
 # build $IMAGE container
 sudo docker build -t "$IMAGE" .
@@ -16,8 +18,5 @@ done;
 
 # XXX FIXME This bloody eval is the workaround for the first -e in env_vars
 # to be treated as docker run command param (otherwise it's swallowed by bash).
-run_cmd=$(printf "sudo docker run -i -d -t -p 7777:7777 %s %s" "$env_vars" "$IMAGE")
+run_cmd=$(printf "sudo docker run --name $NAME --link blog-db:postgres --volumes-from $DATA_CONTAINER -i -t -p 7777:7777 %s %s" "$env_vars" "$IMAGE")
 eval $run_cmd
-
-echo "$IMAGE can be accessed at $(sudo docker ps -f image=\"$IMAGE\" | grep -oP '[0-9.:]*->' | sed 's/->//')"
-

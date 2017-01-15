@@ -4,7 +4,7 @@
 j2 /templates/secret_settings.j2 > /django_steps/mysite/mysite/secret_settings.py
 cat /django_steps/mysite/mysite/secret_settings.py
 # run syncd and apply migrations
-/venv/bin/python /django_steps/mysite/manage.py syncdb
+/venv/bin/python /django_steps/mysite/manage.py syncdb --noinput
 /venv/bin/python /django_steps/mysite/manage.py migrate posts
 # create django admin user
 /venv/bin/python /django_steps/mysite/change_admin_pass.py ina ina

@@ -1,0 +1,11 @@
+- hosts: all
+  tasks:
+    - name: build app docker image
+      docker_image:
+        path: .
+        name: app
+
+    - name: run app image
+      docker:
+        image: app
+        state: started 
