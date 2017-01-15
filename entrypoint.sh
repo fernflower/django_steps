@@ -17,6 +17,9 @@ service nginx restart
 # create uswgi.ini and start uwsgi server
 j2 /templates/uwsgi.j2 > /django_steps/uwsgi_steps.ini
 /venv/bin/uwsgi --ini /django_steps/uwsgi_steps.ini &
+# delete stale static files
+rm -rf /django_steps/mysite/static
+# regenerate static files
 /venv/bin/python /django_steps/mysite/manage.py collectstatic --noinput
 
 exec /bin/bash

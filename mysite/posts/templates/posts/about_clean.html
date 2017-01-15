@@ -9,10 +9,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-<div class="row">
-    <div class="col-md-3"><img src="{{STATIC_URL}}about_author.jpg" class="img-circle" style="width: 50%; height: 50%"/></div>
-    <div class="col-md-9">Hi there! My name is Ina and I'm a python developer. </div>
-</div>
-</div>
+    <article>
+        <div class="container">
+            <div class="row">
+                <img src="{{STATIC_URL}}about_author.jpg" class="img-circle img-responsive center-block"> </img>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Hi there! My name is Ina and I'm a software developer currently charmed by Python/Openstack.</p>
+            </div>
+        </div>
+    </article>
 {% endblock %}

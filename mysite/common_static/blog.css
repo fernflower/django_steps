@@ -197,3 +197,7 @@ a:hover {
     background-color: #383329;
     border-color: #5E4D31;
 }
+
+.img-center {
+    margin:0 auto;
+}
