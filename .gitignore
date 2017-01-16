@@ -6,3 +6,4 @@ mysite/static
 .ropeproject
 .venv
 secret_vars.yml
+secret.yml
