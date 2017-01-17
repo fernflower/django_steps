@@ -20,7 +20,7 @@ def main():
         sys.exit("No %s found on path, exiting" % SECRET_VARS_FILE)
     with open(SECRET_VARS_FILE, 'r') as f:
         data = yaml.load(f)
-        encoded = {k: base64.b64encode(k) for k in data}
+        encoded = {k: base64.b64encode(str(data[k])) for k in data}
         data_str = "\n".join(["  %s: %s" % (name, value)
                               for (name, value) in encoded.iteritems()])
         with open(K8S_SECRETS_FILE, 'w') as sf:
