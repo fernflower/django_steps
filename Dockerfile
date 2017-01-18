@@ -13,6 +13,7 @@ RUN apt-get update && \
         libxml2-dev \
         libxslt1-dev \
         libfreetype6-dev \
+        curl \
         libpq-dev && \
     rm -rf /var/lib/apt/lists
 

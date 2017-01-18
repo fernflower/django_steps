@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 # wait for postgres container to be up and running
-while ! curl http://$DBHOST:$DBPORT/ 2>&1 | grep '52'; do
-    sleep 1;
-done
+# while ! curl http://$DBHOST:$DBPORT/ 2>&1 | grep '52'; do
+#    sleep 1;
+# done
 
 # create secret_settings.yml for django app
 j2 /templates/secret_settings.j2 > /django_steps/mysite/mysite/secret_settings.py

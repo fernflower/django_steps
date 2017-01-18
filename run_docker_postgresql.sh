@@ -10,4 +10,4 @@ postgres_password=$(cat "$SECRET_VARS_FILE" | grep DBPASS | sed 's/.*: //g');
 postgres_user=$(cat "$SECRET_VARS_FILE" | grep DBUSER | sed 's/.*: //g');
 postgres_db=$(cat "$SECRET_VARS_FILE" | grep DBNAME | sed 's/.*: //g');
 
-sudo docker run --name $NAME -e POSTGRES_PASSWORD=$postgres_password -e POSTGRES_DB=$postgres_db -e POSTGRES_USER=$postgres_user --volumes-from $DATA_CONTAINER $IMAGE
+sudo docker run -d --name $NAME -e POSTGRES_PASSWORD=$postgres_password -e POSTGRES_DB=$postgres_db -e POSTGRES_USER=$postgres_user --volumes-from $DATA_CONTAINER $IMAGE
