@@ -7,3 +7,4 @@ mysite/static
 .venv
 secret_vars.yml
 secret.yml
+blog.env

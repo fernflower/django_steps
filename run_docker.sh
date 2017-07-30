@@ -4,22 +4,17 @@
 SECRET_VARS_FILE="secret_vars.yml"
 DATA_CONTAINER=data-cont
 DB_CONTAINER=blog-db
-DB_PORT=5432
 IMAGE=blog
 NAME=blog
+ENV_FILE=blog.env
 
-# build $IMAGE container
-sudo docker build -t "$IMAGE" .
+# get variables from secret_vars
+NGINX_PORT=$(cat $SECRET_VARS_FILE | grep NGINX_PORT | sed 's/.*: //g')
 
-# collect env variables
-env_vars="-e \"DBHOST=$DB_CONTAINER\" -e \"DBPORT=$DB_PORT\" "
-for env_var_line in $(cat "$SECRET_VARS_FILE" | sed 's/: /=/g'); 
-do
-    env_vars+="-e \"$env_var_line\" ";
-done;
+# TODO maybe use KEY=VALUE in secret_vars rightaway?
+# create env-file
+cat "$SECRET_VARS_FILE" | sed 's/: /=/g' > $ENV_FILE
+echo "DBHOST=$DB_CONTAINER" >> $ENV_FILE
 
-# XXX FIXME This bloody eval is the workaround for the first -e in env_vars
-# to be treated as docker run command param (otherwise it's swallowed by bash).
-postgres_cont_ip=$(sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' blog-db)
-run_cmd=$(printf "sudo docker run --name $NAME --link $DB_CONTAINER:postgres --volumes-from $DATA_CONTAINER -p 80:80 -d -t %s %s" "$env_vars" "$IMAGE")
-eval $run_cmd
+sudo docker build --build-arg port_to_expose=$NGINX_PORT -t $IMAGE .
+sudo docker run --name $NAME --link $DB_CONTAINER:postgres --volumes-from $DATA_CONTAINER -p $NGINX_PORT:$NGINX_PORT -dt --env-file $ENV_FILE $IMAGE

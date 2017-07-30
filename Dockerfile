@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+ARG port_to_expose
 
 RUN apt-get update && \
     apt-get install -y ssh python-pip \
@@ -28,6 +29,6 @@ RUN mkdir -p /var/log/uwsgi
 RUN virtualenv -p /usr/bin/python2.7 /venv
 RUN /venv/bin/pip install -r /django_steps/requirements.txt
 
-EXPOSE 7777
+EXPOSE $port_to_expose
 
 ENTRYPOINT ["/entrypoint.sh"]
