@@ -3,10 +3,10 @@ A blog-like django-based website (Python 2, Django 1.6.5)
 ## Installation
 
 ### Custom settings in secret_vars.yml
-Make your own secret_vars.yml file from sample and populate it.
+Make your own blog.env file from sample and populate it.
 
 ```
-cp secret_vars_sample.yml secret_vars.yml
+cp blog.env.sample blog.env
 ```
 
 ### Running install script
@@ -33,5 +33,6 @@ bash run_docker.sh
 
 ## TODO list
 - [] utilize ansible docker for docker installation
-- [x] postgresql in a docker container or configured by ansible on host
+- [x] postgresql in a docker container
 - [] make deployment kubernetes-friendly
+- [] upgrade to more recent django version

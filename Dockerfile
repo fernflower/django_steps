@@ -1,5 +1,7 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage:0.9.22
 ARG port_to_expose
+
+COPY . /django_steps
 
 RUN apt-get update && \
     apt-get install -y ssh python-pip \
@@ -16,19 +18,15 @@ RUN apt-get update && \
         libfreetype6-dev \
         curl \
         libpq-dev && \
-    rm -rf /var/lib/apt/lists
+    rm -rf /var/lib/apt/lists && \
+    pip install j2cli && \
+    chmod +x /django_steps/entrypoint.sh && \
+    mkdir -p /var/log/uwsgi && \
+    virtualenv -p /usr/bin/python2.7 /venv && \
+    /venv/bin/pip install -r /django_steps/requirements.txt
 
-RUN pip install j2cli
-COPY . /django_steps
-
-COPY docker_templates /templates
-COPY entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-
-RUN mkdir -p /var/log/uwsgi
-RUN virtualenv -p /usr/bin/python2.7 /venv
-RUN /venv/bin/pip install -r /django_steps/requirements.txt
+CMD ["/sbin/my_init"]
 
 EXPOSE $port_to_expose
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/django_steps/entrypoint.sh"]
