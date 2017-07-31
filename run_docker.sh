@@ -9,6 +9,7 @@ DB_CONTAINER=blog-db
 
 # get variables from secret_vars
 nginx_port=$(cat $ENV_FILE | grep NGINX_PORT | sed 's/.*=//g')
+nginx_host=$(cat $ENV_FILE | grep NGINX_HOST | sed 's/.*=//g')
 postgres_user=$(cat "$ENV_FILE" | grep DBUSER | sed 's/.*=//g');
 postgres_db=$(cat "$ENV_FILE" | grep DBNAME | sed 's/.*=//g');
 db_posts_dump=$(cat $ENV_FILE | grep DB_DUMP | sed 's/.*=//g')
@@ -18,7 +19,12 @@ if ! [[ $(cat $ENV_FILE | grep DBHOST) ]]; then
     echo "DBHOST=$DB_CONTAINER" >> $ENV_FILE
 fi
 
-sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
+# add proper allowed hosts
+if ! [[ $(cat $ENV_FILE | grep DJANGO_ALLOWED_HOSTS) ]]; then
+    echo "DJANGO_ALLOWED_HOSTS=[\"$nginx_host\"]" >> $ENV_FILE
+fi
+
+# sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
 sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -dt --env-file $ENV_FILE $IMAGE
 
 # XXX FIXME TODO proper backup/restore technic
