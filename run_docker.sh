@@ -24,7 +24,7 @@ if ! [[ $(cat $ENV_FILE | grep DJANGO_ALLOWED_HOSTS) ]]; then
     echo "DJANGO_ALLOWED_HOSTS=[\"$nginx_host\"]" >> $ENV_FILE
 fi
 
-# sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
+sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
 sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -dt --env-file $ENV_FILE $IMAGE
 
 # XXX FIXME TODO proper backup/restore technic
