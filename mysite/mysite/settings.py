@@ -64,7 +64,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    'posts/templates',
+    'posts/templates/posts',
 )
 
 MIDDLEWARE_CLASSES = (

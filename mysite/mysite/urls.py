@@ -1,16 +1,11 @@
-from django.conf.urls import patterns, include, url
+import django.conf.urls as urls
 from django.contrib import admin
-from posts.sitemap import PostSitemapXML
+from django.views.generic import TemplateView
+import settings
 
 admin.autodiscover()
 
-sitemaps = {'posts': PostSitemapXML}
-
-urlpatterns = patterns(
+urlpatterns = urls.patterns(
     '',
-    url(r'^posts/', include('posts.urls', namespace="posts")),
-    url(r'^admin/', include(admin.site.urls)),
-    url('^markdown/', include('django_markdown.urls')),
-    url(r'^adminfiles/', include('adminfiles.urls')),
-    (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
-     {'sitemaps': sitemaps}),)
+    urls.url(r'^posts/', urls.include('posts.urls', namespace="posts")),
+    urls.url(r'^admin/', urls.include(admin.site.urls)),)

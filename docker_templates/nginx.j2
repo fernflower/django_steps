@@ -18,11 +18,6 @@ server {
         rewrite ^ /posts permanent;
     }
 
-    # Django media
-    location /posts/media  {
-        alias /django_steps/mysite/media/;
-    }
-
     location /static {
         alias /django_steps/mysite/static/;
     }
