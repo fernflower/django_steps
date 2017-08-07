@@ -38,9 +38,6 @@ MEDIA_URL = '/posts/media/'
 
 
 INSTALLED_APPS = (
-    # FIXME some day a bootstrapped admin should appear, but currently it is
-    # breaking VK Scraper link and wysiwyg post edition facilities
-    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,19 +45,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'icons_famfamfam',
     'south',
-    'admin_reorder',
-    'django_markdown',
-    'adminfiles',
-    'sorl.thumbnail',
     'posts',
 )
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'apptemplates.Loader',
 )
 
 TEMPLATE_DIRS = (
@@ -74,14 +65,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'admin_reorder.middleware.ModelAdminReorder',
-)
-
-ADMIN_REORDER = (
-    # Rename app
-    {'app': 'auth', 'label': 'Site Authorization'},
-    # Keep original label and models
-    'posts',
 )
 
 LOGGING = {
@@ -139,11 +122,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
-
-# img-video and text cut settings
-IMG_VIDEO_COUNT = 2
-TEXT_CHARS_COUNT = 50
-HTML_CUT_TEXT = u"(Читать дальше ...)"
-
-# django-markdown
-MARKDOWN_PREVIEW_TEMPLATE = "posts/preview.html"
