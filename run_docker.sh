@@ -24,8 +24,10 @@ if ! [[ $(cat $ENV_FILE | grep DJANGO_ALLOWED_HOSTS) ]]; then
     echo "DJANGO_ALLOWED_HOSTS=[\"$nginx_host\"]" >> $ENV_FILE
 fi
 
-# sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
-sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER -v /home/ina/projects/django_steps/mysite/common_static/:/django_steps/mysite/common_static:ro -v /home/ina/projects/django_steps/mysite/posts/:/django_steps/mysite/posts:ro --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
+sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
+sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
+# for testing only
+# sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER -v /home/ina/projects/django_steps/mysite/common_static/:/django_steps/mysite/common_static:ro -v /home/ina/projects/django_steps/mysite/posts/:/django_steps/mysite/posts:ro --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
 
 # XXX FIXME TODO proper backup/restore technic
 # restore db from a dump (table dump like one below)

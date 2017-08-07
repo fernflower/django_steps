@@ -140,13 +140,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
 
-# sentry configuration
-RAVEN_CONFIG = MY_RAVEN_CONFIG
-
-if RAVEN_CONFIG:
-    INSTALLED_APPS = INSTALLED_APPS + \
-        ('raven.contrib.django.raven_compat',)
-
 # img-video and text cut settings
 IMG_VIDEO_COUNT = 2
 TEXT_CHARS_COUNT = 50

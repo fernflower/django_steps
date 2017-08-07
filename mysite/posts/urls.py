@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, url
-from django.views.generic import TemplateView
+
+import posts.views as p_views
 
 
 urlpatterns = patterns(
     '',
-    url(r'^$', TemplateView.as_view(template_name='index.html'),))
+    url(r'^contact_me$', p_views.ContactFormView.as_view()),
+    url(r'^$', p_views.IndexView.as_view()))

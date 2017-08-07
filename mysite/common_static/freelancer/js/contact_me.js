@@ -15,14 +15,16 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            var x_csrftoken = $("input[name=csrfmiddlewaretoken]").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "/static/freelancer/mail/contact_me.php",
+                url: "/posts/contact_me",
                 type: "POST",
+                headers: {"X-CSRFToken": x_csrftoken},
                 data: {
                     name: name,
                     phone: phone,
