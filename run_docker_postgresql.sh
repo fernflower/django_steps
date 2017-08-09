@@ -1,6 +1,6 @@
 #!/bin/sh
 # change this to form unique container name for your app
-UNIQ_SUFFIX=max
+UNIQ_SUFFIX=ina
 
 # XXX maybe proper deployment will fix this ambiguity
 DATA_CONTAINER="data-cont-$UNIQ_SUFFIX"
