@@ -1,6 +1,9 @@
 #!/bin/sh
+# change this to form unique container name for your app
+UNIQ_SUFFIX=max
+
 IMAGE=busybox
-NAME=data-cont
+CONTAINER_NAME="data-cont-$UNIQ_SUFFIX"
 DIR=/var/lib/postgresql
 
-sudo docker create --name $NAME -v $DIR --name $NAME $IMAGE /bin/true
+sudo docker create --name $CONTAINER_NAME -v $DIR $IMAGE /bin/true

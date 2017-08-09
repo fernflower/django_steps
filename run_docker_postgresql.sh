@@ -1,10 +1,14 @@
 #!/bin/sh
+# change this to form unique container name for your app
+UNIQ_SUFFIX=max
+
+# XXX maybe proper deployment will fix this ambiguity
+DATA_CONTAINER="data-cont-$UNIQ_SUFFIX"
 
 # TODO XXX rewrite this with ansible docker one day
 ENV_FILE="blog.env"
-CONTAINER_NAME=blog-db
+CONTAINER_NAME="blog-db-$UNIQ_SUFFIX"
 IMAGE=postgres
-DATA_CONTAINER=data-cont
 
 postgres_password=$(cat "$ENV_FILE" | grep DBPASS | sed 's/.*=//g');
 postgres_user=$(cat "$ENV_FILE" | grep DBUSER | sed 's/.*=//g');

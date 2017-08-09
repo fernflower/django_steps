@@ -1,11 +1,15 @@
 #!/bin/sh
+# change this to form unique container name for your app
+UNIQ_SUFFIX=max
+
+# XXX maybe proper deployment will fix this ambiguity
+DATA_CONTAINER="data-cont-$UNIQ_SUFFIX"
+DB_CONTAINER="blog-db-$UNIQ_SUFFIX"
 
 # TODO XXX rewrite this with ansible docker one day
 ENV_FILE="blog.env"
-CONTAINER_NAME=blog
+CONTAINER_NAME="blog-$UNIQ_SUFFIX"
 IMAGE=blog
-DATA_CONTAINER=data-cont
-DB_CONTAINER=blog-db
 
 # get variables from secret_vars
 nginx_port=$(cat $ENV_FILE | grep NGINX_PORT | sed 's/.*=//g')
@@ -25,7 +29,7 @@ if ! [[ $(cat $ENV_FILE | grep DJANGO_ALLOWED_HOSTS) ]]; then
 fi
 
 sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
-sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
+sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -dt --env-file $ENV_FILE $IMAGE
 # for testing only
 # sudo docker run --name $CONTAINER_NAME --link $DB_CONTAINER -v /home/ina/projects/django_steps/mysite/common_static/:/django_steps/mysite/common_static:ro -v /home/ina/projects/django_steps/mysite/posts/:/django_steps/mysite/posts:ro --volumes-from $DATA_CONTAINER -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
 
