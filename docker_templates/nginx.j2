@@ -14,15 +14,6 @@ server {
     # max upload size
     client_max_body_size 75M;   # adjust to taste
 
-    location = / {
-        rewrite ^ /posts permanent;
-    }
-
-    # Django media
-    location /posts/media  {
-        alias /django_steps/mysite/media/;
-    }
-
     location /static {
         alias /django_steps/mysite/static/;
     }
