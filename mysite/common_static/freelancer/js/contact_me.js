@@ -22,7 +22,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "/posts/contact_me",
+                url: "/contact_me",
                 type: "POST",
                 headers: {"X-CSRFToken": x_csrftoken},
                 data: {
