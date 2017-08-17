@@ -93,124 +93,23 @@
                 </div>
             </div>
             <div class="row">
+            {% block content %}
+                {% for video in videos %}
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                                Andrey Eshpay, Concerto for soprano saxophone, Ivan Dyma project at A. Kozlov's Jazz Club
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/UAeNT6HRIIg">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <a href="#" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
                         <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/g3F_hHP05sA">
+                            <iframe class="embed-responsive-item" allowfullscreen src="{{ video }}">
                             </iframe>
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/T-mFIkXtwdE">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/usoHmmsmzSk">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/H296NUd_csg">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/yCtHTCSlaCs">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/kiMpUe5X5x4">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/RMX8-eVcNgM">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/8WIDQZAZXSw">
-                            </iframe>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
+            {% endblock %}
             </div>
         </div>
     </section>
