@@ -26,6 +26,8 @@ j2 /django_steps/docker_templates/uwsgi.j2 > /django_steps/uwsgi_steps.ini
 rm -rf /django_steps/mysite/static
 # regenerate static files
 /venv/bin/python /django_steps/mysite/manage.py collectstatic --noinput
+# compile translations
+/venv/bin/python /django_steps/mysite/manage.py compilemessages
 
 /venv/bin/uwsgi --ini /django_steps/uwsgi_steps.ini &
 exec /bin/bash

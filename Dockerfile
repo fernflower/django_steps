@@ -17,6 +17,7 @@ RUN apt-get update && \
         libxslt1-dev \
         libfreetype6-dev \
         curl \
+        gettext \
         libpq-dev && \
     rm -rf /var/lib/apt/lists && \
     pip install j2cli && \

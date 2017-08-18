@@ -14,7 +14,11 @@ server {
     # max upload size
     client_max_body_size 75M;   # adjust to taste
 
-    location /{{DJANGO_STATIC_URL}} {
+    location /en/{{DJANGO_STATIC_URL}} {
+        alias /django_steps/mysite/static/;
+    }
+
+    location /ru/{{DJANGO_STATIC_URL}} {
         alias /django_steps/mysite/static/;
     }
 

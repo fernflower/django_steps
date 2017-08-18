@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-19 01:47+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: mysite/settings.py:117
+msgid "English"
+msgstr "Английский"
+
+#: mysite/settings.py:118
+msgid "Russian"
+msgstr "Русский"
+
+#: posts/templates/posts/index.html:15
+msgid "Max Makagonov - double bass player"
+msgstr "Максим Макагонов - профессиональный контрабасист"
+
+#: posts/templates/posts/index.html:46
+msgid "Menu"
+msgstr "Меню"
+
+#: posts/templates/posts/index.html:48 posts/templates/posts/index.html:80
+msgid "Max Makagonov"
+msgstr "Максим Макагонов"
+
+#: posts/templates/posts/index.html:58 posts/templates/posts/index.html:94
+msgid "Videos"
+msgstr "Видео"
+
+#: posts/templates/posts/index.html:61 posts/templates/posts/index.html:125
+msgid "About"
+msgstr "Биография"
+
+#: posts/templates/posts/index.html:64 posts/templates/posts/index.html:162
+msgid "Contact Me"
+msgstr "Обратная связь"
+
+#: posts/templates/posts/index.html:82
+msgid "Double Bass"
+msgstr "Контрабас"
+
+#: posts/templates/posts/index.html:82
+msgid "Bass Guitar"
+msgstr "Бас-гитара"
+
+#: posts/templates/posts/index.html:131
+msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
+msgstr "Родился 6 декабря 1990 в г. Магнитогорске в России"
+
+#: posts/templates/posts/index.html:133
+msgid "Started taking cello lessons at the age of eight"
+msgstr ""
+"Начал заниматься музыкой в 8 лет у Лукьяненко А. Д. по классу виолончели"
+
+#: posts/templates/posts/index.html:134
+msgid ""
+"In 2002 passed audition to Moscow Frederic Chopin College of Music "
+"Performing where took up the double bass"
+msgstr ""
+"С сентября 2000 года учился в средней школе 1173 в гимназическом классе с "
+"музыкальном уклоном. С сентября 2002 учился в ДМШ при МГУМИ им. Ф. Шопена в "
+"классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. Склеминой по "
+"специальности контрабас"
+
+#: posts/templates/posts/index.html:135
+msgid ""
+"During school years garnered top prizes in numerous musical competitions, "
+"including Young talents of Moscovia, Young composers Moscow, III "
+"international competition of young musicians, Forum Festival in St. "
+"Petersburg"
+msgstr ""
+"Во время обучения в школе и колледже неоднократно занимал призовые места на "
+"многочисленных музыкальных конкурсах и фестивалях, таких как Юные таланты "
+"Московии, Московский конкурс юных композиторов, III Международный конкурс "
+"юных музыкантов, Фестиваль ForumKlassika в г. Санкт-Петербург и других"
+
+#: posts/templates/posts/index.html:138
+msgid ""
+"Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
+"2012, graduated from Maimonides State Classical Academy in 2015.  At that "
+"time was a member of several orchestras, including chamber orchestra of "
+"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra directed "
+"by A. Karimov (Grand Prix at Young Prague festival, Prague 2011), Moscow "
+"State University Theater of Ancient music orchestra directed by V. A. "
+"Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+msgstr ""
+"С 2009 по 2012 год был студентом МГК им. П. И. Чайковского, класс профессора "
+"Е. А. Колосова. В 2014 году закончил ГКА им. Маймонида, класс А. А. Аминова. "
+"В студенческие годы был участником нескольких оркестров, в том числе "
+"Камерного Оркестра Московской Консерватории под управлением Ф. П. Коробова, "
+"оркестра Entre Nous под управлением А. Каримова (гран-при фестиваля Young "
+"Prague 2011), оркестра Театра Старинной Музыки МГУ под управлением В. А. "
+"Крейсберга, Биг-бенде Averkin Band (п/у А. Аверкина) и JazZyl Big Band (п/у "
+"А. Зыля)"
+
+#: posts/templates/posts/index.html:142
+msgid ""
+"Engaged in various musical projects, worked with Natalia Skvortsova, Dmitry "
+"Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey Osokin, "
+"Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro and others"
+msgstr ""
+"Участвовал в разноплановых музыкальных проектах, работал с такими "
+"музыкантами, как Наталья Скворцова, Дмитрий Мосьпан, Александр Зингер, "
+"Дмитрий и Александр Бриль, Евгений Побожий, Сергей Осокин, Григорий Середин, "
+"Ярослава Симонова, Иван Дыма, Анреа Бекарро и другими"
+
+#: posts/templates/posts/index.html:145
+msgid ""
+"Participated in numerous jazz festivals and competitions, including Gnesin "
+"Jazz, State college of Music pop & jazz art Guitar & Piano competions, "
+"AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, 1Jazz.ru Festival"
+msgstr ""
+"В составе различных ансамблей и оркестров многократно принимал участие в "
+"джазовых фестивалях и конкурсах: Гнесин-Джаз, Многоликая гитара, Рояль в "
+"джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, Jazz May "
+"Penza, Фестиваль радио 1jazz.ru"
+
+#: posts/templates/posts/index.html:150
+msgid "Technical Rider"
+msgstr "Райдер"
+
+#: posts/templates/posts/index.html:174
+msgid "Name"
+msgstr "Имя"
+
+#: posts/templates/posts/index.html:181
+msgid "Email Address"
+msgstr "Электронная почта"
+
+#: posts/templates/posts/index.html:188
+msgid "Phone Number"
+msgstr "Телефон"
+
+#: posts/templates/posts/index.html:195
+msgid "Message"
+msgstr "Сообщение"
+
+#: posts/templates/posts/index.html:219
+msgid "Location"
+msgstr "Город"
+
+#: posts/templates/posts/index.html:220
+msgid "Moscow, Russia"
+msgstr "Москва, Россия"
+
+#: posts/templates/posts/index.html:223
+msgid "Around the Web"
+msgstr "В сети"
+
+#: posts/templates/posts/index.html:240
+msgid "See also"
+msgstr "Друзья"
