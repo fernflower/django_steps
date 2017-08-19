@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-19 01:47+0300\n"
+"POT-Creation-Date: 2017-08-19 13:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,58 +27,70 @@ msgstr "Английский"
 msgid "Russian"
 msgstr "Русский"
 
-#: posts/templates/posts/index.html:15
+#: posts/templates/posts/index.html:12
+#, fuzzy
+msgid "Max Makagonov, professional double bass/bass guitar player"
+msgstr "Максим Макагонов - профессиональный музыкант, контрабас/бас-гитара"
+
+#: posts/templates/posts/index.html:13
+msgid ""
+"Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical,"
+"music,Moscow,maxmakagonov.com,Maxim Makagonov,Magnitogorsk,gigs,studio,"
+"musician,professional"
+msgstr "Макс Макагонов,бас,контрабас,бас-гитара,джаз,фанк,рок,поп,классика,музыка,Москва,maxmakagonov.com,Максим Макагонов,Магнитогорск,выступления,студийная запись,музыкант,профессиональный,Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical music,Moscow,Maxim Makagonov,Magnitogorsk,gigs,studio,professional musician"
+
+#: posts/templates/posts/index.html:16
 msgid "Max Makagonov - double bass player"
 msgstr "Максим Макагонов - профессиональный контрабасист"
 
-#: posts/templates/posts/index.html:46
+#: posts/templates/posts/index.html:47
 msgid "Menu"
 msgstr "Меню"
 
-#: posts/templates/posts/index.html:48 posts/templates/posts/index.html:80
+#: posts/templates/posts/index.html:49 posts/templates/posts/index.html:87
 msgid "Max Makagonov"
 msgstr "Максим Макагонов"
 
-#: posts/templates/posts/index.html:58 posts/templates/posts/index.html:94
+#: posts/templates/posts/index.html:59 posts/templates/posts/index.html:101
 msgid "Videos"
 msgstr "Видео"
 
-#: posts/templates/posts/index.html:61 posts/templates/posts/index.html:125
+#: posts/templates/posts/index.html:62 posts/templates/posts/index.html:132
 msgid "About"
 msgstr "Биография"
 
-#: posts/templates/posts/index.html:64 posts/templates/posts/index.html:162
+#: posts/templates/posts/index.html:65 posts/templates/posts/index.html:169
 msgid "Contact Me"
 msgstr "Обратная связь"
 
-#: posts/templates/posts/index.html:82
+#: posts/templates/posts/index.html:89
 msgid "Double Bass"
 msgstr "Контрабас"
 
-#: posts/templates/posts/index.html:82
+#: posts/templates/posts/index.html:89
 msgid "Bass Guitar"
 msgstr "Бас-гитара"
 
-#: posts/templates/posts/index.html:131
+#: posts/templates/posts/index.html:138
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Родился 6 декабря 1990 в г. Магнитогорске в России"
 
-#: posts/templates/posts/index.html:133
+#: posts/templates/posts/index.html:140
 msgid "Started taking cello lessons at the age of eight"
 msgstr ""
 "Начал заниматься музыкой в 8 лет у Лукьяненко А. Д. по классу виолончели"
 
-#: posts/templates/posts/index.html:134
+#: posts/templates/posts/index.html:141
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
 msgstr ""
 "С сентября 2000 года учился в средней школе 1173 в гимназическом классе с "
-"музыкальном уклоном. С сентября 2002 учился в ДМШ при МГУМИ им. Ф. Шопена в "
-"классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. Склеминой по "
-"специальности контрабас"
+"музыкальном уклоном. С сентября 2002 года учился в ДМШ при МГУМИ им. Ф. "
+"Шопена в классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. "
+"Склеминой по специальности контрабас"
 
-#: posts/templates/posts/index.html:135
+#: posts/templates/posts/index.html:142
 msgid ""
 "During school years garnered top prizes in numerous musical competitions, "
 "including Young talents of Moscovia, Young composers Moscow, III "
@@ -90,7 +102,7 @@ msgstr ""
 "Московии, Московский конкурс юных композиторов, III Международный конкурс "
 "юных музыкантов, Фестиваль ForumKlassika в г. Санкт-Петербург и других"
 
-#: posts/templates/posts/index.html:138
+#: posts/templates/posts/index.html:145
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that "
@@ -109,7 +121,7 @@ msgstr ""
 "Крейсберга, Биг-бенде Averkin Band (п/у А. Аверкина) и JazZyl Big Band (п/у "
 "А. Зыля)"
 
-#: posts/templates/posts/index.html:142
+#: posts/templates/posts/index.html:149
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, Dmitry "
 "Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey Osokin, "
@@ -120,7 +132,7 @@ msgstr ""
 "Дмитрий и Александр Бриль, Евгений Побожий, Сергей Осокин, Григорий Середин, "
 "Ярослава Симонова, Иван Дыма, Анреа Бекарро и другими"
 
-#: posts/templates/posts/index.html:145
+#: posts/templates/posts/index.html:152
 msgid ""
 "Participated in numerous jazz festivals and competitions, including Gnesin "
 "Jazz, State college of Music pop & jazz art Guitar & Piano competions, "
@@ -131,38 +143,58 @@ msgstr ""
 "джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, Jazz May "
 "Penza, Фестиваль радио 1jazz.ru"
 
-#: posts/templates/posts/index.html:150
+#: posts/templates/posts/index.html:157
 msgid "Technical Rider"
 msgstr "Райдер"
 
-#: posts/templates/posts/index.html:174
+#: posts/templates/posts/index.html:182
 msgid "Name"
 msgstr "Имя"
 
-#: posts/templates/posts/index.html:181
+#: posts/templates/posts/index.html:182
+msgid "Please enter your name."
+msgstr "Укажите имя"
+
+#: posts/templates/posts/index.html:189
 msgid "Email Address"
 msgstr "Электронная почта"
 
-#: posts/templates/posts/index.html:188
+#: posts/templates/posts/index.html:189
+msgid "Please enter your email address."
+msgstr "Укажите адрес электронной почты"
+
+#: posts/templates/posts/index.html:196
 msgid "Phone Number"
 msgstr "Телефон"
 
-#: posts/templates/posts/index.html:195
+#: posts/templates/posts/index.html:196
+msgid "Please enter your phone number."
+msgstr "Укажите номер телефона"
+
+#: posts/templates/posts/index.html:203
 msgid "Message"
 msgstr "Сообщение"
 
-#: posts/templates/posts/index.html:219
+#: posts/templates/posts/index.html:203
+msgid "Please enter a message."
+msgstr "Введите текст сообщения"
+
+#: posts/templates/posts/index.html:211
+msgid "Send"
+msgstr "Отправить"
+
+#: posts/templates/posts/index.html:226
 msgid "Location"
 msgstr "Город"
 
-#: posts/templates/posts/index.html:220
+#: posts/templates/posts/index.html:227
 msgid "Moscow, Russia"
 msgstr "Москва, Россия"
 
-#: posts/templates/posts/index.html:223
+#: posts/templates/posts/index.html:230
 msgid "Around the Web"
 msgstr "В сети"
 
-#: posts/templates/posts/index.html:240
+#: posts/templates/posts/index.html:247
 msgid "See also"
 msgstr "Друзья"
