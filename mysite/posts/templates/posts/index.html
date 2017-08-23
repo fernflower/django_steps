@@ -109,7 +109,7 @@
             </div>
             <div class="row">
             {% block content %}
-                {% for id, url, name, date in videos %}
+                {% for id, url, name, date, duration in videos %}
                 <div class="col-sm-4 portfolio-item">
                     <a href="#" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -117,12 +117,15 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject" class="embed-responsive embed-responsive-4by3">
+                        <div itemscope itemtype="http://schema.org/VideoObject" class="embed-responsive embed-responsive-4by3">
+                            <link itemprop="url" href="{{ url }}">
+                            <link itemprop="thumbnailUrl" href="https://img.youtube.com/vi/{{ id }}/0.jpg">
+                            <meta itemprop="isFamilyFriendly" content="true">
                             <meta itemprop="uploadDate" content="{{ date }}">
                             <meta itemprop="name" content="{{ name }}">
                             <meta itemprop="description" content="{{ name }}">
                             <meta itemprop="thumbnail" content="https://img.youtube.com/vi/{{ id }}/0.jpg">
-                            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/{{ id }}/0.jpg">
+                            <meta itemprop="duration" content="{{ duration }}">
                             <iframe class="embed-responsive-item" allowfullscreen src="{{ url }}">
                             </iframe>
                         </div>
@@ -232,7 +235,7 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="footer-col col-md-4">
+                    <div itemscope itemtype="http://schema.org/PostalAddress" class="footer-col col-md-4">
                         <h3>{% trans "Location" %}</h3>
                         <p>{% trans "Moscow, Russia" %}</p>
                         <meta itemprop="addressLocality" content="Moscow">
