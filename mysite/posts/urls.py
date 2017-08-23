@@ -6,7 +6,15 @@ import posts.views as p_views
 
 def get_videos(filename=settings.VIDEOS_FILE):
     with open(filename, 'r') as f:
-        return [l for l in f.readlines() if l.strip() != ""]
+        # fields are url/name/date/id
+        res = []
+        for line in [l.strip() for l in f.readlines() if l.strip() != ""]:
+            fields = line.split('|')
+            if len(fields) > 0:
+                video_id = fields[0].split('/')[-1]
+                fields = [video_id] + fields
+                res.append(fields)
+        return res
 
 
 urlpatterns = patterns(

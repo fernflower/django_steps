@@ -105,7 +105,7 @@
             </div>
             <div class="row">
             {% block content %}
-                {% for video in videos %}
+                {% for id, url, name, date in videos %}
                 <div class="col-sm-4 portfolio-item">
                     <a href="#" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -113,8 +113,13 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe class="embed-responsive-item" allowfullscreen src="{{ video }}">
+                        <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject" class="embed-responsive embed-responsive-4by3">
+                            <meta itemprop="uploadDate" content="{{ date }}">
+                            <meta itemprop="name" content="{{ name }}">
+                            <meta itemprop="description" content="{{ name }}">
+                            <meta itemprop="thumbnail" content="https://img.youtube.com/vi/{{ id }}/0.jpg">
+                            <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/{{ id }}/0.jpg">
+                            <iframe class="embed-responsive-item" allowfullscreen src="{{ url }}">
                             </iframe>
                         </div>
                     </a>
