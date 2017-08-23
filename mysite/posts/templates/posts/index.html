@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% trans "Max Makagonov, professional double bass/bass guitar player" %}">
-    <meta name="keywords" content="{% trans "Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim Makagonov,Magnitogorsk,gigs,studio,musician,professional" %}">
+    <meta name="keywords" content="{% trans "Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional" %}">
     <meta name="author" content="">
 
     <title>{% trans "Max Makagonov - double bass player" %}</title>
@@ -84,10 +84,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <img class="img-responsive img-circle" src="{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}" alt="">
-                    <div class="intro-text">
-                        <h1 class="name">{% trans "Max Makagonov" %}</h1>
+                    <div itemscope itemtype="http://schema.org/Person" class="intro-text">
+                        <h1 itemprop="name" class="name">{% trans "Max Makagonov" %}</h1>
                         <hr class="star-light">
                         <span class="skills">{% trans "Double Bass" %} | {% trans "Bass Guitar" %}</span>
+                        <meta itemprop="jobTitle" content="Musician">
+                        <meta itemprop="alternateName" content="Maksim Makagonov">
+                        <meta itemprop="name" content="Maxim Makagonov">
+                        <meta itemprop="image" content="{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}">
                     </div>
                 </div>
             </div>
@@ -228,9 +232,11 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="footer-col col-md-4">
                         <h3>{% trans "Location" %}</h3>
                         <p>{% trans "Moscow, Russia" %}</p>
+                        <meta itemprop="addressLocality" content="Moscow">
+                        <meta itemprop="addressRegion" content="Russia">
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>{% trans "Around the Web" %}</h3>
