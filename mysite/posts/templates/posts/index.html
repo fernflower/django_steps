@@ -6,7 +6,7 @@
 
 <head>
 
-    <link rel=icon href="{% static "freelancer/img/bass-clef.png" %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "freelancer/img/bass-clef.png" %}" type="image/png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +21,8 @@
 
     <!-- Theme CSS -->
     <link href="{% static "freelancer/css/freelancer.min.css" %}" rel="stylesheet">
+    <!-- Flags css --!>
+    <link href="{% static "flag-icon-css-master/css/flag-icon.min.css" %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{% static "freelancer/vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
@@ -66,10 +68,10 @@
                         <a href="#contact">{% trans "Contact Me" %}</a>
                     </li>
                     <li>
-                        <a href="/en">en</a>
+                        <a href="/en"><span class="flag-icon-background flag-icon-gb" style="color:transparent">en</span></a>
                     </li>
                     <li>
-                        <a href="/ru">ru</a>
+                        <a href="/ru"><span class="flag-icon-background flag-icon-ru" style="color:transparent">ru</span></a>
                     </li>
                 </ul>
             </div>
