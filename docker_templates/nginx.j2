@@ -4,17 +4,40 @@ upstream django {
     server unix:///django_steps/mysite/mysite.sock; 
 }
 
+# Expires map
+map $sent_http_content_type $expires {
+    default                    off;
+    text/html                  epoch;
+    text/css                   max;
+    ~application/              max;
+    ~image/                    max;
+}
+
 # configuration of the server
 server {
     gzip on;
-    gzip_disable "msie6";
+    gzip_disable "MSIE [1-6].(?!.*SV1)";
 
     gzip_vary on;
     gzip_proxied any;
     gzip_comp_level 6;
     gzip_buffers 16 8k;
+    gzip_min_length 1100;
     gzip_http_version 1.1;
-    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_types
+        text/plain
+        text/css
+        text/js
+        text/xml
+        text/javascript
+        application/javascript
+        application/x-javascript
+        application/json
+        application/xml
+        application/rss+xml
+        image/svg+xml;
+
+    expires $expires;
 
     # the port your site will be served on
     listen      {{NGINX_PORT}};
