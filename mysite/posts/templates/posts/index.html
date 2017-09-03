@@ -12,7 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% trans "Max Makagonov, professional multi-genre double bass/bass guitar player" %}" />
     <meta property="og:description" content="{% trans "Max Makagonov, professional multi-genre double bass/bass guitar player" %}" />
-    <meta property="og:title" content="{% trans "Max Makagonov - double bass player" %}" />
+    <meta property="og:title" content="{% trans "Max Makagonov" %}" />
+    <meta property="og:image" content="{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}" />
+    <meta property="og:url" content="www.maxmakagonov.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="ru_RU" />
     <meta name="keywords" content="{% trans "Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional" %}" />
     <meta name="author" content="Inessa Vasilevskaya" />
 
@@ -23,7 +28,7 @@
 
     <!-- Theme CSS -->
     <link href="{% static "freelancer/css/freelancer.min.css" %}" rel="stylesheet">
-    <!-- Flags css --!>
+    <!-- Flags css -->
     <link href="{% static "flag-icon-css-master/css/flag-icon.min.css" %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -42,16 +47,17 @@
 
 <body id="page-top" class="index">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
-
+    <span itemscope itemtype="http://schema.org/Article">
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <meta itemprop="headline" content="{% trans "Max Makagonov - double bass player" %}">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> {% trans "Menu" %}<i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">{% trans "Max Makagonov" %}</a>
+                <a class="navbar-brand" href="#page-top"><span itemprop="name">{% trans "Max Makagonov" %}</span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,7 +70,7 @@
                         <a href="#portfolio">{% trans "Videos" %}</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">{% trans "About" %}</a>
+                        <a itemprop="url" href="#about">{% trans "About" %}</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">{% trans "Contact Me" %}</a>
@@ -86,7 +92,11 @@
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <link itemprop="url" href="http://www.maxmakagonov.com/{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}">
+                    <meta itemprop="thumbnail" content="http://www.maxmakagonov.com/{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}">
+                    <meta itemprop="height" content="300">
+                    <meta itemprop="width" content="300">
                     <img class="img-responsive img-circle" src="{% static "freelancer/img/so_jazzy_small_square_300px.jpg" %}" alt="">
                     <div itemscope itemtype="http://schema.org/Person" class="intro-text">
                         <h1 itemprop="name" class="name">{% trans "Max Makagonov" %}</h1>
@@ -152,6 +162,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
+                    <meta itemprop="articleBody" content="{% trans "Born in December 06, 1990 in Magnitogorsk, Russia" %}.
+                    {% trans "Started taking cello lessons at the age of eight" %}.
+                    {% trans "In 2002 passed audition to Moscow Frederic Chopin College of Music Performing where took up the double bass" %}.
+                    {% trans "During school years garnered top prizes in numerous musical competitions, including Young talents of Moscovia, Young composers Moscow, III international competition of young musicians, Forum Festival in St. Petersburg" %}.
+                    {% trans "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - 2012, graduated from Maimonides State Classical Academy in 2015.  At that time was a member of several orchestras, including chamber orchestra of Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra directed by A. Karimov (Grand Prix at Young Prague festival, Prague 2011), Moscow State University Theater of Ancient music orchestra directed by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band" %}.
+                    {% trans "Engaged in various musical projects, worked with Natalia Skvortsova, Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey Osokin, Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro and others" %}.
+                    {% trans "Participated in numerous jazz festivals and competitions, including Gnesin Jazz, State college of Music pop & jazz art Guitar & Piano competions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, 1Jazz.ru Festival" %}.">
                     <p>{% trans "Born in December 06, 1990 in Magnitogorsk, Russia" %}.</p>
                     <p>
                     {% trans "Started taking cello lessons at the age of eight" %}.</p>
@@ -177,6 +194,17 @@
             </div>
         </div>
     </section>
+    <meta itemprop="author" content="fernflower">
+    <meta itemprop="datePublished" content="2017-09-02T08:00:00+03:00">
+    <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <link itemprop="url" href="https://avatars0.githubusercontent.com/u/1619167?s=60">
+            <meta itemprop="thumbnail" content="https://avatars0.githubusercontent.com/u/1619167?s=60" %}">
+            <meta itemprop="width" content="60">
+            <meta itemprop="height" content="60">
+        </span>
+        <meta itemprop="name" content="fernflower">
+    </span>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -305,6 +333,7 @@
     <!-- Theme JavaScript -->
     <script src="{% static "freelancer/js/freelancer.min.js" %}"></script>
 
+</span>
 </body>
 
 </html>
