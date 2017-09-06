@@ -135,4 +135,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
 
 VIDEOS_FILE = (os.path.join(STATICFILES_DIRS[0], 'videos.txt'))
+VIDEOS_PER_BLOCK = 9
 USE_I18N = True
