@@ -12,19 +12,20 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         n = int(self.request.GET.get('videos', settings.VIDEOS_PER_BLOCK))
-        blocks = int(self.request.GET.get('blocks', 1))
-        videos = self.get_videos(n * blocks)
+        block = int(self.request.GET.get('block', 0))
+        videos = self.get_videos(n, block)
         context['videos'] = videos
         return context
 
-    def get_videos(self, videos_num, filename=settings.VIDEOS_FILE):
-        """Retrieve first videos_num videos data from videos_file"""
+    def get_videos(self, videos_num, block, filename=settings.VIDEOS_FILE):
+        """Retrieve videos_num videos from given block from videos_file"""
         with open(filename, 'r') as f:
             # fields are url/name/date/id
             res = []
             # fetch first n * total_blocks videos from videos_file
             video_data = [l.strip() for l in f.readlines()
-                          if l.strip() != ""][:videos_num]
+                          if l.strip() != ""][block * videos_num:
+                                              (block + 1) * videos_num]
             for line in video_data:
                 fields = line.split('|')
                 if len(fields) > 0:
