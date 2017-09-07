@@ -1,3 +1,5 @@
+import json
+
 from django.conf import settings
 from django import http
 from django.views import generic
@@ -10,19 +12,19 @@ class IndexView(generic.TemplateView):
     send_to_list = ['inavasilevskaya@gmail.com']
 
     def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        n = int(self.request.GET.get('videos', settings.VIDEOS_PER_BLOCK))
         block = int(self.request.GET.get('block', 0))
+        n = int(self.request.GET.get('videos', settings.VIDEOS_PER_BLOCK))
         videos = self.get_videos(n, block)
+        context = super(IndexView, self).get_context_data(**kwargs)
         context['videos'] = videos
         return context
 
-    def get_videos(self, videos_num, block, filename=settings.VIDEOS_FILE):
+    @staticmethod
+    def get_videos(videos_num, block, filename=settings.VIDEOS_FILE):
         """Retrieve videos_num videos from given block from videos_file"""
         with open(filename, 'r') as f:
-            # fields are url/name/date/id
+            # fields are id/url/name/date
             res = []
-            # fetch first n * total_blocks videos from videos_file
             video_data = [l.strip() for l in f.readlines()
                           if l.strip() != ""][block * videos_num:
                                               (block + 1) * videos_num]
@@ -33,6 +35,14 @@ class IndexView(generic.TemplateView):
                     fields = [video_id] + fields
                     res.append(fields)
             return res
+
+    @staticmethod
+    def get_videos_as_json(request):
+        num = int(request.GET.get('n', settings.VIDEOS_PER_BLOCK))
+        block = int(request.GET.get('block', 0))
+        data = {'videos': IndexView.get_videos(num, block)}
+        return http.HttpResponse(json.dumps(data),
+                                 content_type="application/json")
 
 
 class ContactFormView(generic.edit.FormView):
