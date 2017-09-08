@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-03 04:35+0300\n"
+"POT-Creation-Date: 2017-09-09 01:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: mysite/settings.py:117
+#: mysite/settings.py:110
 msgid "English"
 msgstr "Английский"
 
-#: mysite/settings.py:118
+#: mysite/settings.py:111
 msgid "Russian"
 msgstr "Русский"
 
@@ -61,11 +61,11 @@ msgstr "Меню"
 msgid "Videos"
 msgstr "Видео"
 
-#: posts/templates/posts/index.html:73 posts/templates/posts/index.html:159
+#: posts/templates/posts/index.html:73 posts/templates/posts/index.html:164
 msgid "About"
 msgstr "Биография"
 
-#: posts/templates/posts/index.html:76 posts/templates/posts/index.html:214
+#: posts/templates/posts/index.html:76 posts/templates/posts/index.html:219
 msgid "Contact Me"
 msgstr "Обратная связь"
 
@@ -77,16 +77,20 @@ msgstr "Контрабас"
 msgid "Bass Guitar"
 msgstr "Бас-гитара"
 
-#: posts/templates/posts/index.html:165 posts/templates/posts/index.html:172
+#: posts/templates/posts/index.html:153
+msgid "More"
+msgstr "Ещё"
+
+#: posts/templates/posts/index.html:170 posts/templates/posts/index.html:177
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Родился 6 декабря 1990 в г. Магнитогорске в России"
 
-#: posts/templates/posts/index.html:166 posts/templates/posts/index.html:174
+#: posts/templates/posts/index.html:171 posts/templates/posts/index.html:179
 msgid "Started taking cello lessons at the age of eight"
 msgstr ""
 "Начал заниматься музыкой в 8 лет у Лукьяненко А. Д. по классу виолончели"
 
-#: posts/templates/posts/index.html:167 posts/templates/posts/index.html:175
+#: posts/templates/posts/index.html:172 posts/templates/posts/index.html:180
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
@@ -96,7 +100,7 @@ msgstr ""
 "Шопена в классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. "
 "Склеминой по специальности контрабас"
 
-#: posts/templates/posts/index.html:168 posts/templates/posts/index.html:176
+#: posts/templates/posts/index.html:173 posts/templates/posts/index.html:181
 msgid ""
 "During school years garnered top prizes in numerous musical competitions, "
 "including Young talents of Moscovia, Young composers Moscow, III "
@@ -108,7 +112,7 @@ msgstr ""
 "Московии, Московский конкурс юных композиторов, III Международный конкурс "
 "юных музыкантов, Фестиваль ForumKlassika в г. Санкт-Петербург и других"
 
-#: posts/templates/posts/index.html:169 posts/templates/posts/index.html:179
+#: posts/templates/posts/index.html:174 posts/templates/posts/index.html:184
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that "
@@ -127,7 +131,7 @@ msgstr ""
 "Крейсберга, Биг-бенде Averkin Band (п/у А. Аверкина) и JazZyl Big Band (п/у "
 "А. Зыля)"
 
-#: posts/templates/posts/index.html:170 posts/templates/posts/index.html:183
+#: posts/templates/posts/index.html:175 posts/templates/posts/index.html:188
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, Dmitry "
 "Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey Osokin, "
@@ -138,7 +142,7 @@ msgstr ""
 "Дмитрий и Александр Бриль, Евгений Побожий, Сергей Осокин, Григорий Середин, "
 "Ярослава Симонова, Иван Дыма, Андреа Бекарро и другими"
 
-#: posts/templates/posts/index.html:171 posts/templates/posts/index.html:186
+#: posts/templates/posts/index.html:176 posts/templates/posts/index.html:191
 msgid ""
 "Participated in numerous jazz festivals and competitions, including Gnesin "
 "Jazz, State college of Music pop & jazz art Guitar & Piano competions, "
@@ -149,58 +153,58 @@ msgstr ""
 "джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, Jazz May "
 "Penza, Фестиваль радио 1jazz.ru"
 
-#: posts/templates/posts/index.html:191
+#: posts/templates/posts/index.html:196
 msgid "Technical Rider"
 msgstr "Райдер"
 
-#: posts/templates/posts/index.html:227
+#: posts/templates/posts/index.html:232
 msgid "Name"
 msgstr "Имя"
 
-#: posts/templates/posts/index.html:227
+#: posts/templates/posts/index.html:232
 msgid "Please enter your name."
 msgstr "Укажите имя"
 
-#: posts/templates/posts/index.html:234
+#: posts/templates/posts/index.html:239
 msgid "Email Address"
 msgstr "Электронная почта"
 
-#: posts/templates/posts/index.html:234
+#: posts/templates/posts/index.html:239
 msgid "Please enter your email address."
 msgstr "Укажите адрес электронной почты"
 
-#: posts/templates/posts/index.html:241
+#: posts/templates/posts/index.html:246
 msgid "Phone Number"
 msgstr "Телефон"
 
-#: posts/templates/posts/index.html:241
+#: posts/templates/posts/index.html:246
 msgid "Please enter your phone number."
 msgstr "Укажите номер телефона"
 
-#: posts/templates/posts/index.html:248
+#: posts/templates/posts/index.html:253
 msgid "Message"
 msgstr "Сообщение"
 
-#: posts/templates/posts/index.html:248
+#: posts/templates/posts/index.html:253
 msgid "Please enter a message."
 msgstr "Введите текст сообщения"
 
-#: posts/templates/posts/index.html:256
+#: posts/templates/posts/index.html:261
 msgid "Send"
 msgstr "Отправить"
 
-#: posts/templates/posts/index.html:271
+#: posts/templates/posts/index.html:276
 msgid "Location"
 msgstr "Город"
 
-#: posts/templates/posts/index.html:272
+#: posts/templates/posts/index.html:277
 msgid "Moscow, Russia"
 msgstr "Москва, Россия"
 
-#: posts/templates/posts/index.html:277
+#: posts/templates/posts/index.html:282
 msgid "Around the Web"
 msgstr "В сети"
 
-#: posts/templates/posts/index.html:294
+#: posts/templates/posts/index.html:299
 msgid "See also"
 msgstr "Друзья"
