@@ -40,14 +40,11 @@ MEDIA_URL = '/posts/media/'
 
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'south',
     'posts',
 )
 
@@ -100,12 +97,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': MY_DB_NAME,
-        'USER': MY_DB_USER,
-        'PASSWORD': MY_DB_PASSWORD,
-        'HOST': MY_DB_HOST,
-        'PORT': MY_DB_PORT,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 

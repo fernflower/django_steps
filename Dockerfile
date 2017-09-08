@@ -12,11 +12,9 @@ RUN apt-get update && \
         python-virtualenv \
         python2.7 \
         python-dev \
-        libjpeg-dev \
         libxml2-dev \
         libxslt1-dev \
         libfreetype6-dev \
-        curl \
         gettext \
         libpq-dev && \
     rm -rf /var/lib/apt/lists && \

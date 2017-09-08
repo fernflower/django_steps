@@ -10,10 +10,6 @@ j2 /django_steps/docker_templates/secret_settings.j2 > /django_steps/mysite/mysi
 cat /django_steps/mysite/mysite/secret_settings.py
 # run syncd and apply migrations
 /venv/bin/python /django_steps/mysite/manage.py syncdb --noinput
-# XXX FIXME no posts -> no migrations
-# /venv/bin/python /django_steps/mysite/manage.py migrate posts
-# create django admin user
-/venv/bin/python /django_steps/mysite/change_admin_pass.py $DJANGO_SUPERUSER $DJANGO_SUPERPASS
 
 # create nginx conf files
 j2 /django_steps/docker_templates/nginx.j2 > /etc/nginx/sites-available/django
