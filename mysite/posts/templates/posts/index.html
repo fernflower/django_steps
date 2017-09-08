@@ -148,6 +148,11 @@
                 {% endfor %}
             {% endblock %}
             </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <button id="show_more_videos_btn" onclick="insert_videos(videos_num,videos_block)" class="btn btn-success btn-lg" enabled="{{ more_videos }}">{% trans "More" %}</button>
+                </div>
+            </div>
         </div>
     </section>
 

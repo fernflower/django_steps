@@ -1,3 +1,7 @@
+var videos_block = 1;
+var videos_num = 9;
+var show_more_button_enabled = true;
+
 function do_insert(data) {
     $.each(data.videos,
            function() {
@@ -18,8 +22,13 @@ function do_insert(data) {
                a_div.appendChild(iframe);
                document.getElementById("videos_row").appendChild(div);
            });
+    show_more_button_enabled = data.more_videos;
+    if (show_more_button_enabled != "true") {
+        $("#show_more_videos_btn").prop('disabled', 'disabled');
+    }
 }
 
-function insert_videos(n=9, block=0) {
-    $.getJSON("get_videos?n=" + n + "&block=" + block, function(data) {do_insert(data); });
+function insert_videos(n=videos_num, block=videos_block) {
+    $.getJSON("get_videos?n=" + n + "&block=" + block, function(data) {do_insert(data);});
+    videos_block = videos_block + 1;
 }
