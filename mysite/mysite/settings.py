@@ -41,15 +41,11 @@ MEDIA_URL = '/posts/media/'
 
 INSTALLED_APPS = (
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
     'posts',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.i18n',
 )
 
@@ -63,13 +59,9 @@ TEMPLATE_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 LOGGING = {
@@ -129,4 +121,3 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
 
 VIDEOS_FILE = (os.path.join(STATICFILES_DIRS[0], 'videos.txt'))
 VIDEOS_PER_BLOCK = 9
-USE_I18N = True

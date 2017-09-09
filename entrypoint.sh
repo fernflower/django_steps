@@ -8,8 +8,6 @@
 # create secret_settings.yml for django app
 j2 /django_steps/docker_templates/secret_settings.j2 > /django_steps/mysite/mysite/secret_settings.py
 cat /django_steps/mysite/mysite/secret_settings.py
-# run syncd and apply migrations
-/venv/bin/python /django_steps/mysite/manage.py syncdb --noinput
 
 # create nginx conf files
 j2 /django_steps/docker_templates/nginx.j2 > /etc/nginx/sites-available/django

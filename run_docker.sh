@@ -17,6 +17,6 @@ if ! [[ $(cat $ENV_FILE | grep DJANGO_ALLOWED_HOSTS) ]]; then
 fi
 
 sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
-sudo docker run --name $CONTAINER_NAME -p $nginx_port:$nginx_port -dt --env-file $ENV_FILE $IMAGE
+sudo docker run --name $CONTAINER_NAME -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
 # for testing only
 # sudo docker run --name $CONTAINER_NAME -v /home/ina/projects/django_steps/mysite/common_static/:/django_steps/mysite/common_static:ro -v /home/ina/projects/django_steps/mysite/posts/:/django_steps/mysite/posts:ro -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE

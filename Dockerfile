@@ -15,8 +15,7 @@ RUN apt-get update && \
         libxml2-dev \
         libxslt1-dev \
         libfreetype6-dev \
-        gettext \
-        libpq-dev && \
+        gettext &&\
     rm -rf /var/lib/apt/lists && \
     pip install j2cli && \
     chmod +x /django_steps/entrypoint.sh && \
