@@ -1,11 +1,34 @@
 import bottle
+import functools
+import jinja2
 import json
 
 VIDEOS_FILE = "common_static/videos.txt"
 VIDEOS_PER_BLOCK = 9
 STATIC_URL = "static"
+TEMPLATES_DIR = "views"
 
 ALL_VIDEOS = None
+
+
+env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
+    extensions=['jinja2.ext.i18n']
+)
+env.install_null_translations()
+
+
+def jinja2_view(template_name):
+    def decorator(view_func):
+        @functools.wraps(view_func)
+        def wrapper(*args, **kwargs):
+            response = view_func(*args, **kwargs)
+            if isinstance(response, dict):
+                template = env.get_or_select_template(template_name)
+                return template.render(**response)
+            return response
+        return wrapper
+    return decorator
 
 
 @bottle.get("/%s/<filepath:re:.*>" % STATIC_URL)
@@ -54,10 +77,12 @@ def get_videos_as_json():
 
 
 @bottle.route("/")
+@jinja2_view("index.html")
 def index():
     videos, more = get_videos(VIDEOS_PER_BLOCK, 0, ALL_VIDEOS)
-    return bottle.template("index", videos=videos, more_videos=more,
-                           static_url=STATIC_URL)
+    return {"videos": videos,
+            "more_videos": more,
+            "static_url": STATIC_URL}
 
 
 bottle.run(host="localhost", port=8080)
