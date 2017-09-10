@@ -1,0 +1,179 @@
+# Translations template for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-09-11 00:22+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.0\n"
+
+#: mysite/settings.py:102
+msgid "English"
+msgstr ""
+
+#: mysite/settings.py:103
+msgid "Russian"
+msgstr ""
+
+#: views/index.html:10 views/index.html:11
+msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
+msgstr ""
+
+#: views/index.html:12 views/index.html:57 views/index.html:99
+msgid "Max Makagonov"
+msgstr ""
+
+#: views/index.html:18
+msgid ""
+"Max Makagonov,bass,double bass,bass "
+"guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
+"Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
+msgstr ""
+
+#: views/index.html:21 views/index.html:50
+msgid "Max Makagonov - double bass player"
+msgstr ""
+
+#: views/index.html:55
+msgid "Menu"
+msgstr ""
+
+#: views/index.html:67 views/index.html:117
+msgid "Videos"
+msgstr ""
+
+#: views/index.html:70 views/index.html:161
+msgid "About"
+msgstr ""
+
+#: views/index.html:73 views/index.html:216
+msgid "Contact Me"
+msgstr ""
+
+#: views/index.html:101
+msgid "Double Bass"
+msgstr ""
+
+#: views/index.html:101
+msgid "Bass Guitar"
+msgstr ""
+
+#: views/index.html:150
+msgid "More"
+msgstr ""
+
+#: views/index.html:167 views/index.html:174
+msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
+msgstr ""
+
+#: views/index.html:168 views/index.html:176
+msgid "Started taking cello lessons at the age of eight"
+msgstr ""
+
+#: views/index.html:169 views/index.html:177
+msgid ""
+"In 2002 passed audition to Moscow Frederic Chopin College of Music "
+"Performing where took up the double bass"
+msgstr ""
+
+#: views/index.html:170 views/index.html:178
+msgid ""
+"During school years garnered top prizes in numerous musical competitions,"
+" including Young talents of Moscovia, Young composers Moscow, III "
+"international competition of young musicians, Forum Festival in St. "
+"Petersburg"
+msgstr ""
+
+#: views/index.html:171 views/index.html:181
+msgid ""
+"Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
+"2012, graduated from Maimonides State Classical Academy in 2015.  At that"
+" time was a member of several orchestras, including chamber orchestra of "
+"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra "
+"directed by A. Karimov (Grand Prix at Young Prague festival, Prague "
+"2011), Moscow State University Theater of Ancient music orchestra "
+"directed by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+msgstr ""
+
+#: views/index.html:172 views/index.html:185
+msgid ""
+"Engaged in various musical projects, worked with Natalia Skvortsova, "
+"Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
+"Osokin, Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro "
+"and others"
+msgstr ""
+
+#: views/index.html:173 views/index.html:188
+msgid ""
+"Participated in numerous jazz festivals and competitions, including "
+"Gnesin Jazz, State college of Music pop & jazz art Guitar & Piano "
+"competions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
+"1Jazz.ru Festival"
+msgstr ""
+
+#: views/index.html:193
+msgid "Technical Rider"
+msgstr ""
+
+#: views/index.html:228
+msgid "Name"
+msgstr ""
+
+#: views/index.html:228
+msgid "Please enter your name."
+msgstr ""
+
+#: views/index.html:235
+msgid "Email Address"
+msgstr ""
+
+#: views/index.html:235
+msgid "Please enter your email address."
+msgstr ""
+
+#: views/index.html:242
+msgid "Phone Number"
+msgstr ""
+
+#: views/index.html:242
+msgid "Please enter your phone number."
+msgstr ""
+
+#: views/index.html:249
+msgid "Message"
+msgstr ""
+
+#: views/index.html:249
+msgid "Please enter a message."
+msgstr ""
+
+#: views/index.html:257
+msgid "Send"
+msgstr ""
+
+#: views/index.html:272
+msgid "Location"
+msgstr ""
+
+#: views/index.html:273
+msgid "Moscow, Russia"
+msgstr ""
+
+#: views/index.html:278
+msgid "Around the Web"
+msgstr ""
+
+#: views/index.html:295
+msgid "See also"
+msgstr ""
+

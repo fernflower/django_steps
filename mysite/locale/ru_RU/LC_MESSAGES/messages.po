@@ -1,96 +1,95 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian (Russia) translations for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 01:56+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-09-11 00:22+0300\n"
+"PO-Revision-Date: 2017-09-11 00:24+0300\n"
+"Last-Translator: Inessa Vasilevskaya <inavasilevskaya@gmail.com>\n"
+"Language: ru_RU\n"
+"Language-Team: ru_RU <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: Babel 2.5.0\n"
 
-#: mysite/settings.py:110
+#: mysite/settings.py:102
 msgid "English"
 msgstr "Английский"
 
-#: mysite/settings.py:111
+#: mysite/settings.py:103
 msgid "Russian"
 msgstr "Русский"
 
-#: posts/templates/posts/index.html:13 posts/templates/posts/index.html:14
+#: views/index.html:10 views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
 msgstr ""
 "Максим Макагонов - профессиональный музыкант, мультижанровый контрабасист/"
 "бас-гитарист"
 
-#: posts/templates/posts/index.html:15 posts/templates/posts/index.html:60
-#: posts/templates/posts/index.html:102
+#: views/index.html:12 views/index.html:57 views/index.html:99
 msgid "Max Makagonov"
 msgstr "Максим Макагонов"
 
-#: posts/templates/posts/index.html:21
+#: views/index.html:18
 msgid ""
-"Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical,"
-"music,Moscow,maxmakagonov.com,Maxim Makagonov,Maksim Makagonov,Magnitogorsk,"
-"musician,professional"
+"Max Makagonov,bass,double bass,bass "
+"guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
+"Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
 msgstr ""
 "Макс Макагонов,бас,контрабас,бас-гитара,джаз,фанк,рок,поп,классика,музыка,"
 "Москва,maxmakagonov.com,Максим Макагонов,Магнитогорск,музыкант,"
 "профессиональный,Max Makagonov,bass,double bass,bass guitar,jazz,funk,rock,"
 "pop,classical music,Moscow,Maxim Makagonov,Magnitogorsk,professional musician"
 
-#: posts/templates/posts/index.html:24 posts/templates/posts/index.html:53
+#: views/index.html:21 views/index.html:50
 msgid "Max Makagonov - double bass player"
 msgstr "Максим Макагонов - профессиональный контрабасист"
 
-#: posts/templates/posts/index.html:58
+#: views/index.html:55
 msgid "Menu"
 msgstr "Меню"
 
-#: posts/templates/posts/index.html:70 posts/templates/posts/index.html:120
+#: views/index.html:67 views/index.html:117
 msgid "Videos"
 msgstr "Видео"
 
-#: posts/templates/posts/index.html:73 posts/templates/posts/index.html:164
+#: views/index.html:70 views/index.html:161
 msgid "About"
 msgstr "Биография"
 
-#: posts/templates/posts/index.html:76 posts/templates/posts/index.html:219
+#: views/index.html:73 views/index.html:216
 msgid "Contact Me"
 msgstr "Обратная связь"
 
-#: posts/templates/posts/index.html:104
+#: views/index.html:101
 msgid "Double Bass"
 msgstr "Контрабас"
 
-#: posts/templates/posts/index.html:104
+#: views/index.html:101
 msgid "Bass Guitar"
 msgstr "Бас-гитара"
 
-#: posts/templates/posts/index.html:153
+#: views/index.html:150
 msgid "More"
 msgstr "Ещё"
 
-#: posts/templates/posts/index.html:170 posts/templates/posts/index.html:177
+#: views/index.html:167 views/index.html:174
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Родился 6 декабря 1990 в г. Магнитогорске в России"
 
-#: posts/templates/posts/index.html:171 posts/templates/posts/index.html:179
+#: views/index.html:168 views/index.html:176
 msgid "Started taking cello lessons at the age of eight"
 msgstr ""
 "Начал заниматься музыкой в 8 лет у Лукьяненко А. Д. по классу виолончели"
 
-#: posts/templates/posts/index.html:172 posts/templates/posts/index.html:180
+#: views/index.html:169 views/index.html:177
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
@@ -100,10 +99,10 @@ msgstr ""
 "Шопена в классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. "
 "Склеминой по специальности контрабас"
 
-#: posts/templates/posts/index.html:173 posts/templates/posts/index.html:181
+#: views/index.html:170 views/index.html:178
 msgid ""
-"During school years garnered top prizes in numerous musical competitions, "
-"including Young talents of Moscovia, Young composers Moscow, III "
+"During school years garnered top prizes in numerous musical competitions,"
+" including Young talents of Moscovia, Young composers Moscow, III "
 "international competition of young musicians, Forum Festival in St. "
 "Petersburg"
 msgstr ""
@@ -112,15 +111,15 @@ msgstr ""
 "Московии, Московский конкурс юных композиторов, III Международный конкурс "
 "юных музыкантов, Фестиваль ForumKlassika в г. Санкт-Петербург и других"
 
-#: posts/templates/posts/index.html:174 posts/templates/posts/index.html:184
+#: views/index.html:171 views/index.html:181
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
-"2012, graduated from Maimonides State Classical Academy in 2015.  At that "
-"time was a member of several orchestras, including chamber orchestra of "
-"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra directed "
-"by A. Karimov (Grand Prix at Young Prague festival, Prague 2011), Moscow "
-"State University Theater of Ancient music orchestra directed by V. A. "
-"Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+"2012, graduated from Maimonides State Classical Academy in 2015.  At that"
+" time was a member of several orchestras, including chamber orchestra of "
+"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra "
+"directed by A. Karimov (Grand Prix at Young Prague festival, Prague "
+"2011), Moscow State University Theater of Ancient music orchestra "
+"directed by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
 msgstr ""
 "С 2009 по 2012 год был студентом МГК им. П. И. Чайковского, класс профессора "
 "Е. А. Колосова. В 2014 году закончил ГКА им. Маймонида, класс А. А. Аминова. "
@@ -131,80 +130,82 @@ msgstr ""
 "Крейсберга, Биг-бенде Averkin Band (п/у А. Аверкина) и JazZyl Big Band (п/у "
 "А. Зыля)"
 
-#: posts/templates/posts/index.html:175 posts/templates/posts/index.html:188
+#: views/index.html:172 views/index.html:185
 msgid ""
-"Engaged in various musical projects, worked with Natalia Skvortsova, Dmitry "
-"Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey Osokin, "
-"Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro and others"
+"Engaged in various musical projects, worked with Natalia Skvortsova, "
+"Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
+"Osokin, Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro "
+"and others"
 msgstr ""
 "Участвовал в разноплановых музыкальных проектах, работал с такими "
 "музыкантами, как Наталья Скворцова, Дмитрий Мосьпан, Александр Зингер, "
 "Дмитрий и Александр Бриль, Евгений Побожий, Сергей Осокин, Григорий Середин, "
 "Ярослава Симонова, Иван Дыма, Андреа Бекарро и другими"
 
-#: posts/templates/posts/index.html:176 posts/templates/posts/index.html:191
+#: views/index.html:173 views/index.html:188
 msgid ""
-"Participated in numerous jazz festivals and competitions, including Gnesin "
-"Jazz, State college of Music pop & jazz art Guitar & Piano competions, "
-"AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, 1Jazz.ru Festival"
+"Participated in numerous jazz festivals and competitions, including "
+"Gnesin Jazz, State college of Music pop & jazz art Guitar & Piano "
+"competions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
+"1Jazz.ru Festival"
 msgstr ""
 "В составе различных ансамблей и оркестров многократно принимал участие в "
 "джазовых фестивалях и конкурсах: Гнесин-Джаз, Многоликая гитара, Рояль в "
 "джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, Jazz May "
 "Penza, Фестиваль радио 1jazz.ru"
 
-#: posts/templates/posts/index.html:196
+#: views/index.html:193
 msgid "Technical Rider"
 msgstr "Райдер"
 
-#: posts/templates/posts/index.html:232
+#: views/index.html:228
 msgid "Name"
 msgstr "Имя"
 
-#: posts/templates/posts/index.html:232
+#: views/index.html:228
 msgid "Please enter your name."
 msgstr "Укажите имя"
 
-#: posts/templates/posts/index.html:239
+#: views/index.html:235
 msgid "Email Address"
 msgstr "Электронная почта"
 
-#: posts/templates/posts/index.html:239
+#: views/index.html:235
 msgid "Please enter your email address."
 msgstr "Укажите адрес электронной почты"
 
-#: posts/templates/posts/index.html:246
+#: views/index.html:242
 msgid "Phone Number"
 msgstr "Телефон"
 
-#: posts/templates/posts/index.html:246
+#: views/index.html:242
 msgid "Please enter your phone number."
 msgstr "Укажите номер телефона"
 
-#: posts/templates/posts/index.html:253
+#: views/index.html:249
 msgid "Message"
 msgstr "Сообщение"
 
-#: posts/templates/posts/index.html:253
+#: views/index.html:249
 msgid "Please enter a message."
 msgstr "Введите текст сообщения"
 
-#: posts/templates/posts/index.html:261
+#: views/index.html:257
 msgid "Send"
 msgstr "Отправить"
 
-#: posts/templates/posts/index.html:276
+#: views/index.html:272
 msgid "Location"
 msgstr "Город"
 
-#: posts/templates/posts/index.html:277
+#: views/index.html:273
 msgid "Moscow, Russia"
 msgstr "Москва, Россия"
 
-#: posts/templates/posts/index.html:282
+#: views/index.html:278
 msgid "Around the Web"
 msgstr "В сети"
 
-#: posts/templates/posts/index.html:299
+#: views/index.html:295
 msgid "See also"
 msgstr "Друзья"

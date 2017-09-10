@@ -1,3 +1,4 @@
+from babel import support
 import bottle
 import functools
 import jinja2
@@ -7,6 +8,10 @@ VIDEOS_FILE = "common_static/videos.txt"
 VIDEOS_PER_BLOCK = 9
 STATIC_URL = "static"
 TEMPLATES_DIR = "views"
+LANGS = [('en_GB', 'English'),
+         ('ru_RU', 'Russian')]
+LOCALES_DIR = "locale/"
+TRANS_DOMAIN = "messages"
 
 ALL_VIDEOS = None
 
@@ -15,7 +20,8 @@ env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
     extensions=['jinja2.ext.i18n']
 )
-env.install_null_translations()
+translations = support.Translations.load(LOCALES_DIR, [k[0] for k in LANGS])
+env.install_gettext_translations(translations)
 
 
 def jinja2_view(template_name):
@@ -85,4 +91,5 @@ def index():
             "static_url": STATIC_URL}
 
 
-bottle.run(host="localhost", port=8080)
+app = bottle.default_app()
+app.run(host="localhost", port=8080)
