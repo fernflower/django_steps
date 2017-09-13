@@ -5,17 +5,12 @@ COPY . /django_steps
 
 RUN apt-get update && \
     apt-get install -y ssh python-pip \
-        libssl-dev libffi-dev \
         build-essential \
         git \
         nginx \
         python-virtualenv \
         python2.7 \
-        python-dev \
-        libxml2-dev \
-        libxslt1-dev \
-        libfreetype6-dev \
-        gettext &&\
+        python-dev &&\
     rm -rf /var/lib/apt/lists && \
     pip install j2cli && \
     chmod +x /django_steps/entrypoint.sh && \

@@ -1,5 +1,4 @@
 import functools
-import gettext
 import json
 
 from babel import support
@@ -101,4 +100,3 @@ def index():
 
 
 app = bottle.default_app()
-app.run(host="localhost", port=8080)
