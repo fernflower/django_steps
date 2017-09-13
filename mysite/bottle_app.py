@@ -1,8 +1,10 @@
+import functools
+import gettext
+import json
+
 from babel import support
 import bottle
-import functools
 import jinja2
-import json
 
 VIDEOS_FILE = "common_static/videos.txt"
 VIDEOS_PER_BLOCK = 9
@@ -10,8 +12,8 @@ STATIC_URL = "static"
 TEMPLATES_DIR = "views"
 LANGS = [('en_GB', 'English'),
          ('ru_RU', 'Russian')]
-LOCALES_DIR = "locale/"
-TRANS_DOMAIN = "messages"
+DEFAULT_LOCALE = 'en'
+LOCALES_DIR = "./locale/"
 
 ALL_VIDEOS = None
 
@@ -20,8 +22,11 @@ env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
     extensions=['jinja2.ext.i18n']
 )
-translations = support.Translations.load(LOCALES_DIR, [k[0] for k in LANGS])
-env.install_gettext_translations(translations)
+translations_map = {}
+for l, _ in LANGS:
+    lang_code = l.split("_")[0]
+    t = support.Translations.load(LOCALES_DIR, [l])
+    translations_map[lang_code] = t
 
 
 def jinja2_view(template_name):
@@ -30,6 +35,10 @@ def jinja2_view(template_name):
         def wrapper(*args, **kwargs):
             response = view_func(*args, **kwargs)
             if isinstance(response, dict):
+                lang = bottle.request.query.get('lang', DEFAULT_LOCALE)
+                if lang not in translations_map:
+                    lang = DEFAULT_LOCALE
+                env.install_gettext_translations(translations_map[lang])
                 template = env.get_or_select_template(template_name)
                 return template.render(**response)
             return response
