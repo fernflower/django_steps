@@ -1,3 +1,4 @@
+import ConfigParser
 import functools
 import json
 
@@ -5,26 +6,31 @@ from babel import support
 import bottle
 import jinja2
 
-VIDEOS_FILE = "common_static/videos.txt"
-VIDEOS_PER_BLOCK = 9
-STATIC_URL = "static"
-TEMPLATES_DIR = "views"
+CONFIG_FILE = "config.ini"
 LANGS = [('en_GB', 'English'),
          ('ru_RU', 'Russian')]
-DEFAULT_LOCALE = 'en'
-LOCALES_DIR = "./locale/"
 
 ALL_VIDEOS = None
 
+config = ConfigParser.RawConfigParser()
+config.read(CONFIG_FILE)
+
+DEFAULT_LOCALE = config.get("default", "DEFAULT_LOCALE")
+STATIC_URL = config.get("default", "STATIC_URL")
+VIDEOS_FILE = config.get("default", "VIDEOS_FILE")
+VIDEOS_PER_BLOCK = config.getint("default", "VIDEOS_PER_BLOCK")
+
+# XXX refactor this into a class
+translations_map = {}
 
 env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(TEMPLATES_DIR),
+    loader=jinja2.FileSystemLoader(config.get("default", "TEMPLATES_DIR")),
     extensions=['jinja2.ext.i18n']
 )
-translations_map = {}
+
 for l, _ in LANGS:
     lang_code = l.split("_")[0]
-    t = support.Translations.load(LOCALES_DIR, [l])
+    t = support.Translations.load(config.get("default", "LOCALES_DIR"), [l])
     translations_map[lang_code] = t
 
 
