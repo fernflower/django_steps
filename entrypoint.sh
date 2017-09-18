@@ -13,6 +13,9 @@ service nginx restart
 # create uswgi.ini and start uwsgi server
 j2 /django_steps/docker_templates/uwsgi.j2 > /django_steps/uwsgi_steps.ini
 
+# create config.ini from env vars
+j2 /django_steps/docker_templates/config.j2 > /django_steps/mysite/config.ini
+
 # compile translations
 #/venv/bin/python pybabel compile -f -d ./locale
 

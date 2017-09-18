@@ -48,7 +48,7 @@ server {
     client_max_body_size 75M;   # adjust to taste
 
     location /{{STATIC_URL}} {
-        alias /django_steps/mysite/static/;
+        alias /django_steps/mysite/common_static/;
     }
 
     location / {
