@@ -9,11 +9,10 @@ Make your own blog.env file from sample and populate it.
 cp blog.env.sample blog.env
 ```
 
-### Running install script
-Docker installation
-The application is served by 3 containers: django/nginx, postgres and data.
+### Running docker
+The application is served by a single bottle/nginx container.
 
-Launch bottle/nginx container:
+Launch it:
 ```
 bash run_docker.sh
 ```
