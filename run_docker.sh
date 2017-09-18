@@ -12,4 +12,4 @@ nginx_host=$(cat $ENV_FILE | grep NGINX_HOST | sed 's/.*=//g')
 
 
 sudo docker build --build-arg port_to_expose=$nginx_port -t $IMAGE .
-sudo docker run --name $CONTAINER_NAME -p $nginx_port:$nginx_port -it --env-file $ENV_FILE $IMAGE
+sudo docker run --name $CONTAINER_NAME -p $nginx_port:$nginx_port -dt --env-file $ENV_FILE $IMAGE
