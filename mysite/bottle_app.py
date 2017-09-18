@@ -1,10 +1,16 @@
 import ConfigParser
 import functools
 import json
+import logging
+import smtplib
 
 from babel import support
 import bottle
 import jinja2
+
+# setup logging
+logging.basicConfig()
+LOG = logging.getLogger(__name__)
 
 CONFIG_FILE = "config.ini"
 LANGS = [('en_GB', 'English'),
@@ -103,6 +109,35 @@ def index():
     return {"videos": videos,
             "more_videos": more,
             "static_url": STATIC_URL}
+
+
+@bottle.route("/contact_me", method="POST")
+def send_mail():
+    data = bottle.request.forms
+    try:
+        server = smtplib.SMTP()
+        server.connect(config.get("mail", "EMAIL_HOST"),
+                       config.getint("mail", "EMAIL_PORT"))
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(config.get("mail", "EMAIL_HOST_USER"),
+                     config.get("mail", "EMAIL_HOST_PASSWORD"))
+        subject = ("A message from %(email)s AKA %(name)s (%(phone)s)" %
+                   {"name": data.get('name'),
+                    "phone": data.get('phone'),
+                    "email": data.get('email')})
+        to_addrs = [s for s in config.get("mail",
+                                          "EMAIL_RECIPIENT_LIST").split(',')
+                    if s.strip() != ""]
+        server.sendmail(from_addr=data.email,
+                        to_addrs=to_addrs,
+                        msg="Subject: %(subject)s\n\n%(message)s" % {
+                            "message": data.get('message'),
+                            "subject": subject})
+        server.quit()
+    except:
+        LOG.error("failed to send email")
 
 
 app = bottle.default_app()
