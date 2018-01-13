@@ -38,9 +38,6 @@ MEDIA_URL = '/posts/media/'
 
 
 INSTALLED_APPS = (
-    # FIXME some day a bootstrapped admin should appear, but currently it is
-    # breaking VK Scraper link and wysiwyg post edition facilities
-    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,12 +45,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'icons_famfamfam',
-    'south',
-    'admin_reorder',
     'django_markdown',
-    'adminfiles',
     'sorl.thumbnail',
+    'adminfiles',
     'posts',
 )
 
@@ -74,14 +68,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'admin_reorder.middleware.ModelAdminReorder',
-)
-
-ADMIN_REORDER = (
-    # Rename app
-    {'app': 'auth', 'label': 'Site Authorization'},
-    # Keep original label and models
-    'posts',
 )
 
 LOGGING = {
@@ -139,6 +125,7 @@ STATIC_URL = MY_STATIC_URL
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'common_static/'), )
+APPEND_SLASH = False
 
 # sentry configuration
 RAVEN_CONFIG = MY_RAVEN_CONFIG

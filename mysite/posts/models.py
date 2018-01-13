@@ -8,9 +8,6 @@ from pyquery import PyQuery
 import django_markdown.models
 import markdown
 
-from south.modelsinspector import add_introspection_rules
-add_introspection_rules([], ["^django_markdown\.models\.MarkdownField"])
-
 
 class Post(models.Model):
     title = models.CharField(max_length=100)

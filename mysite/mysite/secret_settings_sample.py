@@ -10,12 +10,14 @@ MY_EMAIL_HOST = ""
 MY_EMAIL_PORT = ""
 # if you want to commit your main settings.py, then you should place secret_key
 # here
-MY_SECRET_KEY = ""
+MY_SECRET_KEY = "42"
 MY_EMAIL_RECIPIENT_LIST = []
 MY_DB_NAME = ""
 MY_DB_USER = ""
+MY_DB_HOST = "127.0.0.1"
+MY_DB_PORT = 5432
 MY_DB_PASSWORD = ""
+MY_STATIC_URL = "/static/"
 MY_ALLOWED_HOSTS = []
-MY_VK_API_ID = 0
 MY_DEBUG = False
-MY_RAVEN_CONFIG = None
+MY_RAVEN_CONFIG = 0

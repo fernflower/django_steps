@@ -1,10 +1,12 @@
+import json
+
 import django.http
 
 from django.core.urlresolvers import reverse
 from django.contrib.admin import actions, site
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
-from django.utils import simplejson, timezone
+from django.utils import timezone
 from django.views import generic
 
 from posts import utils
@@ -45,7 +47,7 @@ def about_author(request):
 @utils.check_auth
 def update(request, pk):
     data = request.body.decode('utf-8')
-    json_data = simplejson.loads(data)
+    json_data = json.loads(data)
     is_visible = json_data.get('is_visible')
     is_favourite = json_data.get('is_favourite')
     post = get_object_or_404(Post, pk=pk)
@@ -60,7 +62,7 @@ def update(request, pk):
 @utils.check_auth
 def preview(request):
     data = request.body.decode('utf-8')
-    json_data = simplejson.loads(data)
+    json_data = json.loads(data)
     posts = [get_object_or_404(Post, pk=post_id)
              for post_id in json_data["visible"]]
     return render_to_response('posts/index_clean.html', {"last_posts": posts},

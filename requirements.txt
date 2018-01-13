@@ -1,14 +1,11 @@
-Django==1.6.5
-django-icons-famfamfam==0.2-1
+Django==1.8
 pyquery==1.2.8
 psycopg2==2.5.3
-raven==5.0.0
-South==1.0.2
 django-apptemplates
-django-modeladmin-reorder
 uwsgi
 requests
 django-markdown
-django-adminfiles
+# necessary for django-admin
 sorl-thumbnail
+git+git://github.com/fernflower/django-adminfiles.git#egg=django-adminfiles
 pillow

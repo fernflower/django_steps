@@ -14,8 +14,15 @@ server {
     # max upload size
     client_max_body_size 75M;   # adjust to taste
 
+    rewrite ^.*/{{DJANGO_STATIC_URL}}(.*)/? /{{DJANGO_STATIC_URL}}$1 last;
+
     location /{{DJANGO_STATIC_URL}} {
         alias /django_steps/mysite/static/;
+    }
+
+    # media files for django-admin
+    location /posts/media {
+        alias /django_steps/mysite/media/;
     }
 
     location / {
