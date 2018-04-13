@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2017 ORGANIZATION
+# Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-11 00:22+0300\n"
+"POT-Creation-Date: 2018-04-13 23:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.5.0\n"
-
-#: mysite/settings.py:102
-msgid "English"
-msgstr ""
-
-#: mysite/settings.py:103
-msgid "Russian"
-msgstr ""
 
 #: views/index.html:10 views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
@@ -56,7 +48,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: views/index.html:73 views/index.html:216
+#: views/index.html:73 views/index.html:219
 msgid "Contact Me"
 msgstr ""
 
@@ -121,59 +113,74 @@ msgid ""
 "1Jazz.ru Festival"
 msgstr ""
 
-#: views/index.html:193
+#: views/index.html:185
+msgid ""
+"As a member of All-Russia State Television and Radio Broadcasting Company"
+" Orchestra directed by Yury Medyanik participated in conducting All-"
+"Russian contest of young talents"
+msgstr ""
+
+#: views/index.html:185
+msgid "in 2017 and 2018 "
+msgstr ""
+
+#: views/index.html:191
+msgid "Since March 2018 lives in Prague, Czech Republic"
+msgstr ""
+
+#: views/index.html:196
 msgid "Technical Rider"
 msgstr ""
 
-#: views/index.html:228
+#: views/index.html:231
 msgid "Name"
 msgstr ""
 
-#: views/index.html:228
+#: views/index.html:231
 msgid "Please enter your name."
 msgstr ""
 
-#: views/index.html:235
+#: views/index.html:238
 msgid "Email Address"
 msgstr ""
 
-#: views/index.html:235
+#: views/index.html:238
 msgid "Please enter your email address."
 msgstr ""
 
-#: views/index.html:242
+#: views/index.html:245
 msgid "Phone Number"
 msgstr ""
 
-#: views/index.html:242
+#: views/index.html:245
 msgid "Please enter your phone number."
 msgstr ""
 
-#: views/index.html:249
+#: views/index.html:252
 msgid "Message"
 msgstr ""
 
-#: views/index.html:249
+#: views/index.html:252
 msgid "Please enter a message."
 msgstr ""
 
-#: views/index.html:257
+#: views/index.html:260
 msgid "Send"
 msgstr ""
 
-#: views/index.html:272
+#: views/index.html:275
 msgid "Location"
 msgstr ""
 
-#: views/index.html:273
+#: views/index.html:276
 msgid "Moscow, Russia"
 msgstr ""
 
-#: views/index.html:278
+#: views/index.html:281
 msgid "Around the Web"
 msgstr ""
 
-#: views/index.html:295
+#: views/index.html:298
 msgid "See also"
 msgstr ""
 
