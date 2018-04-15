@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-13 23:14+0200\n"
+"POT-Creation-Date: 2018-04-15 09:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,10 +91,10 @@ msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
 " time was a member of several orchestras, including chamber orchestra of "
-"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra "
-"directed by A. Karimov (Grand Prix at Young Prague festival, Prague "
+"Moscow Conservatory conducted by F. P. Korobov, Entre Nous orchestra "
+"conducted by A. Karimov (Grand Prix at Young Prague festival, Prague "
 "2011), Moscow State University Theater of Ancient music orchestra "
-"directed by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+"conducted by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
 msgstr ""
 
 #: views/index.html:172 views/index.html:185
@@ -115,13 +115,13 @@ msgstr ""
 
 #: views/index.html:185
 msgid ""
-"As a member of All-Russia State Television and Radio Broadcasting Company"
-" Orchestra directed by Yury Medyanik participated in conducting All-"
-"Russian contest of young talents"
+"Was a member of All-Russia State Television and Radio Broadcasting "
+"Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
+"of young talents"
 msgstr ""
 
 #: views/index.html:185
-msgid "in 2017 and 2018 "
+msgid "in 2016-2018"
 msgstr ""
 
 #: views/index.html:191
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Around the Web"
 msgstr ""
 
-#: views/index.html:298
+#: views/index.html:301
 msgid "See also"
 msgstr ""
 
