@@ -14,7 +14,8 @@ LOG = logging.getLogger(__name__)
 
 CONFIG_FILE = "config.ini"
 LANGS = [('en_GB', 'English'),
-         ('ru_RU', 'Russian')]
+         ('ru_RU', 'Russian'),
+         ('cs_CZ', 'Czech')]
 
 ALL_VIDEOS = None
 

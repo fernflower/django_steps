@@ -1,17 +1,18 @@
-# Translations template for PROJECT.
+# Czech (Czech Republic) translations for PROJECT.
 # Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2018-07-29 18:12+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-07-29 16:13+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs_CZ\n"
+"Language-Team: cs_CZ <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +20,7 @@ msgstr ""
 
 #: views/index.html:10 views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
-msgstr ""
+msgstr "Max Makagonov, profesionální hráč na kontrabas a baskytaru"
 
 #: views/index.html:12 views/index.html:58 views/index.html:103
 msgid "Max Makagonov"
@@ -34,49 +35,51 @@ msgstr ""
 
 #: views/index.html:22 views/index.html:51
 msgid "Max Makagonov - double bass player"
-msgstr ""
+msgstr "Max Makagonov - kontrabasista"
 
 #: views/index.html:56
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: views/index.html:68 views/index.html:121
 msgid "Videos"
-msgstr ""
+msgstr "Videa"
 
 #: views/index.html:71 views/index.html:165
 msgid "About"
-msgstr ""
+msgstr "O mně"
 
 #: views/index.html:74 views/index.html:223
 msgid "Contact Me"
-msgstr ""
+msgstr "Kontakt"
 
 #: views/index.html:105
 msgid "Double Bass"
-msgstr ""
+msgstr "Kontrabas"
 
 #: views/index.html:105
 msgid "Bass Guitar"
-msgstr ""
+msgstr "Baskytara"
 
 #: views/index.html:154
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: views/index.html:171 views/index.html:178
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
-msgstr ""
+msgstr "Narodil se 6. prosince 1990 v Magnitogorsku v Rusku"
 
 #: views/index.html:172 views/index.html:180
 msgid "Started taking cello lessons at the age of eight"
-msgstr ""
+msgstr "Ve osmi letech hral na cello"
 
 #: views/index.html:173 views/index.html:181
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
 msgstr ""
+"V roce 2002 prošel konkurz do vysoké školy hudby Fryderyka Chopina v "
+"Moskvě, kde začal hrát na kontrabas"
 
 #: views/index.html:174 views/index.html:182
 msgid ""
@@ -85,6 +88,9 @@ msgid ""
 "international competition of young musicians, Forum Festival in St. "
 "Petersburg"
 msgstr ""
+"Během školních let získal ocenění v mnohých hudebních soutěžích, včetně "
+"mladé talenty Moscovy, mladé skladateli Moskvy, III mezinárodní soutěž "
+"mladých hudebníků, Forum Festival v Petrohradě"
 
 #: views/index.html:175 views/index.html:185
 msgid ""
@@ -96,6 +102,13 @@ msgid ""
 "2011), Moscow State University Theater of Ancient music orchestra "
 "conducted by V. A. Kreisberg, Averkin's Big Band, JazZyl Big Band"
 msgstr ""
+"Byl studentem konzervatoře v Moskvě v letech 2009 - 2012, vystudoval "
+"statní klasickí akademii Maimonida v roce 2015.V té době byl členem "
+"několik orchestrů, včetně komorního orchestru Moskevské konzervatoře pod "
+"vedením F. P. Korobova, orchestru Entre Nous pod vedením A. Karimova "
+"(Grand Prix na festivalu Mladá Praha, Praha 2011), Divadlo antického "
+"hudebního orchestru v Moskevské státní univerzitě pod vedením V. A "
+"Kreisberga, Averkin Big Band, Jazzyl Big Band."
 
 #: views/index.html:176 views/index.html:189
 msgid ""
@@ -104,6 +117,10 @@ msgid ""
 "Osokin, Grigory Seredin, Yaroslava Simonova, Ivan Dyma, Andrea Becarro "
 "and others"
 msgstr ""
+"Vystupoval v různých hudebních projektech, spolupracoval s Natálií "
+"Skvortsovou, Dmitrij Mospan, Alexander Zinger, Brill Brothers, Evgeny "
+"Pobozhy, Sergey Osokin, Grigorij Seredin, Yaroslava Simonova, Ivan Dyma, "
+"Andrea Becarro a další"
 
 #: views/index.html:177 views/index.html:192
 msgid ""
@@ -112,6 +129,9 @@ msgid ""
 "competitions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
 "1Jazz.ru Festival"
 msgstr ""
+"Podílel se na mnoha jazzových festivalech a soutěžích, včetně Gnesin "
+"Jazz, Moskva State College of Pop a Jazz Art klavírní a kytarové soutěže,"
+" AquaJazz, Jazz sezóny Igor Butman, Jazz May Penza, Festival 1Jazz.ru"
 
 #: views/index.html:189
 msgid ""
@@ -119,6 +139,9 @@ msgid ""
 "Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
 "of young talents"
 msgstr ""
+"V letech 2016-2018 byl členem celoregionální státní televize a "
+"rozhlasového vysíláníSpolečný orchestr vedl Yury Medyanik v All-ruské "
+"soutěži mladých talentů"
 
 #: views/index.html:189
 msgid "in 2016-2018"
@@ -126,7 +149,7 @@ msgstr ""
 
 #: views/index.html:195
 msgid "Since March 2018 lives in Prague, Czech Republic"
-msgstr ""
+msgstr "Od března 2018 bydlí v Praze, Česká republika"
 
 #: views/index.html:200
 msgid "Technical Rider"
@@ -134,53 +157,52 @@ msgstr ""
 
 #: views/index.html:235
 msgid "Name"
-msgstr ""
+msgstr "Jmeno"
 
 #: views/index.html:235
 msgid "Please enter your name."
-msgstr ""
+msgstr "Zadejte své jméno."
 
 #: views/index.html:242
 msgid "Email Address"
-msgstr ""
+msgstr "Email"
 
 #: views/index.html:242
 msgid "Please enter your email address."
-msgstr ""
+msgstr "Prosím zadejte svou e-mailovou adresu."
 
 #: views/index.html:249
 msgid "Phone Number"
-msgstr ""
+msgstr "Telefonní číslo"
 
 #: views/index.html:249
 msgid "Please enter your phone number."
-msgstr ""
+msgstr "Zadejte své telefonní číslo"
 
 #: views/index.html:256
 msgid "Message"
-msgstr ""
+msgstr "Zpráva"
 
 #: views/index.html:256
 msgid "Please enter a message."
-msgstr ""
+msgstr "Zadejte prosím zprávu"
 
 #: views/index.html:264
 msgid "Send"
-msgstr ""
+msgstr "Odeslat"
 
 #: views/index.html:279
 msgid "Location"
-msgstr ""
+msgstr "Umístění"
 
 #: views/index.html:280
 msgid "Prague, Czech Republic"
-msgstr ""
+msgstr "Praha, Česká republika"
 
 #: views/index.html:285
 msgid "Around the Web"
-msgstr ""
+msgstr "Na webu"
 
 #: views/index.html:305
 msgid "See also"
-msgstr ""
-
+msgstr "Viz také"

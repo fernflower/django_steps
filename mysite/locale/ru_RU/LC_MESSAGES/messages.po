@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-15 09:44+0200\n"
+"POT-Creation-Date: 2018-07-29 18:12+0200\n"
 "PO-Revision-Date: 2017-09-11 00:24+0300\n"
 "Last-Translator: Inessa Vasilevskaya <inavasilevskaya@gmail.com>\n"
 "Language: ru_RU\n"
@@ -25,11 +25,11 @@ msgstr ""
 "Максим Макагонов - профессиональный музыкант, мультижанровый "
 "контрабасист/бас-гитарист"
 
-#: views/index.html:12 views/index.html:57 views/index.html:99
+#: views/index.html:12 views/index.html:58 views/index.html:103
 msgid "Max Makagonov"
 msgstr "Максим Макагонов"
 
-#: views/index.html:18
+#: views/index.html:19
 msgid ""
 "Max Makagonov,bass,double bass,bass "
 "guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
@@ -41,47 +41,47 @@ msgstr ""
 "Makagonov,bass,double bass,bass guitar,jazz,funk,rock,pop,classical "
 "music,Moscow,Maxim Makagonov,Magnitogorsk,professional musician"
 
-#: views/index.html:21 views/index.html:50
+#: views/index.html:22 views/index.html:51
 msgid "Max Makagonov - double bass player"
 msgstr "Максим Макагонов - профессиональный контрабасист"
 
-#: views/index.html:55
+#: views/index.html:56
 msgid "Menu"
 msgstr "Меню"
 
-#: views/index.html:67 views/index.html:117
+#: views/index.html:68 views/index.html:121
 msgid "Videos"
 msgstr "Видео"
 
-#: views/index.html:70 views/index.html:161
+#: views/index.html:71 views/index.html:165
 msgid "About"
 msgstr "Биография"
 
-#: views/index.html:73 views/index.html:219
+#: views/index.html:74 views/index.html:223
 msgid "Contact Me"
 msgstr "Обратная связь"
 
-#: views/index.html:101
+#: views/index.html:105
 msgid "Double Bass"
 msgstr "Контрабас"
 
-#: views/index.html:101
+#: views/index.html:105
 msgid "Bass Guitar"
 msgstr "Бас-гитара"
 
-#: views/index.html:150
+#: views/index.html:154
 msgid "More"
 msgstr "Ещё"
 
-#: views/index.html:167 views/index.html:174
+#: views/index.html:171 views/index.html:178
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Родился 6 декабря 1990 в г. Магнитогорске в России"
 
-#: views/index.html:168 views/index.html:176
+#: views/index.html:172 views/index.html:180
 msgid "Started taking cello lessons at the age of eight"
 msgstr "Начал заниматься музыкой в 8 лет у Лукьяненко А. Д. по классу виолончели"
 
-#: views/index.html:169 views/index.html:177
+#: views/index.html:173 views/index.html:181
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
@@ -91,7 +91,7 @@ msgstr ""
 "Шопена в классе Алексеевой Т. Г. В 2005 году поступил в класс Т. Ю. "
 "Склеминой по специальности контрабас"
 
-#: views/index.html:170 views/index.html:178
+#: views/index.html:174 views/index.html:182
 msgid ""
 "During school years garnered top prizes in numerous musical competitions,"
 " including Young talents of Moscovia, Young composers Moscow, III "
@@ -104,7 +104,7 @@ msgstr ""
 " конкурс юных музыкантов, Фестиваль ForumKlassika в г. Санкт-Петербург и "
 "других"
 
-#: views/index.html:171 views/index.html:181
+#: views/index.html:175 views/index.html:185
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
@@ -112,7 +112,7 @@ msgid ""
 "Moscow Conservatory conducted by F. P. Korobov, Entre Nous orchestra "
 "conducted by A. Karimov (Grand Prix at Young Prague festival, Prague "
 "2011), Moscow State University Theater of Ancient music orchestra "
-"conducted by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+"conducted by V. A. Kreisberg, Averkin's Big Band, JazZyl Big Band"
 msgstr ""
 "С 2009 по 2012 год был студентом МГК им. П. И. Чайковского, класс "
 "профессора Е. А. Колосова. В 2014 году закончил ГКА им. Маймонида, класс "
@@ -123,7 +123,7 @@ msgstr ""
 "управлением В. А. Крейсберга, Биг-бенде Averkin Band (п/у А. Аверкина) и "
 "JazZyl Big Band (п/у А. Зыля)"
 
-#: views/index.html:172 views/index.html:185
+#: views/index.html:176 views/index.html:189
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, "
 "Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
@@ -135,88 +135,89 @@ msgstr ""
 "Дмитрий и Александр Бриль, Евгений Побожий, Сергей Осокин, Григорий "
 "Середин, Ярослава Симонова, Иван Дыма, Андреа Бекарро и другими"
 
-#: views/index.html:173 views/index.html:188
+#: views/index.html:177 views/index.html:192
 msgid ""
 "Participated in numerous jazz festivals and competitions, including "
-"Gnesin Jazz, State college of Music pop & jazz art Guitar & Piano "
-"competions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
+"Gnesin Jazz, Moscow State College of Pop and Jazz Art piano & guitar "
+"competitions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
 "1Jazz.ru Festival"
 msgstr ""
-"Как участник различных ансамблей и оркестров многократно принимал участие в "
-"джазовых фестивалях и конкурсах: Гнесин-Джаз, Многоликая гитара, Рояль в "
-"джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, Jazz "
-"May Penza, Фестиваль радио 1jazz.ru"
+"Как участник различных ансамблей и оркестров многократно принимал участие"
+" в джазовых фестивалях и конкурсах: Гнесин-Джаз, Многоликая гитара, Рояль"
+" в джазе, Свинговый бум, Акваджаз, Джазовые сезоны в Ленинских горках, "
+"Jazz May Penza, Фестиваль радио 1jazz.ru"
 
-#: views/index.html:185
+#: views/index.html:189
 msgid ""
 "Was a member of All-Russia State Television and Radio Broadcasting "
 "Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
 "of young talents"
 msgstr ""
-"В качестве артиста оркестра всероссийской государственной телевизионной и "
-"радиовещательной компании под управлением Юрия Медяника принимал участие "
-"в записи сезонов 2016-2018 всероссийского детского конкурса юных талантов " 
+"В качестве артиста оркестра всероссийской государственной телевизионной и"
+" радиовещательной компании под управлением Юрия Медяника принимал участие"
+" в записи сезонов 2016-2018 всероссийского детского конкурса юных "
+"талантов "
 
-#: views/index.html:185
+#: views/index.html:189
 msgid "in 2016-2018"
 msgstr " "
 
-#: views/index.html:191
+#: views/index.html:195
 msgid "Since March 2018 lives in Prague, Czech Republic"
 msgstr "С марта 2018 года живет в Праге, Чехия"
 
-#: views/index.html:196
+#: views/index.html:200
 msgid "Technical Rider"
 msgstr "Райдер"
 
-#: views/index.html:231
+#: views/index.html:235
 msgid "Name"
 msgstr "Имя"
 
-#: views/index.html:231
+#: views/index.html:235
 msgid "Please enter your name."
 msgstr "Укажите имя"
 
-#: views/index.html:238
+#: views/index.html:242
 msgid "Email Address"
 msgstr "Электронная почта"
 
-#: views/index.html:238
+#: views/index.html:242
 msgid "Please enter your email address."
 msgstr "Укажите адрес электронной почты"
 
-#: views/index.html:245
+#: views/index.html:249
 msgid "Phone Number"
 msgstr "Телефон"
 
-#: views/index.html:245
+#: views/index.html:249
 msgid "Please enter your phone number."
 msgstr "Укажите номер телефона"
 
-#: views/index.html:252
+#: views/index.html:256
 msgid "Message"
 msgstr "Сообщение"
 
-#: views/index.html:252
+#: views/index.html:256
 msgid "Please enter a message."
 msgstr "Введите текст сообщения"
 
-#: views/index.html:260
+#: views/index.html:264
 msgid "Send"
 msgstr "Отправить"
 
-#: views/index.html:275
+#: views/index.html:279
 msgid "Location"
 msgstr "Город"
 
-#: views/index.html:276
-msgid "Moscow, Russia"
-msgstr "Москва, Россия"
+#: views/index.html:280
+msgid "Prague, Czech Republic"
+msgstr "Прага, Чехия"
 
-#: views/index.html:281
+#: views/index.html:285
 msgid "Around the Web"
 msgstr "В сети"
 
-#: views/index.html:301
+#: views/index.html:305
 msgid "See also"
 msgstr "Друзья"
