@@ -1,3 +1,4 @@
+import codecs
 import ConfigParser
 import functools
 import json
@@ -71,7 +72,7 @@ def get_videos(videos_num, block, all_videos, filename=VIDEOS_FILE):
 
     """
     if all_videos is None:
-        with open(filename, 'r') as f:
+        with codecs.open(filename, 'r', encoding='utf-8') as f:
             all_videos = [l.strip() for l in f.readlines() if l.strip() != ""]
     # fields are id/url/name/date
     video_data = all_videos[block * videos_num: (block + 1) * videos_num]
