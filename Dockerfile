@@ -1,25 +1,25 @@
 FROM phusion/baseimage:0.9.22
 ARG port_to_expose
 
-COPY . /django_steps
-
 RUN apt-get update && \
-    apt-get install -y ssh python-pip \
+    apt-get install -y ssh python3-pip \
         build-essential \
+        python3-venv \
         git \
         nginx \
-        python-virtualenv \
-        python2.7 \
-        python-dev &&\
+        python3.4 \
+        python-dev && \
     rm -rf /var/lib/apt/lists && \
-    pip install j2cli && \
-    chmod +x /django_steps/entrypoint.sh && \
-    mkdir -p /var/log/uwsgi && \
-    virtualenv -p /usr/bin/python2.7 /venv && \
-    /venv/bin/pip install -r /django_steps/requirements.txt
+    pip3 install j2cli
 
 CMD ["/sbin/my_init"]
 
 EXPOSE $port_to_expose
+
+COPY . /django_steps
+RUN chmod +x /django_steps/entrypoint.sh && \
+    mkdir -p /var/log/uwsgi && \
+    python3 -m venv /venv && \
+    /venv/bin/pip install -r /django_steps/requirements.txt
 
 ENTRYPOINT ["/django_steps/entrypoint.sh"]
