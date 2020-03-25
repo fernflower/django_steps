@@ -12,11 +12,12 @@ cp blog.env.sample blog.env
 ### Running docker
 The application is served by a single bottle/nginx container.
 
-Launch it:
-```
-bash run_docker.sh
-```
+You can build and run it using docker-compose `docker-compose up -d` or
+plain old bash-script-it way `bash run_docker.sh`.
+
+If you haven't changed the defaults in blog.env the site will be served
+at http://localhost:8888
 
 ## TODO list
-- [] utilize ansible docker for docker installation
+- [x] docker-compose for easy deployment
 - [] make deployment kubernetes-friendly

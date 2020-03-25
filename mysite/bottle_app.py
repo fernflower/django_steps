@@ -1,5 +1,5 @@
 import codecs
-import ConfigParser
+import configparser
 import functools
 import json
 import logging
@@ -20,7 +20,7 @@ LANGS = [('en_GB', 'English'),
 
 ALL_VIDEOS = None
 
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read(CONFIG_FILE)
 
 DEFAULT_LOCALE = config.get("default", "DEFAULT_LOCALE")
