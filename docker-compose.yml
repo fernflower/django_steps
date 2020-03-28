@@ -9,3 +9,5 @@ services:
       - "8888:8888"
     env_file:
       - blog.env
+    volumes:
+      - ./files:/django_steps/mysite/common_static/files:Z
