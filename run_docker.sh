@@ -14,4 +14,4 @@ if [[ -z $NGINX_PORT ]]; then
 fi
 
 sudo docker build --build-arg nginx_port=$NGINX_PORT -t $IMAGE .
-sudo docker run --name $CONTAINER_NAME -p $NGINX_PORT:$NGINX_PORT -dt --env-file $ENV_FILE $IMAGE
+sudo docker run --name $CONTAINER_NAME -p $NGINX_PORT:$NGINX_PORT -dt --env-file $ENV_FILE -v $(pwd)/files:/django_steps/mysite/common_static/files:Z $IMAGE
