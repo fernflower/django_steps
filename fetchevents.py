@@ -23,6 +23,7 @@ def parse_args(args):
     parser.add_argument('--secrets', default=SECRETS_FILE, help='File with google calendar oath credentials location')
     parser.add_argument('--scope', action='append', default=SCOPES,
                         help='Additional scopes to parse, default is {}'.format(SCOPES[0]))
+    parser.add_argument('--id', default='primary', help='Calendar id, default is primary')
     return parser.parse_args(args)
 
 
@@ -49,20 +50,23 @@ def _get_creds(token_file, secrets_file, scopes):
     return creds
 
 
-def _fetch_eventlist(creds, count):
+def _fetch_eventlist(creds, count, calendar_id='primary'):
     """Returns a list of dicts {date, name, description, location}"""
 
     service = build('calendar', 'v3', credentials=creds)
 
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    events_result = service.events().list(calendarId='primary', timeMin=now,
+    events_result = service.events().list(calendarId=calendar_id, timeMin=now,
                                           maxResults=count, singleEvents=True,
                                           orderBy='startTime').execute()
     results = []
     for event in events_result.get('items', []):
         start = event['start'].get('dateTime', event['start'].get('date'))
-        start_dt = datetime.datetime.strptime(start, "%Y-%m-%dT%H:%M:%S%z")
+        try:
+            start_dt = datetime.datetime.strptime(start, "%Y-%m-%dT%H:%M:%S%z")
+        except ValueError:
+            start_dt = datetime.datetime.strptime(start, "%Y-%m-%d")
         # parse date here for the frontend component to use
         start_details = {"month": start_dt.strftime("%b"), "day": start_dt.day, "year": start_dt.year,
                          "time": start_dt.strftime("%H:%M"), "datetime": start_dt.strftime("%Y-%m-%d %H%M")}
@@ -78,7 +82,7 @@ def _fetch_eventlist(creds, count):
 def main():
     parsed = parse_args(sys.argv[1:])
     creds = _get_creds(parsed.token, parsed.secrets, parsed.scope)
-    events = _fetch_eventlist(creds, parsed.count)
+    events = _fetch_eventlist(creds, parsed.count, parsed.id)
     data = json.dumps(events)
     print(data)
 
