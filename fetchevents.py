@@ -62,8 +62,15 @@ def _fetch_eventlist(creds, count):
     results = []
     for event in events_result.get('items', []):
         start = event['start'].get('dateTime', event['start'].get('date'))
-        res = {'date': start, 'name': event['summary'], 'description': event.get('description'),
-               'location': event.get('location')}
+        start_dt = datetime.datetime.strptime(start, "%Y-%m-%dT%H:%M:%S%z")
+        # parse date here for the frontend component to use
+        start_details = {"month": start_dt.strftime("%b"), "day": start_dt.day, "year": start_dt.year,
+                         "time": start_dt.strftime("%H:%M"), "datetime": start_dt.strftime("%Y-%m-%d %H%M")}
+        url = next((w for w in event.get('description', '').split() if w.startswith('http')), None)
+        location = ('https://www.google.com/maps/search/?api=1&query={}'.format(event['location'])
+                    if event.get('location') else None)
+        res = {'start': start_details, 'name': event['summary'], 'description': event.get('description', ''),
+               'location': location, 'url': url}
         results.append(res)
     return results
 
