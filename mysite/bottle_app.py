@@ -91,8 +91,7 @@ def get_videos(videos_num, block, all_videos, filename=VIDEOS_FILE):
 def get_events(filename=EVENTS_FILE):
     with open(EVENTS_FILE) as f:
         try:
-            data = json.loads(f.read())
-            return data
+            return json.loads(f.read())
         except:
             return []
 

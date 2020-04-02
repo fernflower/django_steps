@@ -68,12 +68,15 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
         except ValueError:
             start_dt = datetime.datetime.strptime(start, "%Y-%m-%d")
         # parse date here for the frontend component to use
+        # EVENT_LINK found in description will be removed and put as url in google location link
+        # VENUE will be taken from the location (hope we are lucky here) and displayed in the event description
         start_details = {"month": start_dt.strftime("%b"), "day": start_dt.day, "year": start_dt.year,
                          "time": start_dt.strftime("%H:%M"), "datetime": start_dt.strftime("%Y-%m-%d %H%M")}
         url = next((w for w in event.get('description', '').split() if w.startswith('http')), None)
         location = ('https://www.google.com/maps/search/?api=1&query={}'.format(event['location'])
                     if event.get('location') else None)
-        res = {'start': start_details, 'name': event['summary'], 'description': event.get('description', ''),
+        venue = event.get('location').split(',')[0] if location else ''
+        res = {'start': start_details, 'name': event['summary'], 'description': venue,
                'location': location, 'url': url}
         results.append(res)
     return results
