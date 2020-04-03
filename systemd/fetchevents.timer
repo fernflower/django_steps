@@ -1,0 +1,11 @@
+[Unit]
+Description=Run fetchevents every 5 minutes
+Requires=fetchevents.service
+
+[Timer]
+Unit=fetchevents.service
+OnUnitInactiveSec=5m
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

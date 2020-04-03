@@ -27,6 +27,7 @@ DEFAULT_LOCALE = config.get("default", "DEFAULT_LOCALE")
 STATIC_URL = config.get("default", "STATIC_URL")
 VIDEOS_FILE = config.get("default", "VIDEOS_FILE")
 VIDEOS_PER_BLOCK = config.getint("default", "VIDEOS_PER_BLOCK")
+EVENTS_FILE = config.get("default", "EVENTS_FILE")
 
 # XXX refactor this into a class
 translations_map = {}
@@ -87,6 +88,14 @@ def get_videos(videos_num, block, all_videos, filename=VIDEOS_FILE):
     return res, more_videos
 
 
+def get_events(filename=EVENTS_FILE):
+    with open(EVENTS_FILE) as f:
+        try:
+            return json.loads(f.read())
+        except:
+            return []
+
+
 @bottle.route("/get_videos")
 def get_videos_as_json():
 
@@ -108,7 +117,9 @@ def get_videos_as_json():
 @jinja2_view("index.html")
 def index():
     videos, more = get_videos(VIDEOS_PER_BLOCK, 0, ALL_VIDEOS)
+    events = get_events()
     return {"videos": videos,
+            "events": events,
             "more_videos": more,
             "static_url": STATIC_URL}
 

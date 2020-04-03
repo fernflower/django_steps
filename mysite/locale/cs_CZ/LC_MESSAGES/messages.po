@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-07-29 18:12+0200\n"
+"POT-Creation-Date: 2020-04-04 00:33+0200\n"
 "PO-Revision-Date: 2018-07-29 16:13+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs_CZ\n"
@@ -18,70 +18,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: views/index.html:10 views/index.html:11
+#: mysite/views/index.html:10 mysite/views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
 msgstr "Max Makagonov, profesionální hráč na kontrabas a baskytaru"
 
-#: views/index.html:12 views/index.html:58 views/index.html:103
+#: mysite/views/index.html:12 mysite/views/index.html:60
+#: mysite/views/index.html:108
 msgid "Max Makagonov"
 msgstr ""
 
-#: views/index.html:19
+#: mysite/views/index.html:19
 msgid ""
 "Max Makagonov,bass,double bass,bass "
 "guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
 "Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
 msgstr ""
 
-#: views/index.html:22 views/index.html:51
+#: mysite/views/index.html:22 mysite/views/index.html:53
 msgid "Max Makagonov - double bass player"
 msgstr "Max Makagonov - kontrabasista"
 
-#: views/index.html:56
+#: mysite/views/index.html:58
 msgid "Menu"
 msgstr "Menu"
 
-#: views/index.html:68 views/index.html:121
+#: mysite/views/index.html:70 mysite/views/index.html:126
 msgid "Videos"
 msgstr "Videa"
 
-#: views/index.html:71 views/index.html:165
+#: mysite/views/index.html:73 mysite/views/index.html:170
 msgid "About"
 msgstr "O mně"
 
-#: views/index.html:74 views/index.html:223
+#: mysite/views/index.html:76 mysite/views/index.html:222
+msgid "Upcoming Events"
+msgstr "Nadcházející Akce"
+
+#: mysite/views/index.html:79 mysite/views/index.html:266
 msgid "Contact Me"
 msgstr "Kontakt"
 
-#: views/index.html:105
+#: mysite/views/index.html:110
 msgid "Double Bass"
 msgstr "Kontrabas"
 
-#: views/index.html:105
+#: mysite/views/index.html:110
 msgid "Bass Guitar"
 msgstr "Baskytara"
 
-#: views/index.html:154
+#: mysite/views/index.html:159
 msgid "More"
 msgstr "Více"
 
-#: views/index.html:171 views/index.html:178
+#: mysite/views/index.html:176 mysite/views/index.html:183
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Narodil se 6. prosince 1990 v Magnitogorsku v Rusku"
 
-#: views/index.html:172 views/index.html:180
+#: mysite/views/index.html:177 mysite/views/index.html:185
 msgid "Started taking cello lessons at the age of eight"
 msgstr "Ve osmi letech hral na cello"
 
-#: views/index.html:173 views/index.html:181
+#: mysite/views/index.html:178 mysite/views/index.html:186
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
 msgstr ""
-"V roce 2002 nastoupil na  vysokou školu hudby Fryderyka Chopina v "
-"Moskvě, kde začal hrát na kontrabas"
+"V roce 2002 nastoupil na  vysokou školu hudby Fryderyka Chopina v Moskvě,"
+" kde začal hrát na kontrabas"
 
-#: views/index.html:174 views/index.html:182
+#: mysite/views/index.html:179 mysite/views/index.html:187
 msgid ""
 "During school years garnered top prizes in numerous musical competitions,"
 " including Young talents of Moscovia, Young composers Moscow, III "
@@ -92,7 +97,7 @@ msgstr ""
 "soutěže mladých talentů Moscovy, mladých skladatelů Moskvy, III "
 "mezinárodní soutěže mladých hudebníků a Forum Festivaul v Petrohradě"
 
-#: views/index.html:175 views/index.html:185
+#: mysite/views/index.html:180 mysite/views/index.html:190
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
@@ -110,7 +115,7 @@ msgstr ""
 " v Moskevské státní univerzitě pod vedením V. A Kreisberga, Averkin Big "
 "Band, Jazzyl Big Band"
 
-#: views/index.html:176 views/index.html:189
+#: mysite/views/index.html:181 mysite/views/index.html:194
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, "
 "Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
@@ -122,7 +127,7 @@ msgstr ""
 "Evgeniem Pobozhym, Sergeyem Osokinem, Grigorijem Seredinym, Yaroslavou "
 "Simonovou, Ivanem Dymou, Andreem Becarrou a dalšími"
 
-#: views/index.html:177 views/index.html:192
+#: mysite/views/index.html:182 mysite/views/index.html:197
 msgid ""
 "Participated in numerous jazz festivals and competitions, including "
 "Gnesin Jazz, Moscow State College of Pop and Jazz Art piano & guitar "
@@ -134,7 +139,7 @@ msgstr ""
 "umění, AquaJazz, Jazz sezóny Igora Butmana, Jazz May Penza, Festival "
 "1Jazz.ru"
 
-#: views/index.html:189
+#: mysite/views/index.html:194
 msgid ""
 "Was a member of All-Russia State Television and Radio Broadcasting "
 "Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
@@ -144,67 +149,66 @@ msgstr ""
 "pod vedením Jurije Medianika a se podílel na nahrávání sezon All-ruské "
 "soutěži mladých talentů"
 
-#: views/index.html:189
+#: mysite/views/index.html:194
 msgid "in 2016-2018"
 msgstr "v letech 2016-2018"
 
-#: views/index.html:195
+#: mysite/views/index.html:200
 msgid "Since March 2018 lives in Prague, Czech Republic"
 msgstr "Od března 2018 bydlí v Praze, Česká republika"
 
-#: views/index.html:200
-msgid "Technical Rider"
-msgstr ""
-
-#: views/index.html:235
+#: mysite/views/index.html:278
 msgid "Name"
 msgstr "Jmeno"
 
-#: views/index.html:235
+#: mysite/views/index.html:278
 msgid "Please enter your name."
 msgstr "Zadejte své jméno."
 
-#: views/index.html:242
+#: mysite/views/index.html:285
 msgid "Email Address"
 msgstr "Email"
 
-#: views/index.html:242
+#: mysite/views/index.html:285
 msgid "Please enter your email address."
 msgstr "Prosím zadejte svou e-mailovou adresu."
 
-#: views/index.html:249
+#: mysite/views/index.html:292
 msgid "Phone Number"
 msgstr "Telefonní číslo"
 
-#: views/index.html:249
+#: mysite/views/index.html:292
 msgid "Please enter your phone number."
 msgstr "Zadejte své telefonní číslo"
 
-#: views/index.html:256
+#: mysite/views/index.html:299
 msgid "Message"
 msgstr "Zpráva"
 
-#: views/index.html:256
+#: mysite/views/index.html:299
 msgid "Please enter a message."
 msgstr "Zadejte prosím zprávu"
 
-#: views/index.html:264
+#: mysite/views/index.html:307
 msgid "Send"
 msgstr "Odeslat"
 
-#: views/index.html:279
+#: mysite/views/index.html:322
 msgid "Location"
 msgstr "Umístění"
 
-#: views/index.html:280
+#: mysite/views/index.html:323
 msgid "Prague, Czech Republic"
 msgstr "Praha, Česká republika"
 
-#: views/index.html:285
+#: mysite/views/index.html:328
 msgid "Around the Web"
 msgstr "Na webu"
 
-#: views/index.html:305
+#: mysite/views/index.html:348
 msgid "See also"
 msgstr "Viz také"
+
+#~ msgid "Technical Rider"
+#~ msgstr ""
 

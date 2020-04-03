@@ -25,6 +25,7 @@
     <link href="/{{static_url}}/freelancer/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
+    <link href="/{{static_url}}/mysite.css" rel="stylesheet">
     <link href="/{{static_url}}/freelancer/css/freelancer.min.css" rel="stylesheet">
     <!-- Flags css -->
     <link href="/{{static_url}}/flag-icon-css-master/css/flag-icon.min.css" rel="stylesheet">
@@ -33,6 +34,7 @@
     <link href="/{{static_url}}/freelancer/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,6 +71,9 @@
                     </li>
                     <li class="page-scroll">
                         <a itemprop="url" href="#about">{% trans %}About{% endtrans %}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#events">{% trans %}Upcoming Events{% endtrans %}</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">{% trans %}Contact Me{% endtrans %}</a>
@@ -209,6 +214,49 @@
         </span>
         <meta itemprop="name" content="fernflower">
     </span>
+
+    <section id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{% trans %}Upcoming Events{% endtrans %}</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            {% block events_list %}
+            {% for event in events %}
+            <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                <ul class="event-list">
+                    <li>
+                        <time datetime="{{event.start.datetime}}">
+                            <span class="day">{{event.start.day}}</span>
+                            <span class="month">{{event.start.month}}</span>
+                            <span class="year">{{event.start.year}}</span>
+                            <span class="time">{{event.start.time}}</span>
+                        </time>
+                        <div class="info">
+                            <h2 class="title">{{ event.name }}</h2>
+                            <p class="desc">{{ event.description }}</p>
+                        </div>
+                        <div class="social">
+                            <ul>
+                                {% if event.url %}
+                                <li class="tickets" style="width:33%;"><a href="{{event.url}}" target="_blank"><span class="fa fa-ticket"></span></a></li>
+                                {% endif %}
+                                {% if event.location %}
+                                <li class="tickets" style="width:33%;"><a href="{{event.location}}" target="_blank"><span class="fa fa-map-marker"></span></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            {% endfor %}
+            {% endblock %}
+        </div>
+    </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
