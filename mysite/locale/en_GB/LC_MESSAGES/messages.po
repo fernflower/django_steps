@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-09-11 00:22+0300\n"
+"POT-Creation-Date: 2020-04-04 00:33+0200\n"
 "PO-Revision-Date: 2017-09-11 00:55+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_GB\n"
@@ -16,78 +16,75 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.5.0\n"
+"Generated-By: Babel 2.7.0\n"
 
-#: mysite/settings.py:102
-msgid "English"
-msgstr ""
-
-#: mysite/settings.py:103
-msgid "Russian"
-msgstr ""
-
-#: views/index.html:10 views/index.html:11
+#: mysite/views/index.html:10 mysite/views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
 msgstr ""
 
-#: views/index.html:12 views/index.html:57 views/index.html:99
+#: mysite/views/index.html:12 mysite/views/index.html:60
+#: mysite/views/index.html:108
 msgid "Max Makagonov"
 msgstr ""
 
-#: views/index.html:18
+#: mysite/views/index.html:19
 msgid ""
 "Max Makagonov,bass,double bass,bass "
 "guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
 "Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
 msgstr ""
 
-#: views/index.html:21 views/index.html:50
+#: mysite/views/index.html:22 mysite/views/index.html:53
 msgid "Max Makagonov - double bass player"
 msgstr ""
 
-#: views/index.html:55
+#: mysite/views/index.html:58
 msgid "Menu"
 msgstr ""
 
-#: views/index.html:67 views/index.html:117
+#: mysite/views/index.html:70 mysite/views/index.html:126
 msgid "Videos"
 msgstr ""
 
-#: views/index.html:70 views/index.html:161
+#: mysite/views/index.html:73 mysite/views/index.html:170
 msgid "About"
 msgstr ""
 
-#: views/index.html:73 views/index.html:216
+#: mysite/views/index.html:76 mysite/views/index.html:222
+msgid "Upcoming Events"
+msgstr ""
+
+#: mysite/views/index.html:79 mysite/views/index.html:266
 msgid "Contact Me"
 msgstr ""
 
-#: views/index.html:101
+#: mysite/views/index.html:110
 msgid "Double Bass"
 msgstr ""
 
-#: views/index.html:101
+#: mysite/views/index.html:110
 msgid "Bass Guitar"
 msgstr ""
 
-#: views/index.html:150
+#: mysite/views/index.html:159
 msgid "More"
 msgstr ""
 
-#: views/index.html:167 views/index.html:174
+#: mysite/views/index.html:176 mysite/views/index.html:183
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr ""
 
-#: views/index.html:168 views/index.html:176
+#: mysite/views/index.html:177 mysite/views/index.html:185
 msgid "Started taking cello lessons at the age of eight"
 msgstr ""
 
-#: views/index.html:169 views/index.html:177
+#: mysite/views/index.html:178 mysite/views/index.html:186
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
 msgstr ""
 
-#: views/index.html:170 views/index.html:178
+#: mysite/views/index.html:179 mysite/views/index.html:187
 msgid ""
 "During school years garnered top prizes in numerous musical competitions,"
 " including Young talents of Moscovia, Young composers Moscow, III "
@@ -95,18 +92,18 @@ msgid ""
 "Petersburg"
 msgstr ""
 
-#: views/index.html:171 views/index.html:181
+#: mysite/views/index.html:180 mysite/views/index.html:190
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
 " time was a member of several orchestras, including chamber orchestra of "
-"Moscow Conservatory directed by F. P. Korobov, Entre Nous orchestra "
-"directed by A. Karimov (Grand Prix at Young Prague festival, Prague "
+"Moscow Conservatory conducted by F. P. Korobov, Entre Nous orchestra "
+"conducted by A. Karimov (Grand Prix at Young Prague festival, Prague "
 "2011), Moscow State University Theater of Ancient music orchestra "
-"directed by V. A. Kreisberg, Averkin's Big Bang, JazZyl Big Band"
+"conducted by V. A. Kreisberg, Averkin's Big Band, JazZyl Big Band"
 msgstr ""
 
-#: views/index.html:172 views/index.html:185
+#: mysite/views/index.html:181 mysite/views/index.html:194
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, "
 "Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
@@ -114,67 +111,116 @@ msgid ""
 "and others"
 msgstr ""
 
-#: views/index.html:173 views/index.html:188
+#: mysite/views/index.html:182 mysite/views/index.html:197
 msgid ""
 "Participated in numerous jazz festivals and competitions, including "
-"Gnesin Jazz, State college of Music pop & jazz art Guitar & Piano "
-"competions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
+"Gnesin Jazz, Moscow State College of Pop and Jazz Art piano & guitar "
+"competitions, AquaJazz, Igor Butman's Jazz seasons, Jazz May Penza, "
 "1Jazz.ru Festival"
 msgstr ""
 
-#: views/index.html:193
-msgid "Technical Rider"
+#: mysite/views/index.html:194
+msgid ""
+"Was a member of All-Russia State Television and Radio Broadcasting "
+"Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
+"of young talents"
 msgstr ""
 
-#: views/index.html:228
+#: mysite/views/index.html:194
+msgid "in 2016-2018"
+msgstr ""
+
+#: mysite/views/index.html:200
+msgid "Since March 2018 lives in Prague, Czech Republic"
+msgstr ""
+
+#: mysite/views/index.html:278
 msgid "Name"
 msgstr ""
 
-#: views/index.html:228
+#: mysite/views/index.html:278
 msgid "Please enter your name."
 msgstr ""
 
-#: views/index.html:235
+#: mysite/views/index.html:285
 msgid "Email Address"
 msgstr ""
 
-#: views/index.html:235
+#: mysite/views/index.html:285
 msgid "Please enter your email address."
 msgstr ""
 
-#: views/index.html:242
+#: mysite/views/index.html:292
 msgid "Phone Number"
 msgstr ""
 
-#: views/index.html:242
+#: mysite/views/index.html:292
 msgid "Please enter your phone number."
 msgstr ""
 
-#: views/index.html:249
+#: mysite/views/index.html:299
 msgid "Message"
 msgstr ""
 
-#: views/index.html:249
+#: mysite/views/index.html:299
 msgid "Please enter a message."
 msgstr ""
 
-#: views/index.html:257
+#: mysite/views/index.html:307
 msgid "Send"
 msgstr ""
 
-#: views/index.html:272
+#: mysite/views/index.html:322
 msgid "Location"
 msgstr ""
 
-#: views/index.html:273
-msgid "Moscow, Russia"
+#: mysite/views/index.html:323
+msgid "Prague, Czech Republic"
 msgstr ""
 
-#: views/index.html:278
+#: mysite/views/index.html:328
 msgid "Around the Web"
 msgstr ""
 
-#: views/index.html:295
+#: mysite/views/index.html:348
 msgid "See also"
 msgstr ""
+
+#~ msgid "English"
+#~ msgstr ""
+
+#~ msgid "Russian"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Was a student of Moscow State "
+#~ "Tchaikovsky Conservatory throughout 2009 - "
+#~ "2012, graduated from Maimonides State "
+#~ "Classical Academy in 2015.  At that "
+#~ "time was a member of several "
+#~ "orchestras, including chamber orchestra of "
+#~ "Moscow Conservatory directed by F. P."
+#~ " Korobov, Entre Nous orchestra directed "
+#~ "by A. Karimov (Grand Prix at Young"
+#~ " Prague festival, Prague 2011), Moscow "
+#~ "State University Theater of Ancient "
+#~ "music orchestra directed by V. A. "
+#~ "Kreisberg, Averkin's Big Bang, JazZyl "
+#~ "Big Band"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Participated in numerous jazz festivals "
+#~ "and competitions, including Gnesin Jazz, "
+#~ "State college of Music pop & jazz"
+#~ " art Guitar & Piano competions, "
+#~ "AquaJazz, Igor Butman's Jazz seasons, "
+#~ "Jazz May Penza, 1Jazz.ru Festival"
+#~ msgstr ""
+
+#~ msgid "Technical Rider"
+#~ msgstr ""
+
+#~ msgid "Moscow, Russia"
+#~ msgstr ""
 

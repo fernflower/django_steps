@@ -73,7 +73,7 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
         start_details = {"month": start_dt.strftime("%b"), "day": start_dt.day, "year": start_dt.year,
                          "time": start_dt.strftime("%H:%M"), "datetime": start_dt.strftime("%Y-%m-%d %H%M")}
         url = next((w for w in event.get('description', '').split() if w.startswith('http')), None)
-        location = ('https://www.google.com/maps/search/?api=1&query={}'.format(event['location'])
+        location = ('https://www.google.com/maps/search/?api=1&query={}'.format(event['location'].replace('&', '%26'))
                     if event.get('location') else None)
         venue = event.get('location').split(',')[0] if location else ''
         res = {'start': start_details, 'name': event['summary'], 'description': venue,
