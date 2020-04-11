@@ -24,6 +24,7 @@ def parse_args(args):
     parser.add_argument('--scope', action='append', default=SCOPES,
                         help='Additional scopes to parse, default is {}'.format(SCOPES[0]))
     parser.add_argument('--id', default='primary', help='Calendar id, default is primary')
+    parser.add_argument('--output', help='File to save fetched results')
     return parser.parse_args(args)
 
 
@@ -61,12 +62,20 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
                                           maxResults=count, singleEvents=True,
                                           orderBy='startTime').execute()
     results = []
+
+    def parse_date(sate, date_format):
+        try:
+            return datetime.datetime.strptime(start, date_format)
+        except ValueError:
+            return None
+
     for event in events_result.get('items', []):
         start = event['start'].get('dateTime', event['start'].get('date'))
-        try:
-            start_dt = datetime.datetime.strptime(start, "%Y-%m-%dT%H:%M:%S%z")
-        except ValueError:
-            start_dt = datetime.datetime.strptime(start, "%Y-%m-%d")
+        start_dt = parse_date(start, "%Y-%m-%dT%H:%M:%S%z")
+        start_dt = start_dt if start_dt else parse_date(start, "%Y-%m-%d")
+        if not start_dt:
+            # don't know how to parse date, skipping event
+            continue
         # parse date here for the frontend component to use
         # EVENT_LINK found in description will be removed and put as url in google location link
         # VENUE will be taken from the location (hope we are lucky here) and displayed in the event description
@@ -84,10 +93,14 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
 
 def main():
     parsed = parse_args(sys.argv[1:])
-    creds = _get_creds(parsed.token, parsed.secrets, parsed.scope)
-    events = _fetch_eventlist(creds, parsed.count, parsed.id)
-    data = json.dumps(events)
-    print(data)
+    try:
+       creds = _get_creds(parsed.token, parsed.secrets, parsed.scope)
+       events = _fetch_eventlist(creds, parsed.count, parsed.id)
+       output = open(parsed.output, 'w') if parsed.output else sys.stdout
+       json.dump(events, output)
+    except Exception as e:
+        # XXX FIXME in desperate need of proper logging
+        print("An error has occurred: {}". format(str(e)))
 
 if __name__ == '__main__':
     main()
