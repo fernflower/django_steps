@@ -63,7 +63,7 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
                                           orderBy='startTime').execute()
     results = []
 
-    def parse_date(sate, date_format):
+    def parse_date(start, date_format):
         try:
             return datetime.datetime.strptime(start, date_format)
         except ValueError:
@@ -72,7 +72,10 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
     for event in events_result.get('items', []):
         start = event['start'].get('dateTime', event['start'].get('date'))
         start_dt = parse_date(start, "%Y-%m-%dT%H:%M:%S%z")
-        start_dt = start_dt if start_dt else parse_date(start, "%Y-%m-%d")
+        start_dt = next((parse_date(start, f) for f in ["%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d"] if parse_date(start, f)), None)
+        # XXX FIXME A quick hack, figure out why dateparsing of +offset is inconsistent on different machines
+        # (python 3 version?)
+        start_dt = start_dt if start_dt else parse_date(start.split('+')[0], "%Y-%m-%dT%H:%M:%S")
         if not start_dt:
             # don't know how to parse date, skipping event
             continue
