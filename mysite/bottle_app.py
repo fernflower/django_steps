@@ -9,6 +9,8 @@ from babel import support
 import bottle
 import jinja2
 
+import utils
+
 # setup logging
 logging.basicConfig()
 LOG = logging.getLogger(__name__)
@@ -128,27 +130,15 @@ def index():
 def send_mail():
     data = bottle.request.forms
     try:
-        server = smtplib.SMTP()
-        server.connect(config.get("mail", "EMAIL_HOST"),
-                       config.getint("mail", "EMAIL_PORT"))
-        server.ehlo()
-        server.starttls()
-        server.ehlo()
-        server.login(config.get("mail", "EMAIL_HOST_USER"),
-                     config.get("mail", "EMAIL_HOST_PASSWORD"))
+        service = utils.get_gmail_service(config.get("mail", "EMAIL_TOKEN_FILE"),
+                                          config.get("mail", "EMAIL_CREDENTIALS_FILE"))
+        to_addrs = [addr.strip() for addr in config.get("mail", "EMAIL_RECIPIENT_LIST").split(',') if addr.strip()]
         subject = ("A message from %(email)s AKA %(name)s (%(phone)s)" %
                    {"name": data.get('name'),
                     "phone": data.get('phone'),
                     "email": data.get('email')})
-        to_addrs = [s for s in config.get("mail",
-                                          "EMAIL_RECIPIENT_LIST").split(',')
-                    if s.strip() != ""]
-        server.sendmail(from_addr=data.email,
-                        to_addrs=to_addrs,
-                        msg="Subject: %(subject)s\n\n%(message)s" % {
-                            "message": data.get('message'),
-                            "subject": subject})
-        server.quit()
+        for addr in to_addrs:
+            utils.send_mail(addr, subject, data.get('message'), service)
     except:
         LOG.error("failed to send email")
 

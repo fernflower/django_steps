@@ -7,8 +7,8 @@ import os.path
 import sys
 
 from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
+
+import utils
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
@@ -26,29 +26,6 @@ def parse_args(args):
     parser.add_argument('--id', default='primary', help='Calendar id, default is primary')
     parser.add_argument('--output', help='File to save fetched results')
     return parser.parse_args(args)
-
-
-def _get_creds(token_file, secrets_file, scopes):
-    """Get credentials for google calendar access"""
-
-    creds = None
-    # The file token.pickle stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
-    if os.path.exists(token_file):
-        with open(token_file, 'rb') as token:
-            creds = pickle.load(token)
-    # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(secrets_file, scopes)
-            creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
-        with open(token_file, 'wb') as token:
-            pickle.dump(creds, token)
-    return creds
 
 
 def _fetch_eventlist(creds, count, calendar_id='primary'):
@@ -97,7 +74,7 @@ def _fetch_eventlist(creds, count, calendar_id='primary'):
 def main():
     parsed = parse_args(sys.argv[1:])
     try:
-       creds = _get_creds(parsed.token, parsed.secrets, parsed.scope)
+       creds = utils.get_creds(parsed.token, parsed.secrets, parsed.scope)
        events = _fetch_eventlist(creds, parsed.count, parsed.id)
        output = open(parsed.output, 'w') if parsed.output else sys.stdout
        json.dump(events, output)
