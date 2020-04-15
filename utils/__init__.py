@@ -38,13 +38,13 @@ def get_gmail_service(token_file, secrets_file):
 
 
 def send_mail(to, subject, text, service):
+    """
+    Sends an email with given subject and text to address in to.
+    Return HttpError in case of failure.
+    """
     message = MIMEText(text)
     message['to'] = to
     message['from'] = 'me'
     message['subject'] = subject
     msg_to_send = {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode('utf-8')}
-    try:
-        return service.users().messages().send(userId="me", body=msg_to_send).execute()
-    except errors.HttpError as error:
-        # XXX FIXME logging
-        print('An error occurred: %s' % error)
+    return service.users().messages().send(userId="me", body=msg_to_send).execute()

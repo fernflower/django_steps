@@ -3,10 +3,8 @@ ARG nginx_port=8888
 ENV NGINX_PORT=$nginx_port
 ENV NGINX_HOST=0.0.0.0
 ENV STATIC_URL=max_static
-ENV EMAIL_HOST=smtp.gmail.com
-ENV EMAIL_PORT=587
-ENV EMAIL_HOST_USER=NOONE@gmail.com
-ENV EMAIL_HOST_PASSWORD=NOONESPASS
+ENV EMAIL_CREDENTIALS_FILE=common_static/files/credentials_email.json
+ENV EMAIL_TOKEN_FILE=common_static/files/token_email.pickle
 ENV EMAIL_RECIPIENT_LIST=NOONE@gmail.com,
 
 RUN apt-get update && \
@@ -34,9 +32,6 @@ RUN ln -s /etc/nginx/sites-available/maxmakagonov /etc/nginx/sites-enabled/maxma
 
 # create uswgi.ini and start uwsgi server
 RUN j2 /django_steps/docker_templates/uwsgi.j2 > /django_steps/uwsgi_steps.ini
-
-# create config.ini from env vars
-RUN j2 /django_steps/docker_templates/config.j2 > /django_steps/mysite/config.ini
 
 EXPOSE $NGINX_PORT
 

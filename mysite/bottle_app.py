@@ -129,18 +129,18 @@ def index():
 @bottle.route("/contact_me", method="POST")
 def send_mail():
     data = bottle.request.forms
-    try:
-        service = utils.get_gmail_service(config.get("mail", "EMAIL_TOKEN_FILE"),
-                                          config.get("mail", "EMAIL_CREDENTIALS_FILE"))
-        to_addrs = [addr.strip() for addr in config.get("mail", "EMAIL_RECIPIENT_LIST").split(',') if addr.strip()]
-        subject = ("A message from %(email)s AKA %(name)s (%(phone)s)" %
-                   {"name": data.get('name'),
-                    "phone": data.get('phone'),
-                    "email": data.get('email')})
-        for addr in to_addrs:
+    service = utils.get_gmail_service(config.get("mail", "EMAIL_TOKEN_FILE"),
+                                      config.get("mail", "EMAIL_CREDENTIALS_FILE"))
+    to_addrs = [addr.strip() for addr in config.get("mail", "EMAIL_RECIPIENT_LIST").split(',') if addr.strip()]
+    subject = ("A message from %(email)s AKA %(name)s (%(phone)s)" %
+               {"name": data.get('name'),
+                "phone": data.get('phone'),
+                "email": data.get('email')})
+    for addr in to_addrs:
+        try:
             utils.send_mail(addr, subject, data.get('message'), service)
-    except:
-        LOG.error("failed to send email")
+        except Exception as e:
+            LOG.error("failed to send email to {}: {}".format(addr, e))
 
 
 app = bottle.default_app()
