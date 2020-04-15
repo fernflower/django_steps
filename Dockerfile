@@ -3,7 +3,7 @@ ARG nginx_port=8888
 ENV NGINX_PORT=$nginx_port
 ENV NGINX_HOST=0.0.0.0
 ENV STATIC_URL=max_static
-ENV EMAIL_CREDENTIALS_FILE=common_static/files/credentials_email.json
+ENV EMAIL_CREDENTIALS_FILE=common_static/files/credentials.json
 ENV EMAIL_TOKEN_FILE=common_static/files/token_email.pickle
 ENV EMAIL_RECIPIENT_LIST=NOONE@gmail.com,
 
