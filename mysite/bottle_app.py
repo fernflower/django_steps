@@ -133,12 +133,12 @@ def send_mail():
                                       config.get("mail", "EMAIL_CREDENTIALS_FILE"))
     to_addrs = [addr.strip() for addr in config.get("mail", "EMAIL_RECIPIENT_LIST").split(',') if addr.strip()]
     subject = ("A message from %(email)s AKA %(name)s (%(phone)s)" %
-               {"name": data.get('name'),
-                "phone": data.get('phone'),
-                "email": data.get('email')})
+               {"name": data.name,
+                "phone": data.phone,
+                "email": data.email})
     for addr in to_addrs:
         try:
-            utils.send_mail(addr, subject, data.get('message'), service)
+            utils.send_mail(addr, subject, data.message, service)
         except Exception as e:
             LOG.error("failed to send email to {}: {}".format(addr, e))
 
