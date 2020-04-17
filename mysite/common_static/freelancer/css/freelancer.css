@@ -31,7 +31,9 @@ h6 {
   font-weight: 700;
 }
 hr.star-light,
-hr.star-primary {
+hr.star-primary,
+hr.star-on-black,
+hr.star-on-green {
   padding: 0;
   border: none;
   border-top: solid 5px;
@@ -40,7 +42,9 @@ hr.star-primary {
   margin: 25px auto 30px;
 }
 hr.star-light:after,
-hr.star-primary:after {
+hr.star-primary:after,
+hr.star-on-black:after,
+hr.star-on-green:after {
   content: "\f005";
   font-family: FontAwesome;
   display: inline-block;
@@ -62,6 +66,20 @@ hr.star-primary {
 hr.star-primary:after {
   background-color: white;
   color: #36383a;
+}
+hr.star-on-green {
+  border-color: white;
+}
+hr.star-on-green:after {
+  background-color: #18BC9C;
+  color: white;
+}
+hr.star-on-black {
+  border-color: white;
+}
+hr.star-on-black:after {
+  background-color: #0e0f0f;
+  color: white;
 }
 .img-centered {
   margin: 0 auto;
