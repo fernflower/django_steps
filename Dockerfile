@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.22
+FROM phusion/baseimage:0.11
 ARG nginx_port=8888
 ENV NGINX_PORT=$nginx_port
 ENV NGINX_HOST=0.0.0.0
@@ -13,7 +13,7 @@ RUN apt-get update && \
         python3-venv \
         git \
         nginx \
-        python3.4 \
+        python3.6 \
         python-dev && \
     rm -rf /var/lib/apt/lists && \
     pip3 install j2cli
