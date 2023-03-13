@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-04 00:33+0200\n"
+"POT-Creation-Date: 2023-03-13 23:45+0100\n"
 "PO-Revision-Date: 2017-09-11 00:55+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_GB\n"
@@ -18,73 +18,72 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: mysite/views/index.html:10 mysite/views/index.html:11
+#: views/index.html:10 views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
 msgstr ""
 
-#: mysite/views/index.html:12 mysite/views/index.html:60
-#: mysite/views/index.html:108
+#: views/index.html:12 views/index.html:60 views/index.html:108
 msgid "Max Makagonov"
 msgstr ""
 
-#: mysite/views/index.html:19
+#: views/index.html:19
 msgid ""
 "Max Makagonov,bass,double bass,bass "
 "guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
 "Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
 msgstr ""
 
-#: mysite/views/index.html:22 mysite/views/index.html:53
+#: views/index.html:22 views/index.html:53
 msgid "Max Makagonov - double bass player"
 msgstr ""
 
-#: mysite/views/index.html:58
+#: views/index.html:58
 msgid "Menu"
 msgstr ""
 
-#: mysite/views/index.html:70 mysite/views/index.html:126
+#: views/index.html:70 views/index.html:126
 msgid "Videos"
 msgstr ""
 
-#: mysite/views/index.html:73 mysite/views/index.html:170
+#: views/index.html:73 views/index.html:170
 msgid "About"
 msgstr ""
 
-#: mysite/views/index.html:76 mysite/views/index.html:222
+#: views/index.html:76 views/index.html:222
 msgid "Upcoming Events"
 msgstr ""
 
-#: mysite/views/index.html:79 mysite/views/index.html:266
+#: views/index.html:79 views/index.html:266
 msgid "Contact Me"
 msgstr ""
 
-#: mysite/views/index.html:110
+#: views/index.html:110
 msgid "Double Bass"
 msgstr ""
 
-#: mysite/views/index.html:110
+#: views/index.html:110
 msgid "Bass Guitar"
 msgstr ""
 
-#: mysite/views/index.html:159
+#: views/index.html:159
 msgid "More"
 msgstr ""
 
-#: mysite/views/index.html:176 mysite/views/index.html:183
+#: views/index.html:176 views/index.html:183
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr ""
 
-#: mysite/views/index.html:177 mysite/views/index.html:185
+#: views/index.html:177 views/index.html:185
 msgid "Started taking cello lessons at the age of eight"
 msgstr ""
 
-#: mysite/views/index.html:178 mysite/views/index.html:186
+#: views/index.html:178 views/index.html:186
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
 msgstr ""
 
-#: mysite/views/index.html:179 mysite/views/index.html:187
+#: views/index.html:179 views/index.html:187
 msgid ""
 "During school years garnered top prizes in numerous musical competitions,"
 " including Young talents of Moscovia, Young composers Moscow, III "
@@ -92,7 +91,7 @@ msgid ""
 "Petersburg"
 msgstr ""
 
-#: mysite/views/index.html:180 mysite/views/index.html:190
+#: views/index.html:180 views/index.html:190
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
@@ -103,7 +102,7 @@ msgid ""
 "conducted by V. A. Kreisberg, Averkin's Big Band, JazZyl Big Band"
 msgstr ""
 
-#: mysite/views/index.html:181 mysite/views/index.html:194
+#: views/index.html:181 views/index.html:194
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, "
 "Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
@@ -111,7 +110,7 @@ msgid ""
 "and others"
 msgstr ""
 
-#: mysite/views/index.html:182 mysite/views/index.html:197
+#: views/index.html:182 views/index.html:197
 msgid ""
 "Participated in numerous jazz festivals and competitions, including "
 "Gnesin Jazz, Moscow State College of Pop and Jazz Art piano & guitar "
@@ -119,70 +118,75 @@ msgid ""
 "1Jazz.ru Festival"
 msgstr ""
 
-#: mysite/views/index.html:194
+#: views/index.html:194
 msgid ""
 "Was a member of All-Russia State Television and Radio Broadcasting "
 "Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
 "of young talents"
 msgstr ""
 
-#: mysite/views/index.html:194
+#: views/index.html:194
 msgid "in 2016-2018"
 msgstr ""
 
-#: mysite/views/index.html:200
-msgid "Since March 2018 lives in Prague, Czech Republic"
+#: views/index.html:200
+msgid ""
+"Since March 2018 lives in Prague, Czech Republic, where he has become a "
+"big part of the local jazz community. Works with many Prague-based "
+"musicians and bands, like Allison Wheeler, Daniel Bulatkin, Crossover "
+"Quintet, Jan Smigmator, Cyrille Oswald, Agnieszka Twardoch, Prague Film "
+"Orchestra and others"
 msgstr ""
 
-#: mysite/views/index.html:278
+#: views/index.html:278
 msgid "Name"
 msgstr ""
 
-#: mysite/views/index.html:278
+#: views/index.html:278
 msgid "Please enter your name."
 msgstr ""
 
-#: mysite/views/index.html:285
+#: views/index.html:285
 msgid "Email Address"
 msgstr ""
 
-#: mysite/views/index.html:285
+#: views/index.html:285
 msgid "Please enter your email address."
 msgstr ""
 
-#: mysite/views/index.html:292
+#: views/index.html:292
 msgid "Phone Number"
 msgstr ""
 
-#: mysite/views/index.html:292
+#: views/index.html:292
 msgid "Please enter your phone number."
 msgstr ""
 
-#: mysite/views/index.html:299
+#: views/index.html:299
 msgid "Message"
 msgstr ""
 
-#: mysite/views/index.html:299
+#: views/index.html:299
 msgid "Please enter a message."
 msgstr ""
 
-#: mysite/views/index.html:307
+#: views/index.html:307
 msgid "Send"
 msgstr ""
 
-#: mysite/views/index.html:322
+#: views/index.html:322
 msgid "Location"
 msgstr ""
 
-#: mysite/views/index.html:323
+#: views/index.html:323
 msgid "Prague, Czech Republic"
 msgstr ""
 
-#: mysite/views/index.html:328
+#: views/index.html:328
 msgid "Around the Web"
 msgstr ""
 
-#: mysite/views/index.html:348
+#: views/index.html:348
 msgid "See also"
 msgstr ""
 
@@ -222,5 +226,19 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Moscow, Russia"
+#~ msgstr ""
+
+#~ msgid "Since March 2018 lives in Prague, Czech Republic"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Since March 2018 lives in Prague, "
+#~ "Czech Republic, where he became a "
+#~ "big part of local jazz community. "
+#~ "Works with many Prague-based musicians"
+#~ " and bands, like Allison Wheeler, "
+#~ "Daniel Bulatkin, Crossover Quintet, Jan "
+#~ "Smigmator, Cyrille Oswald, Agnieszka Twardoch,"
+#~ " Prague Film Orchestra and others"
 #~ msgstr ""
 
