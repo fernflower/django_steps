@@ -144,3 +144,6 @@ def send_mail():
 
 
 app = bottle.default_app()
+
+if __name__ == "__main__":
+    bottle.run(app, host='localhost', port=8888)
