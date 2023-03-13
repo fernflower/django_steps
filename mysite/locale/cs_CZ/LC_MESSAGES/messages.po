@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-04 00:33+0200\n"
+"POT-Creation-Date: 2023-03-13 23:45+0100\n"
 "PO-Revision-Date: 2018-07-29 16:13+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cs_CZ\n"
@@ -18,67 +18,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: mysite/views/index.html:10 mysite/views/index.html:11
+#: views/index.html:10 views/index.html:11
 msgid "Max Makagonov, professional multi-genre double bass/bass guitar player"
 msgstr "Max Makagonov, profesionální hráč na kontrabas a baskytaru"
 
-#: mysite/views/index.html:12 mysite/views/index.html:60
-#: mysite/views/index.html:108
+#: views/index.html:12 views/index.html:60 views/index.html:108
 msgid "Max Makagonov"
 msgstr ""
 
-#: mysite/views/index.html:19
+#: views/index.html:19
 msgid ""
 "Max Makagonov,bass,double bass,bass "
 "guitar,jazz,funk,rock,pop,classical,music,Moscow,maxmakagonov.com,Maxim "
 "Makagonov,Maksim Makagonov,Magnitogorsk,musician,professional"
 msgstr ""
 
-#: mysite/views/index.html:22 mysite/views/index.html:53
+#: views/index.html:22 views/index.html:53
 msgid "Max Makagonov - double bass player"
 msgstr "Max Makagonov - kontrabasista"
 
-#: mysite/views/index.html:58
+#: views/index.html:58
 msgid "Menu"
 msgstr "Menu"
 
-#: mysite/views/index.html:70 mysite/views/index.html:126
+#: views/index.html:70 views/index.html:126
 msgid "Videos"
 msgstr "Videa"
 
-#: mysite/views/index.html:73 mysite/views/index.html:170
+#: views/index.html:73 views/index.html:170
 msgid "About"
 msgstr "O mně"
 
-#: mysite/views/index.html:76 mysite/views/index.html:222
+#: views/index.html:76 views/index.html:222
 msgid "Upcoming Events"
 msgstr "Nadcházející Akce"
 
-#: mysite/views/index.html:79 mysite/views/index.html:266
+#: views/index.html:79 views/index.html:266
 msgid "Contact Me"
 msgstr "Kontakt"
 
-#: mysite/views/index.html:110
+#: views/index.html:110
 msgid "Double Bass"
 msgstr "Kontrabas"
 
-#: mysite/views/index.html:110
+#: views/index.html:110
 msgid "Bass Guitar"
 msgstr "Baskytara"
 
-#: mysite/views/index.html:159
+#: views/index.html:159
 msgid "More"
 msgstr "Více"
 
-#: mysite/views/index.html:176 mysite/views/index.html:183
+#: views/index.html:176 views/index.html:183
 msgid "Born in December 06, 1990 in Magnitogorsk, Russia"
 msgstr "Narodil se 6. prosince 1990 v Magnitogorsku v Rusku"
 
-#: mysite/views/index.html:177 mysite/views/index.html:185
+#: views/index.html:177 views/index.html:185
 msgid "Started taking cello lessons at the age of eight"
 msgstr "Ve osmi letech hral na cello"
 
-#: mysite/views/index.html:178 mysite/views/index.html:186
+#: views/index.html:178 views/index.html:186
 msgid ""
 "In 2002 passed audition to Moscow Frederic Chopin College of Music "
 "Performing where took up the double bass"
@@ -86,7 +85,7 @@ msgstr ""
 "V roce 2002 nastoupil na  vysokou školu hudby Fryderyka Chopina v Moskvě,"
 " kde začal hrát na kontrabas"
 
-#: mysite/views/index.html:179 mysite/views/index.html:187
+#: views/index.html:179 views/index.html:187
 msgid ""
 "During school years garnered top prizes in numerous musical competitions,"
 " including Young talents of Moscovia, Young composers Moscow, III "
@@ -97,7 +96,7 @@ msgstr ""
 "soutěže mladých talentů Moscovy, mladých skladatelů Moskvy, III "
 "mezinárodní soutěže mladých hudebníků a Forum Festivaul v Petrohradě"
 
-#: mysite/views/index.html:180 mysite/views/index.html:190
+#: views/index.html:180 views/index.html:190
 msgid ""
 "Was a student of Moscow State Tchaikovsky Conservatory throughout 2009 - "
 "2012, graduated from Maimonides State Classical Academy in 2015.  At that"
@@ -115,7 +114,7 @@ msgstr ""
 " v Moskevské státní univerzitě pod vedením V. A Kreisberga, Averkin Big "
 "Band, Jazzyl Big Band"
 
-#: mysite/views/index.html:181 mysite/views/index.html:194
+#: views/index.html:181 views/index.html:194
 msgid ""
 "Engaged in various musical projects, worked with Natalia Skvortsova, "
 "Dmitry Mospan, Alexander Zinger, Brill Brothers, Evgeny Pobozhy, Sergey "
@@ -127,7 +126,7 @@ msgstr ""
 "Evgeniem Pobozhym, Sergeyem Osokinem, Grigorijem Seredinym, Yaroslavou "
 "Simonovou, Ivanem Dymou, Andreem Becarrou a dalšími"
 
-#: mysite/views/index.html:182 mysite/views/index.html:197
+#: views/index.html:182 views/index.html:197
 msgid ""
 "Participated in numerous jazz festivals and competitions, including "
 "Gnesin Jazz, Moscow State College of Pop and Jazz Art piano & guitar "
@@ -139,7 +138,7 @@ msgstr ""
 "umění, AquaJazz, Jazz sezóny Igora Butmana, Jazz May Penza, Festival "
 "1Jazz.ru"
 
-#: mysite/views/index.html:194
+#: views/index.html:194
 msgid ""
 "Was a member of All-Russia State Television and Radio Broadcasting "
 "Company Orchestra conducted by Yury Medyanik at the All-Russian contest "
@@ -149,66 +148,98 @@ msgstr ""
 "pod vedením Jurije Medianika a se podílel na nahrávání sezon All-ruské "
 "soutěži mladých talentů"
 
-#: mysite/views/index.html:194
+#: views/index.html:194
 msgid "in 2016-2018"
 msgstr "v letech 2016-2018"
 
-#: mysite/views/index.html:200
-msgid "Since March 2018 lives in Prague, Czech Republic"
-msgstr "Od března 2018 bydlí v Praze, Česká republika"
+#: views/index.html:200
+msgid ""
+"Since March 2018 lives in Prague, Czech Republic, where he has become a "
+"big part of the local jazz community. Works with many Prague-based "
+"musicians and bands, like Allison Wheeler, Daniel Bulatkin, Crossover "
+"Quintet, Jan Smigmator, Cyrille Oswald, Agnieszka Twardoch, Prague Film "
+"Orchestra and others"
+msgstr "Od března 2018 žije v Praze, kde"
+" se stal velkou součástí místní "
+"jazzové komunity. Spolupracuje s mnoha "
+"pražskými hudebníky a kapelami, jako "
+"Allison Wheeler, Daniel Bulatkin, Crossover Quintet, Jan Smigmator, Cyrille Oswald,"
+" Agnieszka Twardoch, Prague Film Orchestra a dalšími"
 
-#: mysite/views/index.html:278
+#: views/index.html:278
 msgid "Name"
 msgstr "Jmeno"
 
-#: mysite/views/index.html:278
+#: views/index.html:278
 msgid "Please enter your name."
 msgstr "Zadejte své jméno."
 
-#: mysite/views/index.html:285
+#: views/index.html:285
 msgid "Email Address"
 msgstr "Email"
 
-#: mysite/views/index.html:285
+#: views/index.html:285
 msgid "Please enter your email address."
 msgstr "Prosím zadejte svou e-mailovou adresu."
 
-#: mysite/views/index.html:292
+#: views/index.html:292
 msgid "Phone Number"
 msgstr "Telefonní číslo"
 
-#: mysite/views/index.html:292
+#: views/index.html:292
 msgid "Please enter your phone number."
 msgstr "Zadejte své telefonní číslo"
 
-#: mysite/views/index.html:299
+#: views/index.html:299
 msgid "Message"
 msgstr "Zpráva"
 
-#: mysite/views/index.html:299
+#: views/index.html:299
 msgid "Please enter a message."
 msgstr "Zadejte prosím zprávu"
 
-#: mysite/views/index.html:307
+#: views/index.html:307
 msgid "Send"
 msgstr "Odeslat"
 
-#: mysite/views/index.html:322
+#: views/index.html:322
 msgid "Location"
 msgstr "Umístění"
 
-#: mysite/views/index.html:323
+#: views/index.html:323
 msgid "Prague, Czech Republic"
 msgstr "Praha, Česká republika"
 
-#: mysite/views/index.html:328
+#: views/index.html:328
 msgid "Around the Web"
 msgstr "Na webu"
 
-#: mysite/views/index.html:348
+#: views/index.html:348
 msgid "See also"
 msgstr "Viz také"
 
 #~ msgid "Technical Rider"
 #~ msgstr ""
+
+#~ msgid "Since March 2018 lives in Prague, Czech Republic"
+#~ msgstr "Od března 2018 bydlí v Praze, Česká republika"
+
+#~ msgid ""
+#~ "Since March 2018 lives in Prague, "
+#~ "Czech Republic, where he became a "
+#~ "big part of local jazz community. "
+#~ "Works with many Prague-based musicians"
+#~ " and bands, like Allison Wheeler, "
+#~ "Daniel Bulatkin, Crossover Quintet, Jan "
+#~ "Smigmator, Cyrille Oswald, Agnieszka Twardoch,"
+#~ " Prague Film Orchestra and others"
+#~ msgstr ""
+#~ "Od března 2018 žije v Praze, kde"
+#~ " se stal velkou součástí místní "
+#~ "jazzové komunity. Spolupracuje s mnoha "
+#~ "pražskými hudebníky a kapelami, jako "
+#~ "Allison Wheeler, Daniel Bulatkin, Crossover"
+#~ " Quintet, Jan Smigmator, Cyrille Oswald,"
+#~ " Agnieszka Twardoch, Prague Film Orchestra"
+#~ " a dalšími"
 
