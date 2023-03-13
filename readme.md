@@ -30,6 +30,17 @@ For ansible deployment see <https://github.com/fernflower/django-steps-vm>.
 The django_steps/fetchevents.py can be used to retrieve events from google calendar. Having the application secret is
 the only prerequisite (not included here for good reasons).
 
+## To regenerate or translations run (from mysite/ directory):
+
+# To extract strings
+pybabel extract -F babel.cfg  -o ./locale/messages.pot .
+
+# To update translations
+pybabel update  -d ./locale -i ./locale/messages.pot
+
+# To compile .mo files
+pybabel compile -f -d ./locale
+
 ## TODO list
 - [x] docker-compose for easy deployment
 - [ ] make deployment [kubernetes-friendly](https://twitter.com/dexhorthy/status/856639005462417409)
